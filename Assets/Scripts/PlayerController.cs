@@ -90,6 +90,31 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void Animate()
+    {
+        if (rigidbody2D.velocity.x == 0)
+        {
+
+        }
+        else if (Mathf.Sign(rigidbody2D.velocity.x) == 1)
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+        }
+        else if (Mathf.Sign(rigidbody2D.velocity.x) == -1)
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
+
+        if (FindObjectOfType<PhysicsManager>().gravitySwitch)
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipY = true;
+        }
+        else
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipY = false;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -119,5 +144,7 @@ public class PlayerController : MonoBehaviour
         {
             Respawn();
         }
+
+        Animate();
     }
 }
