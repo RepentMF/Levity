@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class MovingObstacleManager : MonoBehaviour
 {
-    private PlayerController player;
+    public PlayerController player;
     
     // Start is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType<PlayerController>();
+        
     }
 
     // Update is called once per frame
@@ -25,6 +25,11 @@ public class MovingObstacleManager : MonoBehaviour
                 om.currentTimer = om.initTimer;
                 om.playerAlert = false;
             }
+        }
+
+        if (player.respawnPoint >= 12)
+        {
+            this.gameObject.GetComponent<AudioSource>().loop = false;
         }
         
         this.gameObject.transform.position = player.gameObject.transform.localPosition;

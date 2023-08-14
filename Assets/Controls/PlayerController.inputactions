@@ -15,7 +15,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "GravitySwitch",
+                    "name": "ActivateHarness",
                     "type": "Button",
                     "id": "d0266b28-988a-45b0-bbc2-b17a61dbbf54",
                     "expectedControlType": "Button",
@@ -39,11 +39,11 @@
                 {
                     "name": "",
                     "id": "a4e27a95-8a59-4ddf-b6e0-899c216f303d",
-                    "path": "<Keyboard>/f",
+                    "path": "<Keyboard>/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "GravitySwitch",
+                    "action": "ActivateHarness",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

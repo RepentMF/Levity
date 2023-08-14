@@ -5,6 +5,7 @@ using UnityEngine;
 public class Teleporter : MonoBehaviour
 {
     public bool gravityChanger;
+    public bool isLevelDoor;
     public int ID;
     public int destinationID;
 
@@ -27,6 +28,11 @@ public class Teleporter : MonoBehaviour
                         collider.gameObject.transform.position = tele.gameObject.transform.position;
                         collider.gameObject.GetComponent<PlayerController>().activeTeleporter = destinationID;
                         collider.gameObject.GetComponent<PlayerController>().isTeleporting = true;
+                        if (isLevelDoor)
+                        {
+                            collider.gameObject.GetComponent<PlayerController>().currentHarness =
+                                collider.gameObject.GetComponent<PlayerController>().harnessNumber - 1;
+                        }
                     }
                 }
             }

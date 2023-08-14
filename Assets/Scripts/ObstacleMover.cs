@@ -68,15 +68,22 @@ public class ObstacleMover : MonoBehaviour
             switch (direction)
             {
                 case "x":
-                    body.gameObject.transform.position += new Vector3(obstacleSpeed.x, 0, 0);
+                    body.gameObject.transform.position += new Vector3(obstacleSpeed.x * Time.deltaTime * 150, 0, 0);
                     break;
                 case "y":
-                    body.gameObject.transform.position += new Vector3(0, obstacleSpeed.y, 0);
+                    body.gameObject.transform.position += new Vector3(0, obstacleSpeed.y * Time.deltaTime * 150, 0);
                     break;
                 case "both":
-                    body.gameObject.transform.position += new Vector3(obstacleSpeed.x, obstacleSpeed.y, 0);
+                    body.gameObject.transform.position += new Vector3(obstacleSpeed.x * Time.deltaTime * 150, obstacleSpeed.y * Time.deltaTime * 150, 0);
                     break;
             }
+        }
+        else
+        {
+            this.gameObject.transform.parent.position = initPosition;
+            this.gameObject.transform.position = initPosition;
+            obstacleSpeed = initSpeed;
+            currentTimer = initTimer;
         }
     }
 }

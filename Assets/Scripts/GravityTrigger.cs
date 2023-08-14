@@ -9,13 +9,18 @@ public class GravityTrigger : MonoBehaviour
         if (FindObjectOfType<PhysicsManager>().gravitySwitch)
         {
             FindObjectOfType<PhysicsManager>().gravitySwitch = false;
-        Debug.Log(FindObjectOfType<PhysicsManager>().gravitySwitch + " " + ID);
+            
+            FindObjectOfType<PlayerController>().audio.clip = GameObject.FindWithTag("GravityDown").GetComponent<AudioSource>().clip;
+            FindObjectOfType<PlayerController>().audio.Play(0);
         }
         else
         {
             FindObjectOfType<PhysicsManager>().gravitySwitch = true;
-        Debug.Log(FindObjectOfType<PhysicsManager>().gravitySwitch + " " + ID);
+            
+            FindObjectOfType<PlayerController>().audio.clip = GameObject.FindWithTag("GravityUp").GetComponent<AudioSource>().clip;
+            FindObjectOfType<PlayerController>().audio.Play(0);
         }
+        
         FindObjectOfType<PlayerController>().gameObject.GetComponent<EdgeCollider2D>().offset *= -1;
     }
 
