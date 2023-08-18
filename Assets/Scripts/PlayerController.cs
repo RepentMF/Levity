@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
 {
     public bool blinking;
     public bool canJump;
+    public bool playerFocus;
+    public bool hasWalljumped;
+    public bool onWall;
     public bool onGround;
     public bool isTeleporting;
     public bool isDead;
@@ -38,6 +41,7 @@ public class PlayerController : MonoBehaviour
     public GameObject losingText;
     public GameObject almostText;
     public GameObject startingText;
+    public Camera main;
 
     public void OnJump()
     {
@@ -58,17 +62,51 @@ public class PlayerController : MonoBehaviour
             audio.clip = GameObject.FindWithTag("Jump").GetComponent<AudioSource>().clip;
             audio.Play(0);
         }
+        else if (onWall && !hasWalljumped)
+        {
+            float tempSpeed;
+
+            if (FindObjectOfType<PhysicsManager>().gravitySwitch)
+            {
+                tempSpeed = -vertiSpeed;
+            }
+            else
+            {
+                tempSpeed = vertiSpeed;
+            }
+
+            hasWalljumped = true;
+            rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, tempSpeed);
+            audio.clip = GameObject.FindWithTag("Jump").GetComponent<AudioSource>().clip;
+            audio.Play(0);
+        }
     }
 
     public void OnActivateHarness()
     {
-        if (harnessNumber > 1 && currentHarness > 0)
+        if (harnessNumber != 4 && respawnPoint != 20)
         {
-            FindObjectOfType<GravityTrigger>().ChangeGravity(2);
-            currentHarness--;
+            if (harnessNumber > 1 && currentHarness > 0)
+            {
+                FindObjectOfType<GravityTrigger>().ChangeGravity(2);
+                currentHarness--;
+            }
         }
+        
     }
     
+    public void OnChangeCamera()
+    {
+        if (playerFocus)
+        {
+            playerFocus = false;
+        }
+        else
+        {
+            playerFocus = true;
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Hazard" && harnessNumber != 4)
@@ -88,9 +126,16 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Obstacle" && collision.otherCollider.GetType() == typeof(EdgeCollider2D))
+        if (collision.gameObject.tag == "Obstacle" && collision.otherCollider.GetType() == typeof(EdgeCollider2D)
+            && harnessNumber > 0)
         {
             onGround = true;
+            hasWalljumped = false;
+        }
+
+        if (collision.gameObject.tag == "Wall")
+        {
+            onWall = true;
         }
     }
 
@@ -99,6 +144,11 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Obstacle")
         {
             onGround = false;
+        }
+
+        if (collision.gameObject.tag == "Wall")
+        {
+            onWall = false;
         }
     }
 
@@ -275,9 +325,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        // can only walk
         if (harnessNumber == 0)
         {
             canJump = false;
+            hasWalljumped = true;
 
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
@@ -294,9 +346,11 @@ public class PlayerController : MonoBehaviour
                 rigidbody2D.velocity = new Vector2 (0f, rigidbody2D.velocity.y);
             }
         }
+        // can fly
         else if (harnessNumber == 4)
         {
             canJump = false;
+            hasWalljumped = true;
             rigidbody2D.gravityScale = 0f;
 
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
@@ -317,14 +371,34 @@ public class PlayerController : MonoBehaviour
                 rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, -horiSpeed);
             }
             
-            if (rigidbody2D.velocity.x > 0f || rigidbody2D.velocity.y > 0f)
+            if (rigidbody2D.velocity.x > 0f && rigidbody2D.velocity.y > 0f)
             {
                 rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x - Time.deltaTime, rigidbody2D.velocity.y - Time.deltaTime);
             }
+            else if (rigidbody2D.velocity.x > 0f && rigidbody2D.velocity.y < 0f)
+            {
+                rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x - Time.deltaTime, rigidbody2D.velocity.y + Time.deltaTime);
+            }
+            else if (rigidbody2D.velocity.x < 0f && rigidbody2D.velocity.y > 0f)
+            {
+                rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x + Time.deltaTime, rigidbody2D.velocity.y - Time.deltaTime);
+            }
+            else if (rigidbody2D.velocity.x < 0f && rigidbody2D.velocity.y < 0f)
+            {
+                rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x + Time.deltaTime, rigidbody2D.velocity.y + Time.deltaTime);
+            }
+            else if (Mathf.Round(rigidbody2D.velocity.x) == 0f && Mathf.Round(rigidbody2D.velocity.y) == 0f)
+            {
+                rigidbody2D.velocity = Vector2.zero;
+            }
         }
+        // can walk, gravity trigger, and jump
         else if (harnessNumber < 4)
         {
-            canJump = true;
+            if (!hasWalljumped)
+            {
+                canJump = true;
+            }
 
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
@@ -362,6 +436,88 @@ public class PlayerController : MonoBehaviour
         if (isDead)
         {
             Respawn();
+        }
+
+        // redirect camera focus
+        if (playerFocus)
+        {
+            main.transform.parent = this.gameObject.transform;
+            main.transform.position = new Vector3 (this.gameObject.transform.position.x, this.gameObject.transform.position.y, -1);
+            main.transform.rotation = Quaternion.identity;
+            main.orthographicSize = 5.6f;
+
+            foreach (Transform child in main.gameObject.transform)
+            {
+                if (child.gameObject.name == "Space")
+                {
+                    child.gameObject.GetComponent<SpaceParallax>().enabled = true;
+                    child.gameObject.transform.localScale = new Vector3(2.5f,2.5f,1f);
+                }
+            }
+        }
+        else
+        {
+            
+
+            foreach (GameObject level in GameObject.FindGameObjectsWithTag("Level"))
+            {
+                if (respawnPoint == 20)
+                {
+                    playerFocus = true;
+                    break;
+                }
+                else if (level.name.Contains("Level " + (respawnPoint) + " Folder"))
+                {
+                    foreach (Transform child in level.gameObject.transform)
+                    {
+                        if (respawnPoint == 17)
+                        {
+                            if (child.gameObject.name == "Floor 1")
+                            {
+                                main.transform.parent = child.gameObject.transform;
+                                main.transform.position = new Vector3 (child.transform.GetChild(2).gameObject.transform.position.x, 
+                                    child.transform.GetChild(2).gameObject.transform.position.y - 12f, -1);
+                                main.orthographicSize = 20f;
+                            }
+                        }
+                        else
+                        {
+                            if (child.gameObject.name == "Ceiling")
+                            {
+                                main.transform.parent = child.gameObject.transform;
+                                main.transform.position = new Vector3 (child.transform.GetChild(0).gameObject.transform.position.x, 
+                                    child.transform.GetChild(0).gameObject.transform.position.y, -1);
+                                main.orthographicSize = 9f; 
+                            }
+                        }
+                    }
+                }
+            }
+
+            foreach (Transform child in main.gameObject.transform)
+            {
+                if (respawnPoint == 20)
+                {
+                    playerFocus = true;
+                    break;
+                }
+                else if (child.gameObject.name == "Space")
+                {
+                    if (respawnPoint == 17)
+                    {
+                        child.gameObject.GetComponent<SpaceParallax>().enabled = false;
+                        child.gameObject.transform.localPosition = new Vector3(0f, 0f, 1f);
+                        child.gameObject.transform.localScale = new Vector3(7f, 6f, 1.48440003f);
+                    }
+                    else
+                    {
+                        child.gameObject.GetComponent<SpaceParallax>().enabled = false;
+                        child.gameObject.transform.localPosition = new Vector3(0f, 0f, 1f);
+                        child.gameObject.transform.localScale = new Vector3(2.7f, 2.35f, 1.48440003f);
+                    }
+                    
+                }
+            }
         }
 
         Animate();

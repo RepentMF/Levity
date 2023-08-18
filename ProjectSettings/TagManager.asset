@@ -16,6 +16,8 @@ TagManager:
   - Teleport
   - GravityUp
   - GravityDown
+  - Wall
+  - Level
   layers:
   - Default
   - TransparentFX

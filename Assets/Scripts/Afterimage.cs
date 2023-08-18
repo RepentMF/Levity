@@ -24,7 +24,7 @@ public class Afterimage : MonoBehaviour
     void Update()
     {
         Color color = sprite.color;
-        color.a -= 1.3f * Time.deltaTime;
+        color.a -= 2f * Time.deltaTime;
         sprite.color = color;
 
         if (color.a <= 0f)
