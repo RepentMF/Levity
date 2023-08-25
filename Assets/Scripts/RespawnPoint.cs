@@ -28,9 +28,9 @@ public class RespawnPoint : MonoBehaviour
                 {
                     obj.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
                 }
-
                 obj.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0f;
                 obj.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(random1 * Time.deltaTime, random2 * Time.deltaTime, 0f), ForceMode2D.Impulse);
+                obj.gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
                 exploded = true;
             }
         }
