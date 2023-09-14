@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccj2w7kss300h"]
+
+[ext_resource type="Texture2D" uid="uid://dc3gac65nx4rj" path="res://Art/SpritesheetFiles/MUSH_spritesheet.png" id="1_kp4so"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_83x8t"]
+size = Vector2(14, 14)
+
+[node name="wall" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 3
+texture = ExtResource("1_kp4so")
+region_enabled = true
+region_rect = Rect2(98, 0, 14, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_83x8t")

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjpk2bi6o3e11"]
+
+[ext_resource type="Texture2D" uid="uid://dc3gac65nx4rj" path="res://Art/SpritesheetFiles/MUSH_spritesheet.png" id="1_wisth"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vh123"]
+radius = 7.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hb36v"]
+size = Vector2(7, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oe1gs"]
+size = Vector2(14, 7)
+
+[node name="corner_topleft" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 3
+texture = ExtResource("1_wisth")
+region_enabled = true
+region_rect = Rect2(70, 0, 14, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vh123")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, 0)
+shape = SubResource("RectangleShape2D_hb36v")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_oe1gs")

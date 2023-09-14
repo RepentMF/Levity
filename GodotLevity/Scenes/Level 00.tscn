@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://c5w0l3l0d35n0"]
+
+[ext_resource type="PackedScene" uid="uid://ccj2w7kss300h" path="res://Objects/wall.tscn" id="1_kjch5"]
+[ext_resource type="PackedScene" uid="uid://cr0mq40qfhyup" path="res://Objects/corner_botleft.tscn" id="2_6671t"]
+[ext_resource type="PackedScene" uid="uid://2erhvegnqb5x" path="res://Objects/corner_botright.tscn" id="3_m6gt5"]
+[ext_resource type="PackedScene" uid="uid://lmnev5ju8xr5" path="res://Objects/floor.tscn" id="4_5a74o"]
+[ext_resource type="PackedScene" uid="uid://d4hatb73l64kq" path="res://Objects/corner_topright.tscn" id="5_egjs3"]
+[ext_resource type="PackedScene" uid="uid://bjpk2bi6o3e11" path="res://Objects/corner_topleft.tscn" id="6_xuusl"]
+[ext_resource type="PackedScene" uid="uid://dtuqaxmqan3yl" path="res://Objects/ceiling.tscn" id="7_pg742"]
+[ext_resource type="PackedScene" uid="uid://cquqgrf8e1kse" path="res://Objects/teleporter.tscn" id="8_p8thy"]
+
+[node name="Level 00" type="Node2D"]
+
+[node name="wall" parent="." instance=ExtResource("1_kjch5")]
+position = Vector2(7, 84)
+scale = Vector2(1, 10)
+
+[node name="wall2" parent="." instance=ExtResource("1_kjch5")]
+position = Vector2(413, 84)
+scale = Vector2(1, 10.04)
+
+[node name="corner_botleft" parent="." instance=ExtResource("2_6671t")]
+position = Vector2(7, 161)
+
+[node name="corner_botright" parent="." instance=ExtResource("3_m6gt5")]
+position = Vector2(413, 161)
+
+[node name="floor" parent="." instance=ExtResource("4_5a74o")]
+position = Vector2(210, 161)
+scale = Vector2(28.0089, 1)
+
+[node name="corner_topright" parent="." instance=ExtResource("5_egjs3")]
+position = Vector2(413, 7)
+
+[node name="corner_topleft" parent="." instance=ExtResource("6_xuusl")]
+position = Vector2(7, 7)
+
+[node name="ceiling" parent="." instance=ExtResource("7_pg742")]
+position = Vector2(210, 7)
+scale = Vector2(28, 1)
+
+[node name="teleporter" parent="." instance=ExtResource("8_p8thy")]
+position = Vector2(245, 105)
