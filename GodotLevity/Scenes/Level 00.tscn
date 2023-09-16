@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c5w0l3l0d35n0"]
+[gd_scene load_steps=8 format=3 uid="uid://c5w0l3l0d35n0"]
 
 [ext_resource type="PackedScene" uid="uid://ccj2w7kss300h" path="res://Objects/wall.tscn" id="1_kjch5"]
 [ext_resource type="PackedScene" uid="uid://cr0mq40qfhyup" path="res://Objects/corner_botleft.tscn" id="2_6671t"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://d4hatb73l64kq" path="res://Objects/corner_topright.tscn" id="5_egjs3"]
 [ext_resource type="PackedScene" uid="uid://bjpk2bi6o3e11" path="res://Objects/corner_topleft.tscn" id="6_xuusl"]
 [ext_resource type="PackedScene" uid="uid://dtuqaxmqan3yl" path="res://Objects/ceiling.tscn" id="7_pg742"]
-[ext_resource type="PackedScene" uid="uid://cquqgrf8e1kse" path="res://Objects/teleporter.tscn" id="8_p8thy"]
 
 [node name="Level 00" type="Node2D"]
 
@@ -38,6 +37,3 @@ position = Vector2(7, 7)
 [node name="ceiling" parent="." instance=ExtResource("7_pg742")]
 position = Vector2(210, 7)
 scale = Vector2(28, 1)
-
-[node name="teleporter" parent="." instance=ExtResource("8_p8thy")]
-position = Vector2(245, 105)
