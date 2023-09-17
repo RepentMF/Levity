@@ -1,6 +1,8 @@
 extends Area2D
 
-var DESTINATION = get_meta("Destination")
+var GRAVITY_TRIGGER = get_meta("GRAVITY_TRIGGER")
+var ID = get_meta("ID")
+var DESTINATION = get_meta("DESTINATION")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,9 +20,9 @@ func _on_body_entered(body):
 	if body.name == "MUSH_Player":
 		# If the player is not already teleporting
 		# and if the player's active teleporter ID is not this teleporter's ID
-		if !body.isTeleporting && body.activeTeleporterID != get_meta("ID"):
+		if !body.isTeleporting && body.activeTeleporterID != ID:
 			# If this telporter is a gravity trigger
-			if get_meta("GRAVITY_TRIGGER"):
+			if GRAVITY_TRIGGER:
 				# Change the player's gravity
 				body.gravity *= -1
 			

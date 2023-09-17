@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dc3gac65nx4rj"
-path="res://.godot/imported/MUSH_spritesheet.png-5d3e4e19a3181e5e938a46009f8944a8.ctex"
+path="res://godot/imported/MUSH_spritesheet.png-5d3e4e19a3181e5e938a46009f8944a8.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://Art/SpritesheetFiles/MUSH_spritesheet.png"
-dest_files=["res://.godot/imported/MUSH_spritesheet.png-5d3e4e19a3181e5e938a46009f8944a8.ctex"]
+dest_files=["res://godot/imported/MUSH_spritesheet.png-5d3e4e19a3181e5e938a46009f8944a8.ctex"]
 
 [params]
 

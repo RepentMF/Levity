@@ -1,0 +1,26 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1694911466
+icon.svg::CompressedTexture2D::813009347399540666::1694713829::1694911466::1::::<><>::
+::res://Art/::1694721074
+::res://Art/PyxelFiles/::1694729085
+::res://Art/SpritesheetFiles/::1694878618
+BouncyStar_spritesheet.png::CompressedTexture2D::5754107985987477384::1694729062::1694911466::1::::<><>::
+Electricity_spritesheet.png::CompressedTexture2D::6806343457055229388::1694729004::1694911466::1::::<><>::
+LevelTeleporter_spritesheet.png::CompressedTexture2D::3361161678309339390::1694727555::1694911466::1::::<><>::
+MUSH_spritesheet.png::CompressedTexture2D::7357806771742650823::1694723390::1694911466::1::::<><>::
+::res://Objects/::1694911460
+ceiling.tscn::PackedScene::8535110334469594643::1694726717::0::1::::<><>::uid://dc3gac65nx4rj::::res://Art/SpritesheetFiles/MUSH_spritesheet.png
+corner_botleft.tscn::PackedScene::6018419892231139551::1694725611::0::1::::<><>::uid://dc3gac65nx4rj::::res://Art/SpritesheetFiles/MUSH_spritesheet.png
+corner_botright.tscn::PackedScene::1904402088137664295::1694725808::0::1::::<><>::uid://dc3gac65nx4rj::::res://Art/SpritesheetFiles/MUSH_spritesheet.png
+corner_topleft.tscn::PackedScene::3049741395419484350::1694725799::0::1::::<><>::uid://dc3gac65nx4rj::::res://Art/SpritesheetFiles/MUSH_spritesheet.png
+corner_topright.tscn::PackedScene::9209223194190089088::1694725791::0::1::::<><>::uid://dc3gac65nx4rj::::res://Art/SpritesheetFiles/MUSH_spritesheet.png
+floor.tscn::PackedScene::797647426920112420::1694726210::0::1::::<><>::uid://dc3gac65nx4rj::::res://Art/SpritesheetFiles/MUSH_spritesheet.png
+mush_player.gd::GDScript::-1::1694877295::0::1::::<>CharacterBody2D<>::
+mush_player.tscn::PackedScene::8498017444733574769::1694911460::0::1::::<><>::res://Objects/mush_player.gd<>uid://dc3gac65nx4rj::::res://Art/SpritesheetFiles/MUSH_spritesheet.png
+teleporter.gd::GDScript::-1::1694911265::0::1::::<>Area2D<>::
+teleporter.tscn::PackedScene::5938133509450331520::1694911460::0::1::::<><>::res://Objects/teleporter.gd<>uid://bn5f3vc6n1ali::::res://Art/SpritesheetFiles/LevelTeleporter_spritesheet.png
+wall.tscn::PackedScene::4933478797757677821::1694725626::0::1::::<><>::uid://dc3gac65nx4rj::::res://Art/SpritesheetFiles/MUSH_spritesheet.png
+::res://Scenes/::1694911460
+Level 00.tscn::PackedScene::6925462044456287035::1694911460::0::1::::<><>::uid://ccj2w7kss300h::::res://Objects/wall.tscn<>uid://cr0mq40qfhyup::::res://Objects/corner_botleft.tscn<>uid://2erhvegnqb5x::::res://Objects/corner_botright.tscn<>uid://lmnev5ju8xr5::::res://Objects/floor.tscn<>uid://d4hatb73l64kq::::res://Objects/corner_topright.tscn<>uid://bjpk2bi6o3e11::::res://Objects/corner_topleft.tscn<>uid://dtuqaxmqan3yl::::res://Objects/ceiling.tscn
+Level 01.tscn::PackedScene::6706211508542465654::1694877295::0::1::::<><>::uid://ccj2w7kss300h::::res://Objects/wall.tscn<>uid://cr0mq40qfhyup::::res://Objects/corner_botleft.tscn<>uid://2erhvegnqb5x::::res://Objects/corner_botright.tscn<>uid://lmnev5ju8xr5::::res://Objects/floor.tscn<>uid://d4hatb73l64kq::::res://Objects/corner_topright.tscn<>uid://bjpk2bi6o3e11::::res://Objects/corner_topleft.tscn<>uid://dtuqaxmqan3yl::::res://Objects/ceiling.tscn
+overworld.tscn::PackedScene::5747938914201288889::1694911460::0::1::::<><>::uid://dtcrduh7wvabh::::res://Objects/mush_player.tscn<>uid://c5w0l3l0d35n0::::res://Scenes/Level 00.tscn<>uid://cquqgrf8e1kse::::res://Objects/teleporter.tscn<>uid://c2sslai5x8231::::res://Scenes/Level 01.tscn
