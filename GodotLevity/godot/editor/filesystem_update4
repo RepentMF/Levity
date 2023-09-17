@@ -1,1 +1,4 @@
+res://Scenes/Level 01.tscn
+res://Objects/teleporter.gd
 res://Scenes/overworld.tscn
+res://Objects/teleporter.tscn

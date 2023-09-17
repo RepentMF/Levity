@@ -14,13 +14,13 @@ position = Vector2(378, 161)
 position = Vector2(133, 77)
 
 [node name="backward_teleporter" parent="Level 00" instance=ExtResource("3_l128u")]
-position = Vector2(340, 100)
-metadata/Destination = NodePath("../../Level 01/forward_teleporter")
+position = Vector2(339, 100)
+metadata/DESTINATION = NodePath("../../Level 01/forward_teleporter")
 
 [node name="Level 01" parent="." instance=ExtResource("3_q7q7c")]
 position = Vector2(555, 77)
 
 [node name="forward_teleporter" parent="Level 01" instance=ExtResource("3_l128u")]
 position = Vector2(36, 145)
-metadata/Destination = NodePath("../../Level 00/backward_teleporter")
 metadata/ID = 1
+metadata/DESTINATION = NodePath("../../Level 00/backward_teleporter")

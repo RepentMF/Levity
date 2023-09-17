@@ -8,9 +8,9 @@
 [node name="teleporter" type="Area2D"]
 z_index = -1
 script = ExtResource("1_ajtu7")
-metadata/Destination = NodePath("")
 metadata/ID = 0
 metadata/GRAVITY_TRIGGER = false
+metadata/DESTINATION = NodePath("")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 3
