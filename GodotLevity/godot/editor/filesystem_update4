@@ -1,4 +1,18 @@
-res://Scenes/Level 01.tscn
-res://Objects/teleporter.gd
 res://Scenes/overworld.tscn
-res://Objects/teleporter.tscn
+res://Scenes/Level 00.tscn
+res://InteractiveObjects/mush_player.tscn
+res://InteractiveObjects/teleporter.tscn
+res://InteractiveObjects/bounce.tscn
+res://InteractiveObjects/bounce_static.tscn
+res://InteractiveObjects/bounce.gd
+res://InteractiveObjects/mush_player.gd
+res://InteractiveObjects/teleporter.gd
+res://EnvironmentObjects/wall.tscn
+res://EnvironmentObjects/floor.tscn
+res://EnvironmentObjects/corner_topright.tscn
+res://EnvironmentObjects/corner_topleft.tscn
+res://EnvironmentObjects/corner_botright.tscn
+res://EnvironmentObjects/corner_botleft.tscn
+res://EnvironmentObjects/ceiling.tscn
+res://InteractiveObjects/object_mover.tscn
+res://InteractiveObjects/object_mover.gd

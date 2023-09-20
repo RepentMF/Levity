@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtcrduh7wvabh"]
+[gd_scene load_steps=5 format=3 uid="uid://dtcrduh7wvabh"]
 
-[ext_resource type="Script" path="res://Objects/mush_player.gd" id="1_g2n87"]
+[ext_resource type="Script" path="res://InteractiveObjects/mush_player.gd" id="1_g2n87"]
 [ext_resource type="Texture2D" uid="uid://dc3gac65nx4rj" path="res://Art/SpritesheetFiles/MUSH_spritesheet.png" id="2_to1kk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iynkm"]
 size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7pt2g"]
+size = Vector2(14, 2)
 
 [node name="MUSH_Player" type="CharacterBody2D"]
 script = ExtResource("1_g2n87")
@@ -17,3 +20,9 @@ region_rect = Rect2(0, 0, 14, 14)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_iynkm")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_7pt2g")

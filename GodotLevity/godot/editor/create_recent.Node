@@ -1,0 +1,5 @@
+AnimatableBody2D
+Sprite2D
+CollisionShape2D
+StaticBody2D
+Area2D

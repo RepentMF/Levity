@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv3oit3cchkt2"]
+
+[ext_resource type="Script" path="res://InteractiveObjects/bounce.gd" id="1_0tdxu"]
+[ext_resource type="Texture2D" uid="uid://cn8lk2ory53ea" path="res://Art/SpritesheetFiles/BouncyStar_spritesheet.png" id="2_wl24h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ts4l"]
+
+[node name="bounce" type="Area2D"]
+z_index = -1
+script = ExtResource("1_0tdxu")
+metadata/GRAVITY_TRIGGER = false
+metadata/BOUNCE_SPEED = -400.0
+metadata/MOVE_OBJECT = false
+metadata/MOVE_TIMER = 0.0
+metadata/DIRECTION = Vector2(0, 0)
+metadata/SPEED = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 3
+texture = ExtResource("2_wl24h")
+offset = Vector2(3, 0)
+region_enabled = true
+region_rect = Rect2(1, -1, 64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_4ts4l")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

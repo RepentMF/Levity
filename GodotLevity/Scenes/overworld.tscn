@@ -1,11 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://cn5lyjsi8m8yv"]
+[gd_scene load_steps=6 format=3 uid="uid://cn5lyjsi8m8yv"]
 
-[ext_resource type="PackedScene" uid="uid://dtcrduh7wvabh" path="res://Objects/mush_player.tscn" id="1_k0ixt"]
+[ext_resource type="PackedScene" uid="uid://dtcrduh7wvabh" path="res://InteractiveObjects/mush_player.tscn" id="1_k0ixt"]
 [ext_resource type="PackedScene" uid="uid://c5w0l3l0d35n0" path="res://Scenes/Level 00.tscn" id="2_01t3r"]
-[ext_resource type="PackedScene" uid="uid://cquqgrf8e1kse" path="res://Objects/teleporter.tscn" id="3_l128u"]
+[ext_resource type="PackedScene" uid="uid://cquqgrf8e1kse" path="res://InteractiveObjects/teleporter.tscn" id="3_l128u"]
 [ext_resource type="PackedScene" uid="uid://c2sslai5x8231" path="res://Scenes/Level 01.tscn" id="3_q7q7c"]
+[ext_resource type="PackedScene" uid="uid://cv3oit3cchkt2" path="res://InteractiveObjects/bounce.tscn" id="5_prfjj"]
 
 [node name="Overworld" type="Node2D"]
+
+[node name="bounce" parent="." instance=ExtResource("5_prfjj")]
+position = Vector2(293, 163)
+metadata/MOVE_OBJECT = true
+metadata/MOVE_TIMER = 1.0
+metadata/DIRECTION = Vector2(1, 0)
+metadata/SPEED = Vector2(0.01, 0)
 
 [node name="MUSH_Player" parent="." instance=ExtResource("1_k0ixt")]
 position = Vector2(378, 161)
@@ -21,6 +29,7 @@ metadata/DESTINATION = NodePath("../../Level 01/forward_teleporter")
 position = Vector2(555, 77)
 
 [node name="forward_teleporter" parent="Level 01" instance=ExtResource("3_l128u")]
-position = Vector2(36, 145)
+position = Vector2(39, 100)
 metadata/ID = 1
+metadata/GRAVITY_TRIGGER = true
 metadata/DESTINATION = NodePath("../../Level 00/backward_teleporter")
