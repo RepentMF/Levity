@@ -1,18 +1,24 @@
 res://Scenes/overworld.tscn
 res://Scenes/Level 00.tscn
+res://Scenes/Level 01.tscn
+res://InteractiveObjects/hazard1.tscn
 res://InteractiveObjects/mush_player.tscn
 res://InteractiveObjects/teleporter.tscn
 res://InteractiveObjects/bounce.tscn
-res://InteractiveObjects/bounce_static.tscn
-res://InteractiveObjects/bounce.gd
-res://InteractiveObjects/mush_player.gd
-res://InteractiveObjects/teleporter.gd
+res://EnvironmentObjects/respawn_point.tscn
+res://EnvironmentObjects/wooden_box.tscn
 res://EnvironmentObjects/wall.tscn
-res://EnvironmentObjects/floor.tscn
-res://EnvironmentObjects/corner_topright.tscn
-res://EnvironmentObjects/corner_topleft.tscn
-res://EnvironmentObjects/corner_botright.tscn
-res://EnvironmentObjects/corner_botleft.tscn
-res://EnvironmentObjects/ceiling.tscn
-res://InteractiveObjects/object_mover.tscn
-res://InteractiveObjects/object_mover.gd
+res://InteractiveObjects/mush_player.gd
+res://InteractiveObjects/switch.tscn
+res://Scenes/Level 02.tscn
+res://InteractiveObjects/switch.gd
+res://InteractiveObjects/gravity_zone.tscn
+res://InteractiveObjects/gravity_zone.gd
+res://EnvironmentObjects/respawn_point.gd
+res://EnvironmentObjects/wooden_box.gd
+res://Scenes/Level 03.tscn
+res://Scenes/Camera_Focus.gd
+res://InteractiveObjects/absence_mesh.gd
+res://InteractiveObjects/absence_mesh.tscn
+res://Scenes/Level 04.tscn
+res://Scenes/Level 05.tscn

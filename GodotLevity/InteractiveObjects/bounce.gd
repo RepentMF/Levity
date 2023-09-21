@@ -5,13 +5,15 @@ var GRAVITY_TRIGGER
 var MOVE_OBJECT
 
 # Floats
-var DIRECTION
 var INIT_MOVE_TIMER
 var MOVE_TIMER
-var SPEED
 
 # Integers
 var BOUNCE_SPEED
+
+# Vector2s
+var DIRECTION
+var SPEED
 
 func _move_object(delta):
 	if MOVE_OBJECT:

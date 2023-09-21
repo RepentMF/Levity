@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://e2ybeyj8lsy8"]
+
+[ext_resource type="Script" path="res://InteractiveObjects/gravity_zone.gd" id="1_16vcf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80bm4"]
+
+[node name="gravity_zone" type="Area2D"]
+script = ExtResource("1_16vcf")
+metadata/ONOFF_SWITCH = NodePath("")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_80bm4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

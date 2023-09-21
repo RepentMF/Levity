@@ -15,13 +15,13 @@ public class PlayerController : MonoBehaviour
     public bool hasWalljumped;
     public bool onWall;
     public bool onGround;
-    //public bool isTeleporting;
+    public bool isTeleporting;
     public bool isDead;
     public bool respawnGravity;
     public int harnessNumber;
     public int currentHarness;
     public int respawnPoint;
-    //public int activeTeleporter;
+    public int activeTeleporter;
     public float afterimageTimer;
     public float initAfterimageTimer;
     public float initTimer;

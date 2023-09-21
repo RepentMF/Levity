@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1endk384q5ay"]
+
+[ext_resource type="Script" path="res://InteractiveObjects/absence_mesh.gd" id="1_oo17f"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tkvg3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_125j5"]
+size = Vector2(452, 184)
+
+[node name="AbsenceMesh" type="Area2D"]
+script = ExtResource("1_oo17f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(210, 84)
+scale = Vector2(0.820313, 0.328125)
+texture = SubResource("NoiseTexture2D_tkvg3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 100
+position = Vector2(210, 84)
+shape = SubResource("RectangleShape2D_125j5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvicpctx08p3y"]
+
+[ext_resource type="Script" path="res://InteractiveObjects/hazard.gd" id="1_pbxvr"]
+[ext_resource type="Texture2D" uid="uid://c38bqntbsox5e" path="res://Art/SpritesheetFiles/Electricity_spritesheet.png" id="2_4beh7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8px4"]
+size = Vector2(38, 108)
+
+[node name="hazard" type="Area2D"]
+z_index = -1
+script = ExtResource("1_pbxvr")
+metadata/GRAVITY_TRIGGER = false
+metadata/BOUNCE_SPEED = -400.0
+metadata/MOVE_OBJECT = false
+metadata/MOVE_TIMER = 0.0
+metadata/DIRECTION = Vector2(0, 0)
+metadata/SPEED = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 3
+texture = ExtResource("2_4beh7")
+offset = Vector2(3, 0)
+region_enabled = true
+region_rect = Rect2(0.160549, -0.0194626, 64.8394, 64.2068)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 4)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_m8px4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

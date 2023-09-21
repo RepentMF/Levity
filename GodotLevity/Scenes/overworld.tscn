@@ -1,35 +1,57 @@
-[gd_scene load_steps=6 format=3 uid="uid://cn5lyjsi8m8yv"]
+[gd_scene load_steps=9 format=3 uid="uid://cn5lyjsi8m8yv"]
 
 [ext_resource type="PackedScene" uid="uid://dtcrduh7wvabh" path="res://InteractiveObjects/mush_player.tscn" id="1_k0ixt"]
 [ext_resource type="PackedScene" uid="uid://c5w0l3l0d35n0" path="res://Scenes/Level 00.tscn" id="2_01t3r"]
-[ext_resource type="PackedScene" uid="uid://cquqgrf8e1kse" path="res://InteractiveObjects/teleporter.tscn" id="3_l128u"]
-[ext_resource type="PackedScene" uid="uid://c2sslai5x8231" path="res://Scenes/Level 01.tscn" id="3_q7q7c"]
-[ext_resource type="PackedScene" uid="uid://cv3oit3cchkt2" path="res://InteractiveObjects/bounce.tscn" id="5_prfjj"]
+[ext_resource type="PackedScene" uid="uid://b1endk384q5ay" path="res://InteractiveObjects/absence_mesh.tscn" id="3_b712w"]
+[ext_resource type="PackedScene" uid="uid://dawnlvbdcbjjt" path="res://Scenes/Level 01.tscn" id="3_q7q7c"]
+[ext_resource type="PackedScene" uid="uid://b0rf32c1nfh5j" path="res://Scenes/Level 02.tscn" id="4_gbfym"]
+[ext_resource type="PackedScene" uid="uid://ebxyvlhvhu8l" path="res://Scenes/Level 03.tscn" id="5_qhkg2"]
+[ext_resource type="PackedScene" uid="uid://cpkk5qfba0yl1" path="res://Scenes/Level 04.tscn" id="7_jcx6r"]
+[ext_resource type="PackedScene" uid="uid://bju270vssdjbe" path="res://Scenes/Level 05.tscn" id="8_wxtwe"]
 
 [node name="Overworld" type="Node2D"]
 
-[node name="bounce" parent="." instance=ExtResource("5_prfjj")]
-position = Vector2(293, 163)
-metadata/MOVE_OBJECT = true
-metadata/MOVE_TIMER = 1.0
-metadata/DIRECTION = Vector2(1, 0)
-metadata/SPEED = Vector2(0.01, 0)
-
 [node name="MUSH_Player" parent="." instance=ExtResource("1_k0ixt")]
-position = Vector2(378, 161)
+position = Vector2(157, 220)
+
+[node name="Camera2D" type="Camera2D" parent="MUSH_Player"]
+zoom = Vector2(3, 3)
+limit_left = 33
+limit_bottom = 345
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.25
+drag_top_margin = 0.35
+drag_right_margin = 0.25
+drag_bottom_margin = 0.35
+editor_draw_limits = true
+editor_draw_drag_margin = true
 
 [node name="Level 00" parent="." instance=ExtResource("2_01t3r")]
 position = Vector2(133, 77)
 
-[node name="backward_teleporter" parent="Level 00" instance=ExtResource("3_l128u")]
-position = Vector2(339, 100)
-metadata/DESTINATION = NodePath("../../Level 01/forward_teleporter")
+[node name="AbsenceMesh" parent="Level 00" instance=ExtResource("3_b712w")]
 
 [node name="Level 01" parent="." instance=ExtResource("3_q7q7c")]
-position = Vector2(555, 77)
+position = Vector2(553, 77)
 
-[node name="forward_teleporter" parent="Level 01" instance=ExtResource("3_l128u")]
-position = Vector2(39, 100)
-metadata/ID = 1
-metadata/GRAVITY_TRIGGER = true
-metadata/DESTINATION = NodePath("../../Level 00/backward_teleporter")
+[node name="AbsenceMesh" parent="Level 01" instance=ExtResource("3_b712w")]
+
+[node name="Level 02" parent="." instance=ExtResource("4_gbfym")]
+position = Vector2(973, 77)
+
+[node name="AbsenceMesh" parent="Level 02" instance=ExtResource("3_b712w")]
+
+[node name="Level 03" parent="." instance=ExtResource("5_qhkg2")]
+position = Vector2(1393, 77)
+
+[node name="AbsenceMesh" parent="Level 03" instance=ExtResource("3_b712w")]
+
+[node name="Level 04" parent="." instance=ExtResource("7_jcx6r")]
+position = Vector2(1813, 77)
+
+[node name="AbsenceMesh" parent="Level 04" instance=ExtResource("3_b712w")]
+
+[node name="Level 05" parent="." instance=ExtResource("8_wxtwe")]
+position = Vector2(1813, -91)
