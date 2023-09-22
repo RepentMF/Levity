@@ -21,5 +21,5 @@ func _on_body_entered(body):
 			isOn = false
 		else:
 			isOn = true
-		GRAVITY_ZONE.isChangeNeeded = true
+		GRAVITY_ZONE.changeNeeded = true
 	pass # Replace with function body.

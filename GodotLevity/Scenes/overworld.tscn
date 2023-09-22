@@ -28,30 +28,34 @@ drag_bottom_margin = 0.35
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
-[node name="Level 00" parent="." instance=ExtResource("2_01t3r")]
-position = Vector2(133, 77)
-
-[node name="AbsenceMesh" parent="Level 00" instance=ExtResource("3_b712w")]
-
-[node name="Level 01" parent="." instance=ExtResource("3_q7q7c")]
-position = Vector2(553, 77)
-
-[node name="AbsenceMesh" parent="Level 01" instance=ExtResource("3_b712w")]
-
-[node name="Level 02" parent="." instance=ExtResource("4_gbfym")]
-position = Vector2(973, 77)
-
-[node name="AbsenceMesh" parent="Level 02" instance=ExtResource("3_b712w")]
-
-[node name="Level 03" parent="." instance=ExtResource("5_qhkg2")]
-position = Vector2(1393, 77)
-
-[node name="AbsenceMesh" parent="Level 03" instance=ExtResource("3_b712w")]
-
-[node name="Level 04" parent="." instance=ExtResource("7_jcx6r")]
-position = Vector2(1813, 77)
-
-[node name="AbsenceMesh" parent="Level 04" instance=ExtResource("3_b712w")]
-
-[node name="Level 05" parent="." instance=ExtResource("8_wxtwe")]
+[node name="Area 1" type="Node2D" parent="."]
 position = Vector2(1813, -91)
+
+[node name="Level 00" parent="Area 1" instance=ExtResource("2_01t3r")]
+position = Vector2(-1680, 168)
+
+[node name="AbsenceMesh" parent="Area 1/Level 00" instance=ExtResource("3_b712w")]
+
+[node name="Level 01" parent="Area 1" instance=ExtResource("3_q7q7c")]
+position = Vector2(-1260, 168)
+
+[node name="AbsenceMesh" parent="Area 1/Level 01" instance=ExtResource("3_b712w")]
+
+[node name="Level 02" parent="Area 1" instance=ExtResource("4_gbfym")]
+position = Vector2(-840, 168)
+
+[node name="AbsenceMesh" parent="Area 1/Level 02" instance=ExtResource("3_b712w")]
+
+[node name="Level 03" parent="Area 1" instance=ExtResource("5_qhkg2")]
+position = Vector2(-420, 168)
+
+[node name="AbsenceMesh" parent="Area 1/Level 03" instance=ExtResource("3_b712w")]
+
+[node name="Level 04" parent="Area 1" instance=ExtResource("7_jcx6r")]
+position = Vector2(0, 168)
+
+[node name="AbsenceMesh" parent="Area 1/Level 04" instance=ExtResource("3_b712w")]
+
+[node name="Level 05" parent="Area 1" instance=ExtResource("8_wxtwe")]
+
+[node name="AbsenceMesh" parent="Area 1/Level 05" instance=ExtResource("3_b712w")]
