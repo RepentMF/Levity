@@ -42,7 +42,7 @@ func _change_gravity():
 		up_direction = Vector2(0, 1)
 	pass
 
-func get_which_wall_collided():
+func _get_which_wall_collided():
 	for i in range(get_slide_collision_count()):
 		var collision = get_slide_collision(i)
 		if collision.get_normal().x > 0:
@@ -81,9 +81,10 @@ func _physics_process(delta):
 			_animate_direction(direction)
 		else:
 			velocity.x = move_toward(velocity.x, 0, speed)
-		if get_which_wall_collided() == "right":
+		
+		if _get_which_wall_collided() == "right":
 			walljumpDirection = -1
-		elif get_which_wall_collided() == "left":
+		elif _get_which_wall_collided() == "left":
 			walljumpDirection = 1
 	else:
 		velocity.x = walljumpDirection * speed

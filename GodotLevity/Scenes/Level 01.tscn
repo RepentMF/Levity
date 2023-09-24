@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://d4hatb73l64kq" path="res://EnvironmentObjects/corner_topright.tscn" id="5_ndd4u"]
 [ext_resource type="PackedScene" uid="uid://bjpk2bi6o3e11" path="res://EnvironmentObjects/corner_topleft.tscn" id="6_qhfxg"]
 [ext_resource type="PackedScene" uid="uid://dtuqaxmqan3yl" path="res://EnvironmentObjects/ceiling.tscn" id="7_036l3"]
+[ext_resource type="PackedScene" uid="uid://vpi1v7x7tptd" path="res://EnvironmentObjects/wooden_box.tscn" id="8_3w2c2"]
 [ext_resource type="PackedScene" uid="uid://dxkuqb7fmd5km" path="res://EnvironmentObjects/respawn_point.tscn" id="8_ymg6f"]
-[ext_resource type="PackedScene" uid="uid://ctkdb0jxvs4dr" path="res://EnvironmentObjects/wooden_box.tscn" id="9_sx834"]
 
 [node name="Level 01" type="Node2D"]
 
@@ -44,15 +44,18 @@ scale = Vector2(28, 1)
 
 [node name="OBJECTS" type="Node2D" parent="."]
 
-[node name="wooden_box3" parent="OBJECTS" instance=ExtResource("9_sx834")]
+[node name="wooden_box3" parent="OBJECTS" instance=ExtResource("8_3w2c2")]
 position = Vector2(223, 140)
 scale = Vector2(2, 2)
+metadata/DIRECTION = 1
 
-[node name="wooden_box2" parent="OBJECTS" instance=ExtResource("9_sx834")]
+[node name="wooden_box2" parent="OBJECTS" instance=ExtResource("8_3w2c2")]
 position = Vector2(202, 147)
+metadata/DIRECTION = 1
 
-[node name="wooden_box" parent="OBJECTS" instance=ExtResource("9_sx834")]
+[node name="wooden_box" parent="OBJECTS" instance=ExtResource("8_3w2c2")]
 position = Vector2(108, 147)
+metadata/DIRECTION = 1
 
 [node name="respawn_point" parent="." instance=ExtResource("8_ymg6f")]
 position = Vector2(24, 147)

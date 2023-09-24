@@ -57,14 +57,17 @@ scale = Vector2(1, 4)
 
 [node name="wooden_box" parent="OBJECTS" instance=ExtResource("9_kbfta")]
 position = Vector2(320, 147)
+metadata/DIRECTION = 1
 
 [node name="wooden_box2" parent="OBJECTS" instance=ExtResource("9_kbfta")]
 position = Vector2(28, 140)
 scale = Vector2(2, 2)
+metadata/DIRECTION = 1
 
 [node name="respawn_point" parent="." instance=ExtResource("8_27dgv")]
 position = Vector2(366, 144)
 scale = Vector2(4, 1)
+metadata/ID = 5
 
 [node name="switch" parent="." instance=ExtResource("10_l52cd")]
 position = Vector2(393, 77)
@@ -72,5 +75,4 @@ metadata/GRAVITY_ZONE = NodePath("../gravity_zone")
 
 [node name="gravity_zone" parent="." instance=ExtResource("11_sosqu")]
 position = Vector2(210, 85)
-scale = Vector2(19.5, 7)
 metadata/ONOFF_SWITCH = NodePath("../switch")

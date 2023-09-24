@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cn5lyjsi8m8yv"]
+[gd_scene load_steps=10 format=3 uid="uid://cn5lyjsi8m8yv"]
 
 [ext_resource type="PackedScene" uid="uid://dtcrduh7wvabh" path="res://InteractiveObjects/mush_player.tscn" id="1_k0ixt"]
 [ext_resource type="PackedScene" uid="uid://c5w0l3l0d35n0" path="res://Scenes/Level 00.tscn" id="2_01t3r"]
@@ -8,11 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://ebxyvlhvhu8l" path="res://Scenes/Level 03.tscn" id="5_qhkg2"]
 [ext_resource type="PackedScene" uid="uid://cpkk5qfba0yl1" path="res://Scenes/Level 04.tscn" id="7_jcx6r"]
 [ext_resource type="PackedScene" uid="uid://bju270vssdjbe" path="res://Scenes/Level 05.tscn" id="8_wxtwe"]
+[ext_resource type="PackedScene" uid="uid://47x80cmpf4ab" path="res://Scenes/Level 06.tscn" id="9_b8ymm"]
 
 [node name="Overworld" type="Node2D"]
 
 [node name="MUSH_Player" parent="." instance=ExtResource("1_k0ixt")]
-position = Vector2(157, 220)
+position = Vector2(152, 221)
 
 [node name="Camera2D" type="Camera2D" parent="MUSH_Player"]
 zoom = Vector2(3, 3)
@@ -59,3 +60,8 @@ position = Vector2(0, 168)
 [node name="Level 05" parent="Area 1" instance=ExtResource("8_wxtwe")]
 
 [node name="AbsenceMesh" parent="Area 1/Level 05" instance=ExtResource("3_b712w")]
+
+[node name="Level 06" parent="Area 1" instance=ExtResource("9_b8ymm")]
+position = Vector2(-420, 0)
+
+[node name="AbsenceMesh" parent="Area 1/Level 06" instance=ExtResource("3_b712w")]

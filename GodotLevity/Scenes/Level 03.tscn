@@ -51,10 +51,12 @@ scale = Vector2(1, 8)
 [node name="wooden_box3" parent="OBJECTS" instance=ExtResource("9_0aabn")]
 position = Vector2(310, 140)
 scale = Vector2(2, 2)
+metadata/DIRECTION = 1
 
 [node name="wooden_box4" parent="OBJECTS" instance=ExtResource("9_0aabn")]
 position = Vector2(310, 112)
 scale = Vector2(2, 2)
+metadata/DIRECTION = 1
 
 [node name="respawn_point" parent="." instance=ExtResource("8_gigad")]
 position = Vector2(24, 147)

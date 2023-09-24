@@ -21,11 +21,11 @@ func _process(delta):
 	if objects_array != null && changeNeeded:
 		if ONOFF_SWITCH.isOn:
 			for n in objects_array:
-				n.gravity = -gravity
+				n.GRAVITY_DIRECTION *= -1
 				n.canMove = true
 		else:
 			for n in objects_array:
-				n.gravity = gravity
+				n.GRAVITY_DIRECTION *= -1
 				n.canMove = true
 		
 		var count = 0
