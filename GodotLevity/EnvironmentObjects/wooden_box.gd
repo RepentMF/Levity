@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 #Booleans
 var canMove
+var DISPLAY_INFO
 var isGrounded
 
 # Integers
@@ -13,6 +14,7 @@ var gravity
 var playerVelocityX
 
 func _ready():
+	DISPLAY_INFO = get_meta("DISPLAY_INFO")
 	GRAVITY_DIRECTION = get_meta("DIRECTION")
 	GRAVITY_VALUE = get_meta("GRAVITY_VALUE")
 	canMove = false
@@ -21,9 +23,16 @@ func _ready():
 	pass
 
 func _process(delta):
+	if DISPLAY_INFO:
+		print(isGrounded)
 	pass
 
 func _physics_process(delta):
+	if is_on_floor() || is_on_ceiling():
+		isGrounded = true
+	else:
+		isGrounded = false
+	
 	if !isGrounded:
 		canMove = true
 	
@@ -33,11 +42,6 @@ func _physics_process(delta):
 		if scale.x < 2:
 			velocity.x = 0.25 * playerVelocityX
 		move_and_slide()
-	
-	if is_on_floor() || is_on_ceiling():
-		isGrounded = true
-	else:
-		isGrounded = false
 	pass
 
 func _on_box_mover_body_entered(body):
@@ -56,7 +60,6 @@ func _on_box_mover_body_entered(body):
 
 func _on_box_mover_body_exited(body):
 	if body.name == "MUSH_Player":
-		canMove = false
 		playerVelocityX = 0
 		print("exit")
 	pass # Replace with function body.

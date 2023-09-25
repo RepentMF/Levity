@@ -92,7 +92,6 @@ scale = Vector2(1, 2)
 metadata/ID = 6
 
 [node name="gravity_zone" parent="." instance=ExtResource("10_wpcet")]
-visible = false
 position = Vector2(210, 84)
 metadata/ONOFF_SWITCH = NodePath("../switch")
 

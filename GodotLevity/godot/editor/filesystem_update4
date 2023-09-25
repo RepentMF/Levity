@@ -1,6 +1,7 @@
-res://Scenes/Level 06.tscn
-res://EnvironmentObjects/wooden_box.tscn
 res://Scenes/Level 00.tscn
+res://EnvironmentObjects/box_mover.gd
 res://Scenes/overworld.tscn
+res://EnvironmentObjects/wooden_box.tscn
+res://Scenes/Level 07.tscn
+res://Scenes/Level 06.tscn
 res://EnvironmentObjects/wooden_box.gd
-res://InteractiveObjects/mush_player.gd

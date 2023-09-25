@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6vvdn5e66ugf"]
+[gd_scene load_steps=10 format=3 uid="uid://b6vvdn5e66ugf"]
 
 [ext_resource type="PackedScene" uid="uid://ccj2w7kss300h" path="res://EnvironmentObjects/wall.tscn" id="1_t0ple"]
 [ext_resource type="PackedScene" uid="uid://cr0mq40qfhyup" path="res://EnvironmentObjects/corner_botleft.tscn" id="2_5xtje"]
@@ -8,14 +8,15 @@
 [ext_resource type="PackedScene" uid="uid://bjpk2bi6o3e11" path="res://EnvironmentObjects/corner_topleft.tscn" id="6_mnyas"]
 [ext_resource type="PackedScene" uid="uid://dtuqaxmqan3yl" path="res://EnvironmentObjects/ceiling.tscn" id="7_yl775"]
 [ext_resource type="PackedScene" uid="uid://dxkuqb7fmd5km" path="res://EnvironmentObjects/respawn_point.tscn" id="8_1oa4t"]
+[ext_resource type="PackedScene" uid="uid://vpi1v7x7tptd" path="res://EnvironmentObjects/wooden_box.tscn" id="8_evkp2"]
 
-[node name="Level 00" type="Node2D"]
+[node name="Level 07" type="Node2D"]
 
 [node name="ROOM" type="Node2D" parent="."]
 
 [node name="wall" parent="ROOM" instance=ExtResource("1_t0ple")]
-position = Vector2(7, 84)
-scale = Vector2(1, 10)
+position = Vector2(7, 70)
+scale = Vector2(1, 8)
 
 [node name="wall2" parent="ROOM" instance=ExtResource("1_t0ple")]
 position = Vector2(413, 70)
@@ -38,11 +39,50 @@ position = Vector2(413, 7)
 position = Vector2(7, 7)
 
 [node name="ceiling" parent="ROOM" instance=ExtResource("7_yl775")]
-position = Vector2(224, 7)
-scale = Vector2(26, 1)
+position = Vector2(210, 7)
+scale = Vector2(28, 1)
+
+[node name="wall3" parent="ROOM" instance=ExtResource("1_t0ple")]
+position = Vector2(291, 69)
+scale = Vector2(1, 8)
 
 [node name="OBJECTS" type="Node2D" parent="."]
 
+[node name="wooden_box" parent="OBJECTS" instance=ExtResource("8_evkp2")]
+position = Vector2(206, 119)
+metadata/DIRECTION = 1
+
+[node name="wooden_box2" parent="OBJECTS" instance=ExtResource("8_evkp2")]
+position = Vector2(207, 147)
+metadata/DIRECTION = 1
+
+[node name="wooden_box3" parent="OBJECTS" instance=ExtResource("8_evkp2")]
+position = Vector2(211, 133)
+metadata/DIRECTION = 1
+
+[node name="wooden_box4" parent="OBJECTS" instance=ExtResource("8_evkp2")]
+position = Vector2(211, 105)
+metadata/DIRECTION = 1
+metadata/DISPLAY_INFO = true
+
+[node name="wooden_box5" parent="OBJECTS" instance=ExtResource("8_evkp2")]
+position = Vector2(205, 67)
+metadata/DIRECTION = 1
+
+[node name="wooden_box6" parent="OBJECTS" instance=ExtResource("8_evkp2")]
+position = Vector2(206, 95)
+metadata/DIRECTION = 1
+
+[node name="wooden_box7" parent="OBJECTS" instance=ExtResource("8_evkp2")]
+position = Vector2(210, 81)
+metadata/DIRECTION = 1
+
+[node name="wooden_box8" parent="OBJECTS" instance=ExtResource("8_evkp2")]
+position = Vector2(210, 53)
+metadata/DIRECTION = 1
+metadata/DISPLAY_INFO = true
+
 [node name="respawn_point" parent="." instance=ExtResource("8_1oa4t")]
-position = Vector2(24, 147)
+position = Vector2(396, 147)
 scale = Vector2(1, 2)
+metadata/ID = 7
