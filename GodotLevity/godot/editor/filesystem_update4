@@ -1,22 +1,2 @@
 res://Scenes/overworld.tscn
 res://EnvironmentObjects/box_mover.gd
-res://EnvironmentObjects/wooden_box.tscn
-res://Scenes/Level 07.tscn
-res://InteractiveObjects/gravity_zone.tscn
-res://InteractiveObjects/mush_player.tscn
-res://InteractiveObjects/mush_player.gd
-res://EnvironmentObjects/wooden_box.gd
-res://Scenes/Level 01.tscn
-res://Scenes/Level 02.tscn
-res://Scenes/Level 03.tscn
-res://Scenes/Level 04.tscn
-res://Scenes/Level 05.tscn
-res://Scenes/Level 06.tscn
-res://InteractiveObjects/gravity_zone.gd
-res://Scenes/Level 08.tscn
-res://Scenes/Level 09.tscn
-res://Scenes/Level 10.tscn
-res://EnvironmentObjects/anti_box.tscn
-res://InteractiveObjects/switch.tscn
-res://InteractiveObjects/switch.gd
-res://Scenes/Level 11.tscn
