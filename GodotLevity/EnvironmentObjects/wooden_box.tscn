@@ -1,53 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://vpi1v7x7tptd"]
+[gd_scene load_steps=4 format=3 uid="uid://vpi1v7x7tptd"]
 
 [ext_resource type="Script" path="res://EnvironmentObjects/wooden_box.gd" id="1_cp7h4"]
 [ext_resource type="Texture2D" uid="uid://dc3gac65nx4rj" path="res://Art/SpritesheetFiles/MUSH_spritesheet.png" id="2_fr4ln"]
-[ext_resource type="Script" path="res://EnvironmentObjects/box_mover.gd" id="3_nkgjn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c5kmn"]
 size = Vector2(14, 14)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejf7j"]
-size = Vector2(16, 14)
-
-[node name="wooden_box" type="CharacterBody2D"]
+[node name="wooden_box" type="RigidBody2D"]
 disable_mode = 2
 collision_layer = 3
+can_sleep = false
+lock_rotation = true
 script = ExtResource("1_cp7h4")
-metadata/DIRECTION = 0
-metadata/GRAVITY_VALUE = 525
-metadata/DISPLAY_INFO = false
+metadata/DIRECTION = 1
+metadata/DISPLAY_VALUE = false
+metadata/SIZE = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 3
 texture = ExtResource("2_fr4ln")
 region_enabled = true
-region_rect = Rect2(0.079, 14, 14, 14)
+region_rect = Rect2(0, 14, 14, 14)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_c5kmn")
 one_way_collision_margin = 0.0
-
-[node name="box_mover" type="Area2D" parent="."]
-position = Vector2(7, 0)
-scale = Vector2(0.5, 0.75)
-script = ExtResource("3_nkgjn")
-metadata/PUSHBOX1 = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="box_mover"]
-shape = SubResource("RectangleShape2D_ejf7j")
-
-[node name="box_mover2" type="Area2D" parent="."]
-position = Vector2(-9, 0)
-scale = Vector2(0.5, 0.75)
-script = ExtResource("3_nkgjn")
-metadata/PUSHBOX2 = -1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="box_mover2"]
-position = Vector2(4, 0)
-shape = SubResource("RectangleShape2D_ejf7j")
-
-[connection signal="body_entered" from="box_mover" to="." method="_on_box_mover_body_entered"]
-[connection signal="body_exited" from="box_mover" to="." method="_on_box_mover_body_exited"]
-[connection signal="body_entered" from="box_mover2" to="." method="_on_box_mover_body_entered"]
-[connection signal="body_exited" from="box_mover2" to="." method="_on_box_mover_body_exited"]

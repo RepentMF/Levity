@@ -1,65 +1,30 @@
-extends CharacterBody2D
+extends RigidBody2D
 
 #Booleans
-var canMove
-var DISPLAY_INFO
-var isGrounded
+var DISPLAY_VALUE
 
 # Integers
 var GRAVITY_DIRECTION
-var GRAVITY_VALUE
-var PUSHBOX1
-var PUSHBOX2
+var SIZE
 var gravity
-var playerVelocityX
 
 func _ready():
-	DISPLAY_INFO = get_meta("DISPLAY_INFO")
+	DISPLAY_VALUE = get_meta("DISPLAY_VALUE")
 	GRAVITY_DIRECTION = get_meta("DIRECTION")
-	GRAVITY_VALUE = get_meta("GRAVITY_VALUE")
-	canMove = false
-	gravity = GRAVITY_VALUE * GRAVITY_DIRECTION
-	playerVelocityX = 0
+	if get_meta("SIZE") > 1:
+		SIZE = get_meta("SIZE")
+		get_node("CollisionShape2D").scale.x = SIZE
+		get_node("CollisionShape2D").scale.y = SIZE
+		$Sprite2D.scale.x = SIZE
+		$Sprite2D.scale.y = SIZE
+		mass = pow(SIZE, 3)
 	pass
 
 func _process(delta):
-	if DISPLAY_INFO:
-		print(isGrounded)
+	if DISPLAY_VALUE:
+		pass
 	pass
 
 func _physics_process(delta):
-	if is_on_floor() || is_on_ceiling():
-		isGrounded = true
-	else:
-		isGrounded = false
-	
-	if !isGrounded:
-		canMove = true
-	
-	if canMove:
-		gravity = GRAVITY_VALUE * GRAVITY_DIRECTION
-		velocity.y += gravity * delta
-		if scale.x < 2:
-			velocity.x = 0.25 * playerVelocityX
-		move_and_slide()
+	gravity_scale = GRAVITY_DIRECTION
 	pass
-
-func _on_box_mover_body_entered(body):
-	PUSHBOX1 = get_node("box_mover").get_meta("PUSHBOX1")
-	PUSHBOX2 = get_node("box_mover2").get_meta("PUSHBOX2")
-	if body.name == "MUSH_Player" && Input.get_axis("ui_left", "ui_right") == PUSHBOX1:
-		canMove = true
-		playerVelocityX = PUSHBOX1 * 125
-		print("enter")
-	elif body.name == "MUSH_Player" && Input.get_axis("ui_left", "ui_right") == PUSHBOX2:
-		canMove = true
-		playerVelocityX = PUSHBOX2 * 125
-		print("enter")
-	pass # Replace with function body.
-
-
-func _on_box_mover_body_exited(body):
-	if body.name == "MUSH_Player":
-		playerVelocityX = 0
-		print("exit")
-	pass # Replace with function body.

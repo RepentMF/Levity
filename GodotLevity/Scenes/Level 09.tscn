@@ -1,0 +1,98 @@
+[gd_scene load_steps=12 format=3 uid="uid://ba6shp66gqono"]
+
+[ext_resource type="PackedScene" uid="uid://ccj2w7kss300h" path="res://EnvironmentObjects/wall.tscn" id="1_6ql0r"]
+[ext_resource type="PackedScene" uid="uid://cr0mq40qfhyup" path="res://EnvironmentObjects/corner_botleft.tscn" id="2_8ybmu"]
+[ext_resource type="PackedScene" uid="uid://2erhvegnqb5x" path="res://EnvironmentObjects/corner_botright.tscn" id="3_uj3re"]
+[ext_resource type="PackedScene" uid="uid://lmnev5ju8xr5" path="res://EnvironmentObjects/floor.tscn" id="4_i8yvf"]
+[ext_resource type="PackedScene" uid="uid://d4hatb73l64kq" path="res://EnvironmentObjects/corner_topright.tscn" id="5_4f2ll"]
+[ext_resource type="PackedScene" uid="uid://bjpk2bi6o3e11" path="res://EnvironmentObjects/corner_topleft.tscn" id="6_ku314"]
+[ext_resource type="PackedScene" uid="uid://dtuqaxmqan3yl" path="res://EnvironmentObjects/ceiling.tscn" id="7_7cbmg"]
+[ext_resource type="PackedScene" uid="uid://vpi1v7x7tptd" path="res://EnvironmentObjects/wooden_box.tscn" id="8_rbc76"]
+[ext_resource type="PackedScene" uid="uid://dxkuqb7fmd5km" path="res://EnvironmentObjects/respawn_point.tscn" id="9_l5wfg"]
+[ext_resource type="PackedScene" uid="uid://dmg88tbrm61hf" path="res://InteractiveObjects/switch.tscn" id="10_ccjty"]
+[ext_resource type="PackedScene" uid="uid://e2ybeyj8lsy8" path="res://InteractiveObjects/gravity_zone.tscn" id="11_c5kcd"]
+
+[node name="Level 08" type="Node2D"]
+
+[node name="ROOM" type="Node2D" parent="."]
+
+[node name="wall2" parent="ROOM" instance=ExtResource("1_6ql0r")]
+position = Vector2(413, 70)
+scale = Vector2(1, 8)
+
+[node name="corner_botleft" parent="ROOM" instance=ExtResource("2_8ybmu")]
+position = Vector2(7, 161)
+
+[node name="corner_botright" parent="ROOM" instance=ExtResource("3_uj3re")]
+position = Vector2(413, 161)
+
+[node name="floor" parent="ROOM" instance=ExtResource("4_i8yvf")]
+position = Vector2(224, 161)
+scale = Vector2(26, 1)
+
+[node name="corner_topright" parent="ROOM" instance=ExtResource("5_4f2ll")]
+position = Vector2(413, 7)
+
+[node name="corner_topleft" parent="ROOM" instance=ExtResource("6_ku314")]
+position = Vector2(7, 7)
+
+[node name="ceiling2" parent="ROOM" instance=ExtResource("7_7cbmg")]
+position = Vector2(210, 7)
+scale = Vector2(28, 1)
+
+[node name="wall" parent="ROOM" instance=ExtResource("1_6ql0r")]
+position = Vector2(7, 84)
+scale = Vector2(1, 10)
+
+[node name="wall3" parent="ROOM" instance=ExtResource("1_6ql0r")]
+position = Vector2(350, 99)
+scale = Vector2(1, 8)
+
+[node name="wall5" parent="ROOM" instance=ExtResource("1_6ql0r")]
+position = Vector2(154, 69)
+scale = Vector2(1, 8)
+
+[node name="OBJECTS" type="Node2D" parent="."]
+
+[node name="wooden_box2" parent="OBJECTS" instance=ExtResource("8_rbc76")]
+position = Vector2(253, 140)
+scale = Vector2(2, 2)
+metadata/SIZE = 2
+
+[node name="wooden_box6" parent="OBJECTS" instance=ExtResource("8_rbc76")]
+position = Vector2(253, 112)
+scale = Vector2(2, 2)
+metadata/SIZE = 2
+
+[node name="wooden_box3" parent="OBJECTS" instance=ExtResource("8_rbc76")]
+position = Vector2(253, 84)
+scale = Vector2(2, 2)
+metadata/SIZE = 2
+
+[node name="wooden_box13" parent="OBJECTS" instance=ExtResource("8_rbc76")]
+position = Vector2(154, 147)
+
+[node name="wooden_box15" parent="OBJECTS" instance=ExtResource("8_rbc76")]
+position = Vector2(154, 133)
+
+[node name="wooden_box16" parent="OBJECTS" instance=ExtResource("8_rbc76")]
+position = Vector2(140, 147)
+
+[node name="wooden_box7" parent="OBJECTS" instance=ExtResource("8_rbc76")]
+position = Vector2(329, 140)
+scale = Vector2(2, 2)
+metadata/SIZE = 2
+
+[node name="switch" parent="." instance=ExtResource("10_ccjty")]
+position = Vector2(107, 148)
+metadata/GRAVITY_ZONE = NodePath("../gravity_zone")
+
+[node name="gravity_zone" parent="." instance=ExtResource("11_c5kcd")]
+visible = false
+position = Vector2(210, 84)
+metadata/ONOFF_SWITCH = NodePath("../switch")
+
+[node name="respawn_point2" parent="." instance=ExtResource("9_l5wfg")]
+position = Vector2(54, 144)
+scale = Vector2(4, 1)
+metadata/ID = 9

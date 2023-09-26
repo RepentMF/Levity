@@ -7,6 +7,7 @@ var isUpsideDown = false
 var isWalljumping = false
 
 # Integers
+var PUSH_VALUE
 var activeTeleporterID = -1
 var currentDirection = -1
 var currentPowerLevel = 0
@@ -51,6 +52,9 @@ func _get_which_wall_collided():
 			return "right"
 	pass
 
+func _ready():
+	PUSH_VALUE = get_meta("PUSH_VALUE")
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
@@ -89,9 +93,12 @@ func _physics_process(delta):
 	else:
 		velocity.x = walljumpDirection * speed
 		_animate_direction(walljumpDirection)
-
+		
+	
+	for n in get_slide_collision_count():
+		var i = get_slide_collision(n)
+		if i.get_collider() is RigidBody2D && i.get_collider().name.contains("box") && Input.is_action_pressed("ui_cancel"):
+			i.get_collider().apply_central_impulse(-i.get_normal() * PUSH_VALUE)
+	
 	move_and_slide()
-
-
-func _on_absence_mesh_body_entered(body):
-	pass # Replace with function body.
+	pass

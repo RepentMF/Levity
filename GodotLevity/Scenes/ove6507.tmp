@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://cn5lyjsi8m8yv"]
+
+[ext_resource type="PackedScene" uid="uid://dtcrduh7wvabh" path="res://InteractiveObjects/mush_player.tscn" id="1_k0ixt"]
+[ext_resource type="PackedScene" uid="uid://c5w0l3l0d35n0" path="res://Scenes/Level 00.tscn" id="2_01t3r"]
+[ext_resource type="PackedScene" uid="uid://b1endk384q5ay" path="res://InteractiveObjects/absence_mesh.tscn" id="3_b712w"]
+[ext_resource type="PackedScene" uid="uid://dawnlvbdcbjjt" path="res://Scenes/Level 01.tscn" id="3_q7q7c"]
+[ext_resource type="PackedScene" uid="uid://b0rf32c1nfh5j" path="res://Scenes/Level 02.tscn" id="4_gbfym"]
+[ext_resource type="PackedScene" uid="uid://ebxyvlhvhu8l" path="res://Scenes/Level 03.tscn" id="5_qhkg2"]
+[ext_resource type="PackedScene" uid="uid://cpkk5qfba0yl1" path="res://Scenes/Level 04.tscn" id="7_jcx6r"]
+[ext_resource type="PackedScene" uid="uid://bju270vssdjbe" path="res://Scenes/Level 05.tscn" id="8_wxtwe"]
+[ext_resource type="PackedScene" uid="uid://47x80cmpf4ab" path="res://Scenes/Level 06.tscn" id="9_b8ymm"]
+[ext_resource type="PackedScene" uid="uid://b6vvdn5e66ugf" path="res://Scenes/Level 07.tscn" id="10_q63lt"]
+
+[node name="Overworld" type="Node2D"]
+
+[node name="MUSH_Player" parent="." instance=ExtResource("1_k0ixt")]
+position = Vector2(190, 216)
+
+[node name="Camera2D" type="Camera2D" parent="MUSH_Player"]
+zoom = Vector2(3, 3)
+limit_left = 33
+limit_bottom = 345
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.25
+drag_top_margin = 0.35
+drag_right_margin = 0.25
+drag_bottom_margin = 0.35
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="Area 1" type="Node2D" parent="."]
+position = Vector2(1813, -91)
+
+[node name="Level 00" parent="Area 1" instance=ExtResource("2_01t3r")]
+position = Vector2(-1680, 168)
+
+[node name="AbsenceMesh" parent="Area 1/Level 00" instance=ExtResource("3_b712w")]
+
+[node name="Level 01" parent="Area 1" instance=ExtResource("3_q7q7c")]
+position = Vector2(-1260, 168)
+
+[node name="AbsenceMesh" parent="Area 1/Level 01" instance=ExtResource("3_b712w")]
+
+[node name="Level 02" parent="Area 1" instance=ExtResource("4_gbfym")]
+position = Vector2(-840, 168)
+
+[node name="AbsenceMesh" parent="Area 1/Level 02" instance=ExtResource("3_b712w")]
+
+[node name="Level 03" parent="Area 1" instance=ExtResource("5_qhkg2")]
+position = Vector2(-420, 168)
+
+[node name="AbsenceMesh" parent="Area 1/Level 03" instance=ExtResource("3_b712w")]
+
+[node name="Level 04" parent="Area 1" instance=ExtResource("7_jcx6r")]
+position = Vector2(0, 168)
+
+[node name="AbsenceMesh" parent="Area 1/Level 04" instance=ExtResource("3_b712w")]
+
+[node name="Level 05" parent="Area 1" instance=ExtResource("8_wxtwe")]
+
+[node name="AbsenceMesh" parent="Area 1/Level 05" instance=ExtResource("3_b712w")]
+
+[node name="Level 06" parent="Area 1" instance=ExtResource("9_b8ymm")]
+position = Vector2(-420, 0)
+
+[node name="AbsenceMesh" parent="Area 1/Level 06" instance=ExtResource("3_b712w")]
+
+[node name="Level 00" parent="." instance=ExtResource("10_q63lt")]
+position = Vector2(973, -91)

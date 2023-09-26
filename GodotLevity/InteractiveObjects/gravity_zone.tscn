@@ -7,7 +7,6 @@
 [node name="gravity_zone" type="Area2D"]
 scale = Vector2(19.5, 7)
 script = ExtResource("1_16vcf")
-metadata/ONOFF_SWITCH = NodePath("")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_80bm4")

@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bjpk2bi6o3e11" path="res://EnvironmentObjects/corner_topleft.tscn" id="6_dxfbi"]
 [ext_resource type="PackedScene" uid="uid://dtuqaxmqan3yl" path="res://EnvironmentObjects/ceiling.tscn" id="7_aeu6l"]
 [ext_resource type="PackedScene" uid="uid://dxkuqb7fmd5km" path="res://EnvironmentObjects/respawn_point.tscn" id="8_0dbue"]
-[ext_resource type="PackedScene" uid="uid://ctkdb0jxvs4dr" path="res://EnvironmentObjects/wooden_box.tscn" id="9_cqijp"]
+[ext_resource type="PackedScene" uid="uid://vpi1v7x7tptd" path="res://EnvironmentObjects/wooden_box.tscn" id="9_cqijp"]
 
 [node name="Level 02" type="Node2D"]
 
@@ -48,6 +48,7 @@ scale = Vector2(28, 1)
 position = Vector2(223, 140)
 scale = Vector2(2, 2)
 metadata/DIRECTION = 1
+metadata/SIZE = 2
 
 [node name="wooden_box2" parent="OBJECTS" instance=ExtResource("9_cqijp")]
 position = Vector2(202, 147)
@@ -61,6 +62,7 @@ metadata/DIRECTION = 1
 position = Vector2(287, 140)
 scale = Vector2(2, 2)
 metadata/DIRECTION = 1
+metadata/SIZE = 2
 
 [node name="wooden_box5" parent="OBJECTS" instance=ExtResource("9_cqijp")]
 position = Vector2(308, 147)
