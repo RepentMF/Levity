@@ -47,30 +47,30 @@ scale = Vector2(28, 1)
 [node name="wooden_box3" parent="OBJECTS" instance=ExtResource("9_cqijp")]
 position = Vector2(223, 140)
 scale = Vector2(2, 2)
-metadata/DIRECTION = 1
 metadata/SIZE = 2
 
 [node name="wooden_box2" parent="OBJECTS" instance=ExtResource("9_cqijp")]
-position = Vector2(202, 147)
-metadata/DIRECTION = 1
+position = Vector2(121, 147)
 
 [node name="wooden_box" parent="OBJECTS" instance=ExtResource("9_cqijp")]
-position = Vector2(230, 119)
-metadata/DIRECTION = 1
+position = Vector2(220, 105)
+
+[node name="wooden_box8" parent="OBJECTS" instance=ExtResource("9_cqijp")]
+position = Vector2(244, 147)
+
+[node name="wooden_box7" parent="OBJECTS" instance=ExtResource("9_cqijp")]
+position = Vector2(216, 119)
 
 [node name="wooden_box4" parent="OBJECTS" instance=ExtResource("9_cqijp")]
-position = Vector2(287, 140)
+position = Vector2(357, 140)
 scale = Vector2(2, 2)
-metadata/DIRECTION = 1
 metadata/SIZE = 2
 
 [node name="wooden_box5" parent="OBJECTS" instance=ExtResource("9_cqijp")]
-position = Vector2(308, 147)
-metadata/DIRECTION = 1
+position = Vector2(378, 147)
 
 [node name="wooden_box6" parent="OBJECTS" instance=ExtResource("9_cqijp")]
-position = Vector2(280, 119)
-metadata/DIRECTION = 1
+position = Vector2(350, 119)
 
 [node name="respawn_point" parent="." instance=ExtResource("8_0dbue")]
 position = Vector2(24, 147)

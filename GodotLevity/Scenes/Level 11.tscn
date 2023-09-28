@@ -118,6 +118,16 @@ position = Vector2(107, 112)
 scale = Vector2(2, 2)
 metadata/SIZE = 2
 
+[node name="wooden_box12" parent="OBJECTS" instance=ExtResource("7_ilugc")]
+position = Vector2(213, 140)
+scale = Vector2(2, 2)
+metadata/SIZE = 2
+
+[node name="wooden_box13" parent="OBJECTS" instance=ExtResource("7_ilugc")]
+position = Vector2(241, 140)
+scale = Vector2(2, 2)
+metadata/SIZE = 2
+
 [node name="wooden_box8" parent="OBJECTS" instance=ExtResource("7_ilugc")]
 position = Vector2(135, 84)
 scale = Vector2(2, 2)
@@ -146,4 +156,4 @@ metadata/ONOFF_SWITCH = NodePath("../switch")
 [node name="respawn_point" parent="." instance=ExtResource("11_j1hrw")]
 position = Vector2(24, 148)
 scale = Vector2(1, 2)
-metadata/ID = 6
+metadata/ID = 10

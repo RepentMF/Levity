@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cn5lyjsi8m8yv"]
+[gd_scene load_steps=23 format=3 uid="uid://cn5lyjsi8m8yv"]
 
 [ext_resource type="PackedScene" uid="uid://dtcrduh7wvabh" path="res://InteractiveObjects/mush_player.tscn" id="1_k0ixt"]
 [ext_resource type="PackedScene" uid="uid://c5w0l3l0d35n0" path="res://Scenes/Level 00.tscn" id="2_01t3r"]
@@ -14,12 +14,21 @@
 [ext_resource type="PackedScene" uid="uid://ba6shp66gqono" path="res://Scenes/Level 09.tscn" id="12_2wavj"]
 [ext_resource type="PackedScene" uid="uid://br7at688nu11r" path="res://Scenes/Level 10.tscn" id="13_yl52l"]
 [ext_resource type="PackedScene" uid="uid://mdg2qak8p218" path="res://Scenes/Level 11.tscn" id="14_5ous5"]
+[ext_resource type="PackedScene" uid="uid://ble1r826n6uqo" path="res://Scenes/Level 12.tscn" id="15_7m4xp"]
+[ext_resource type="PackedScene" uid="uid://edfnu60t3q1" path="res://Scenes/Level 14.tscn" id="16_uwxvd"]
+[ext_resource type="PackedScene" uid="uid://dyl3lg2rc4nij" path="res://Scenes/Level 16.tscn" id="17_j1x6b"]
+[ext_resource type="PackedScene" uid="uid://dbjfe0xfuec26" path="res://Scenes/Level 15.tscn" id="17_shqqp"]
+[ext_resource type="PackedScene" uid="uid://b4grv7loys686" path="res://Scenes/Level 19.tscn" id="18_1dcja"]
+[ext_resource type="PackedScene" uid="uid://cuvh80mmgf26f" path="res://Scenes/Level 13.tscn" id="18_qsx4g"]
+[ext_resource type="PackedScene" uid="uid://bcux4iweb4jsl" path="res://Scenes/Level 17.tscn" id="20_11fe1"]
+[ext_resource type="PackedScene" uid="uid://btk76jrh255ii" path="res://Scenes/Level 18.tscn" id="21_b362k"]
 
 [node name="Overworld" type="Node2D"]
 
 [node name="MUSH_Player" parent="." instance=ExtResource("1_k0ixt")]
-position = Vector2(1093, -155)
+position = Vector2(706, -202)
 scale = Vector2(0.818005, 1.02275)
+metadata/PUSH_VALUE = 19
 
 [node name="Camera2D" type="Camera2D" parent="MUSH_Player"]
 zoom = Vector2(3, 3)
@@ -34,7 +43,7 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 
 [node name="Area 1" type="Node2D" parent="."]
-position = Vector2(1813, -91)
+position = Vector2(2344, -105)
 
 [node name="Level 00" parent="Area 1" instance=ExtResource("2_01t3r")]
 position = Vector2(-1680, 168)
@@ -94,3 +103,43 @@ position = Vector2(-840, -168)
 position = Vector2(-420, -168)
 
 [node name="AbsenceMesh" parent="Area 1/Level 11" instance=ExtResource("3_b712w")]
+
+[node name="Level 12" parent="Area 1" instance=ExtResource("15_7m4xp")]
+position = Vector2(0, -168)
+
+[node name="AbsenceMesh" parent="Area 1/Level 12" instance=ExtResource("3_b712w")]
+
+[node name="Level 14" parent="Area 1" instance=ExtResource("16_uwxvd")]
+position = Vector2(-420, -335)
+
+[node name="AbsenceMesh" parent="Area 1/Level 14" instance=ExtResource("3_b712w")]
+
+[node name="Level 15" parent="Area 1" instance=ExtResource("17_shqqp")]
+position = Vector2(-840, -335)
+
+[node name="AbsenceMesh" parent="Area 1/Level 15" instance=ExtResource("3_b712w")]
+
+[node name="Level 13" parent="Area 1" instance=ExtResource("18_qsx4g")]
+position = Vector2(0, -335)
+
+[node name="AbsenceMesh" parent="Area 1/Level 13" instance=ExtResource("3_b712w")]
+
+[node name="Level 16" parent="Area 1" instance=ExtResource("17_j1x6b")]
+position = Vector2(-1260, -335)
+
+[node name="AbsenceMesh" parent="Area 1/Level 16" instance=ExtResource("3_b712w")]
+
+[node name="Level 17" parent="Area 1" instance=ExtResource("20_11fe1")]
+position = Vector2(-1680, -335)
+
+[node name="AbsenceMesh" parent="Area 1/Level 17" instance=ExtResource("3_b712w")]
+
+[node name="Level 18" parent="Area 1" instance=ExtResource("21_b362k")]
+position = Vector2(-1680, -168)
+
+[node name="AbsenceMesh" parent="Area 1/Level 18" instance=ExtResource("3_b712w")]
+
+[node name="Level 19" parent="Area 1" instance=ExtResource("18_1dcja")]
+position = Vector2(-1680, 0)
+
+[node name="AbsenceMesh" parent="Area 1/Level 19" instance=ExtResource("3_b712w")]

@@ -1,2 +1,14 @@
 res://Scenes/overworld.tscn
 res://EnvironmentObjects/box_mover.gd
+res://Scenes/Level 19.tscn
+res://Scenes/Level 16.tscn
+res://Scenes/Level 14.tscn
+res://EnvironmentObjects/respawn_point.gd
+res://Scenes/Level 13.tscn
+res://Scenes/Level 12.tscn
+res://Scenes/Level 04.tscn
+res://Scenes/Level 11.tscn
+res://Scenes/Level 10.tscn
+res://Scenes/Level 15.tscn
+res://Scenes/Level 17.tscn
+res://Scenes/Level 18.tscn

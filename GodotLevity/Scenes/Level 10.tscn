@@ -83,6 +83,7 @@ metadata/SIZE = 2
 [node name="switch" parent="." instance=ExtResource("9_m0im4")]
 position = Vector2(96, 148)
 metadata/GRAVITY_ZONE = NodePath("../gravity_zone")
+metadata/SWITCH_TYPE = "wooden"
 
 [node name="gravity_zone" parent="." instance=ExtResource("10_kcsxr")]
 visible = false

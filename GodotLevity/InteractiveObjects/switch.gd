@@ -14,12 +14,15 @@ func _ready():
 	match SWITCH_TYPE:
 		"all":
 			# Make it purple
+			$Sprite2D.modulate = Color(1,0,1)
 			pass
 		"wooden":
 			# Make it red
+			$Sprite2D.modulate = Color(1,0,0)
 			pass
 		"anti":
 			# Make it blue
+			$Sprite2D.modulate = Color(0,0,1)
 			pass
 	pass # Replace with function body.
 
