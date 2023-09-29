@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmg88tbrm61hf"]
+[gd_scene load_steps=8 format=3 uid="uid://dmg88tbrm61hf"]
 
 [ext_resource type="Texture2D" uid="uid://dc3gac65nx4rj" path="res://Art/SpritesheetFiles/MUSH_spritesheet.png" id="1_erqe2"]
 [ext_resource type="Script" path="res://InteractiveObjects/switch.gd" id="1_jxe51"]
@@ -9,16 +9,37 @@ size = Vector2(4, 3)
 [sub_resource type="CircleShape2D" id="CircleShape2D_hlxh8"]
 radius = 6.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2pus"]
+atlas = ExtResource("1_erqe2")
+region = Rect2(127, 0, 12, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_my5bg"]
+atlas = ExtResource("1_erqe2")
+region = Rect2(113, 0, 12, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fw04b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2pus")
+}],
+"loop": true,
+"name": &"switch_pushed",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_my5bg")
+}],
+"loop": true,
+"name": &"switch_unpushed",
+"speed": 0.0
+}]
+
 [node name="switch" type="Area2D"]
 script = ExtResource("1_jxe51")
 metadata/GRAVITY_ZONE = NodePath("")
 metadata/SWITCH_TYPE = "all"
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 3
-texture = ExtResource("1_erqe2")
-region_enabled = true
-region_rect = Rect2(112, 0, 14, 14)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
@@ -31,4 +52,10 @@ position = Vector2(0, 8)
 rotation = 1.5708
 shape = SubResource("CircleShape2D_hlxh8")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_fw04b")
+animation = &"switch_pushed"
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

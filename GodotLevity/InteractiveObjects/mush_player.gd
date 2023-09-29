@@ -19,9 +19,11 @@ var maxPowerLevel = 0
 var speed = 125.0
 var walljumpDirection = 0
 
+# String
+var lastSurface
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 525
-#ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _animate_direction(direction):
 	if direction == 1:
@@ -60,45 +62,56 @@ func _process(delta):
 	pass
 
 func _physics_process(delta):
-	# Add the gravity.
-	if !is_on_floor():
-		velocity.y += gravity * delta
-		if sign(velocity.y) == sign(gravity):
-			isWalljumping = false 
-	else:
-		currentWalljumpCount = 0
-		isWalljumping = false
-
-	# Handle Jump or Walljump.
-	if Input.is_action_just_pressed("ui_accept") && (is_on_floor() || is_on_ceiling()):
-		velocity.y = jumpVelocity
-	elif Input.is_action_just_pressed("ui_accept") && is_on_wall() && currentWalljumpCount < maxWallJumpCount:
-		velocity.y = jumpVelocity
-		isWalljumping = true
-		currentWalljumpCount += 1
-
-	# Get the input direction and handle the movement/deceleration.
-	if (!isWalljumping):
-		var direction = Input.get_axis("ui_left", "ui_right")
-		if direction:
-			velocity.x = direction * speed
-			_animate_direction(direction)
+	#Handle death conditions
+	if !isDead:
+		# Add the gravity.
+		if !is_on_floor():
+			velocity.y += gravity * delta
+			if sign(velocity.y) == sign(gravity):
+				isWalljumping = false 
 		else:
-			velocity.x = move_toward(velocity.x, 0, speed)
+			currentWalljumpCount = 0
+			isWalljumping = false
+
+		# Handle Jump or Walljump.
+		if Input.is_action_just_pressed("ui_accept") && (is_on_floor() || is_on_ceiling()):
+			velocity.y = jumpVelocity
+		elif Input.is_action_just_pressed("ui_accept") && is_on_wall() && currentWalljumpCount < maxWallJumpCount:
+			velocity.y = jumpVelocity
+			isWalljumping = true
+			currentWalljumpCount += 1
+
+		# Get the input direction and handle the movement/deceleration.
+		if (!isWalljumping):
+			var direction = Input.get_axis("ui_left", "ui_right")
+			if direction:
+				velocity.x = direction * speed
+				_animate_direction(direction)
+			else:
+				velocity.x = move_toward(velocity.x, 0, speed)
+			
+			if _get_which_wall_collided() == "right":
+				walljumpDirection = -1
+			elif _get_which_wall_collided() == "left":
+				walljumpDirection = 1
+		else:
+			velocity.x = walljumpDirection * speed
+			_animate_direction(walljumpDirection)
 		
-		if _get_which_wall_collided() == "right":
-			walljumpDirection = -1
-		elif _get_which_wall_collided() == "left":
-			walljumpDirection = 1
-	else:
-		velocity.x = walljumpDirection * speed
-		_animate_direction(walljumpDirection)
-		
-	
-	for n in get_slide_collision_count():
-		var i = get_slide_collision(n)
-		if i.get_collider() is RigidBody2D && i.get_collider().name.contains("box") && Input.is_action_pressed("ui_cancel"):
-			i.get_collider().apply_central_impulse(-i.get_normal() * PUSH_VALUE)
-	
-	move_and_slide()
+		move_and_slide()
+		var squishCount = 0
+		for n in get_slide_collision_count():
+			var i = get_slide_collision(n)
+			if i.get_collider() is RigidBody2D && i.get_collider().name.contains("box") && Input.is_action_pressed("ui_cancel"):
+				i.get_collider().apply_central_impulse(-i.get_normal() * PUSH_VALUE)
+		if is_on_ceiling() == true && lastSurface == "ceiling":
+			isDead = true
+		elif is_on_floor():
+			lastSurface = "floor"
+		elif is_on_ceiling():
+			lastSurface = "ceiling"
+			
+		print(lastSurface)
+	#else:
+		#print(isDead)
 	pass

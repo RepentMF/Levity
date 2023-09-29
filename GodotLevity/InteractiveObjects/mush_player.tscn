@@ -10,6 +10,7 @@ size = Vector2(14, 14)
 size = Vector2(14, 2)
 
 [node name="MUSH_Player" type="CharacterBody2D"]
+safe_margin = 0.01
 script = ExtResource("1_g2n87")
 metadata/PUSH_VALUE = 20
 
