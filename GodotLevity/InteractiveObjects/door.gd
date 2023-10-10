@@ -4,96 +4,111 @@ extends StaticBody2D
 var animatedSprite2D
 
 # Booleans
-var isLocked
-var isOpen
-var shouldClose
-var shouldOpen
+var DISPLAY_VALUE
+var UNMARKED
+var closedFlag
+var openFlag
 
 # Floats
+var initPosY
 var initScale
+var previousFrame
 
 # Strings
 var DOOR_TYPE
+var currentState
 
-func _animate_door():
-	# Door is not locked
-	if !isLocked:
-		# Door is open
-		if isOpen && !shouldClose && !shouldOpen:
-			animatedSprite2D.play("door_opened")
-			animatedSprite2D.stop()
-		elif !isOpen && !shouldClose && !shouldOpen:
-			animatedSprite2D.play("door_unlocked")
-			animatedSprite2D.stop()
-		# Door is opening or closing
-		elif shouldOpen:
-			if !animatedSprite2D.is_playing() && animatedSprite2D.frame < 10:
-				animatedSprite2D.play("door_opening")
-		elif shouldClose:
-			if !animatedSprite2D.is_playing() && animatedSprite2D.frame < 10:
-				animatedSprite2D.play("door_closing")
-			# Door finished opening or closing
-		if animatedSprite2D.frame == 10:
-			if shouldOpen:
-				isOpen = true
+func _change_state(newState):
+	if currentState != newState:
+		currentState = newState
+	pass
+
+func _handle_state():
+	match currentState:
+		"locked":
+			animatedSprite2D.play("door_locked")
+			pass
+		"unlocked":
+			if UNMARKED:
+				animatedSprite2D.play("door_unlocked_unmarked")
 			else:
-				isOpen = false
-			shouldOpen = false
-			shouldClose = false
-	# Door is closed and locked
-	else:
-		animatedSprite2D.play("door_locked")
-		animatedSprite2D.stop()
+				animatedSprite2D.play("door_unlocked")
+			if !closedFlag:
+				get_node("CollisionShape2D").position.y = initPosY
+				get_node("CollisionShape2D").scale = initScale
+			closedFlag = true
+			openFlag = false
+			pass
+		"opening":
+			if animatedSprite2D.frame == 10:
+				_change_state("opened")
+			else:
+				if UNMARKED:
+					animatedSprite2D.play("door_opening_unmarked")
+				else:
+					animatedSprite2D.play("door_opening")
+				if previousFrame != -1:
+					animatedSprite2D.set_frame(previousFrame)
+					previousFrame = -1
+			pass
+		"closing":
+			if animatedSprite2D.frame == 10:
+				_change_state("unlocked")
+			else:
+				if UNMARKED:
+					animatedSprite2D.play("door_closing_unmarked")
+				else:
+					animatedSprite2D.play("door_closing")
+				if previousFrame != -1:
+					animatedSprite2D.set_frame(previousFrame)
+					previousFrame = -1
+			pass
+		"opened":
+			animatedSprite2D.play("door_opened")
+			if !openFlag:
+				get_node("CollisionShape2D").position.y = initPosY + 20
+				get_node("CollisionShape2D").scale = Vector2(0, 0)
+			closedFlag = false
+			openFlag = true
+			pass
+	pass
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	DISPLAY_VALUE = get_meta("DISPLAY_VALUE")
+	UNMARKED = get_meta("UNMARKED")
+	closedFlag = false
+	openFlag = false
+	initScale = get_node("CollisionShape2D").scale
+	initPosY = get_node("CollisionShape2D").position.y
+	previousFrame = -1
 	DOOR_TYPE = get_meta("DOOR_TYPE")
 	animatedSprite2D = $AnimatedSprite2D
-	isOpen = false
-	shouldClose = false
-	shouldOpen = false
-	initScale = get_node("CollisionShape2D").scale
 	
-	match DOOR_TYPE:
-		"locked":
-			isLocked = true
-			pass
-		"unlocked":
-			isLocked = false
-			pass
+	_change_state(DOOR_TYPE)
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	_animate_door()
-	if isOpen:
-		get_node("CollisionShape2D").scale = Vector2(0, 0)
-		get_node("CollisionShape2D").position.y += 20
-	else:
-		get_node("CollisionShape2D").scale = initScale
-		get_node("CollisionShape2D").position.y -= 20
+	_handle_state()
+	if DISPLAY_VALUE:
+		print(get_node("CollisionShape2D").position.y)
 	pass
 
 func _on_body_entered(body):
 	if body.name == "MUSH_Player":
-		if !isLocked:
-			if shouldClose:
-				var currentFrame = animatedSprite2D.get_frame()
-				var currentProgress = animatedSprite2D.get_frame_progress()
-				animatedSprite2D.play_backwards("door_closing")
-				animatedSprite2D.set_frame_and_progress(currentFrame, currentProgress)
-			shouldOpen = true
-			shouldClose = false
+		if currentState == "locked" && body.hasKey:
+			_change_state("unlocked")
+		if currentState != "locked":
+			if currentState == "closing":
+				previousFrame = 10 - animatedSprite2D.frame
+			_change_state("opening")
 	pass
 
 func _on_body_exited(body):
 	if body.name == "MUSH_Player":
-		if shouldOpen:
-			var currentFrame = animatedSprite2D.get_frame()
-			var currentProgress = animatedSprite2D.get_frame_progress()
-			animatedSprite2D.play_backwards("door_opening")
-			animatedSprite2D.set_frame_and_progress(currentFrame, currentProgress)
-		if !isLocked:
-			shouldOpen = false
-			shouldClose = true
+		if currentState != "locked":
+			if currentState == "opening":
+				previousFrame = 10 - animatedSprite2D.frame
+			_change_state("closing")
 	pass

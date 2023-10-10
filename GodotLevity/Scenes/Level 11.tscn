@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://mdg2qak8p218"]
+[gd_scene load_steps=16 format=3 uid="uid://mdg2qak8p218"]
 
 [ext_resource type="PackedScene" uid="uid://ccj2w7kss300h" path="res://EnvironmentObjects/wall.tscn" id="1_vn1bp"]
 [ext_resource type="PackedScene" uid="uid://cr0mq40qfhyup" path="res://EnvironmentObjects/corner_botleft.tscn" id="2_0ea0x"]
@@ -8,10 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://dtuqaxmqan3yl" path="res://EnvironmentObjects/ceiling.tscn" id="6_ymb81"]
 [ext_resource type="PackedScene" uid="uid://dr63t8sd2kb61" path="res://InteractiveObjects/anti_box.tscn" id="7_4ltou"]
 [ext_resource type="PackedScene" uid="uid://vpi1v7x7tptd" path="res://InteractiveObjects/wooden_box.tscn" id="7_ilugc"]
+[ext_resource type="PackedScene" uid="uid://bfgomdm1iea48" path="res://EnvironmentObjects/backdrop.tscn" id="8_10b38"]
 [ext_resource type="PackedScene" uid="uid://dmg88tbrm61hf" path="res://InteractiveObjects/switch.tscn" id="8_v38fh"]
 [ext_resource type="PackedScene" uid="uid://e2ybeyj8lsy8" path="res://InteractiveObjects/gravity_zone.tscn" id="9_mv0fv"]
 [ext_resource type="PackedScene" uid="uid://lmnev5ju8xr5" path="res://EnvironmentObjects/floor.tscn" id="10_0m865"]
-[ext_resource type="PackedScene" uid="uid://dxkuqb7fmd5km" path="res://EnvironmentObjects/respawn_point.tscn" id="11_j1hrw"]
+[ext_resource type="PackedScene" uid="uid://dxkuqb7fmd5km" path="res://InteractiveObjects/respawn_point.tscn" id="11_j1hrw"]
 [ext_resource type="PackedScene" uid="uid://b1endk384q5ay" path="res://InteractiveObjects/absence_mesh.tscn" id="13_sop0f"]
 [ext_resource type="PackedScene" uid="uid://lrk2cmcs8axw" path="res://InteractiveObjects/door.tscn" id="14_c174k"]
 
@@ -57,6 +58,11 @@ scale = Vector2(1, 3)
 [node name="floor2" parent="ROOM" instance=ExtResource("10_0m865")]
 position = Vector2(241, 62)
 scale = Vector2(6, 1)
+
+[node name="backdrop" parent="ROOM" instance=ExtResource("8_10b38")]
+z_index = -5
+position = Vector2(210, 84)
+scale = Vector2(28, 10)
 
 [node name="OBJECTS" type="Node2D" parent="."]
 

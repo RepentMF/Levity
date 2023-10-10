@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c5w0l3l0d35n0"]
+[gd_scene load_steps=14 format=3 uid="uid://c5w0l3l0d35n0"]
 
 [ext_resource type="PackedScene" uid="uid://ccj2w7kss300h" path="res://EnvironmentObjects/wall.tscn" id="1_kjch5"]
 [ext_resource type="PackedScene" uid="uid://cr0mq40qfhyup" path="res://EnvironmentObjects/corner_botleft.tscn" id="2_6671t"]
@@ -8,8 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bjpk2bi6o3e11" path="res://EnvironmentObjects/corner_topleft.tscn" id="6_xuusl"]
 [ext_resource type="PackedScene" uid="uid://dtuqaxmqan3yl" path="res://EnvironmentObjects/ceiling.tscn" id="7_pg742"]
 [ext_resource type="Texture2D" uid="uid://c86ia1frrlchl" path="res://Art/SpritesheetFiles/Level00_Boxes_spritesheet.png" id="8_3nfah"]
-[ext_resource type="PackedScene" uid="uid://dxkuqb7fmd5km" path="res://EnvironmentObjects/respawn_point.tscn" id="8_aw8vb"]
+[ext_resource type="PackedScene" uid="uid://dxkuqb7fmd5km" path="res://InteractiveObjects/respawn_point.tscn" id="8_aw8vb"]
 [ext_resource type="PackedScene" uid="uid://cv3oit3cchkt2" path="res://InteractiveObjects/bounce.tscn" id="8_dk85c"]
+[ext_resource type="PackedScene" uid="uid://bfgomdm1iea48" path="res://EnvironmentObjects/backdrop.tscn" id="9_j2j7q"]
 [ext_resource type="PackedScene" uid="uid://b1endk384q5ay" path="res://InteractiveObjects/absence_mesh.tscn" id="9_t7oel"]
 [ext_resource type="PackedScene" uid="uid://lrk2cmcs8axw" path="res://InteractiveObjects/door.tscn" id="12_s2xp4"]
 
@@ -79,6 +80,11 @@ texture_filter = 1
 position = Vector2(84, 98)
 texture = ExtResource("8_3nfah")
 
+[node name="backdrop" parent="ROOM" instance=ExtResource("9_j2j7q")]
+z_index = -5
+position = Vector2(210, 84)
+scale = Vector2(28, 10)
+
 [node name="OBJECTS" type="Node2D" parent="."]
 
 [node name="bounce" parent="OBJECTS" instance=ExtResource("8_dk85c")]
@@ -88,6 +94,11 @@ position = Vector2(25, 85)
 
 [node name="door2" parent="OBJECTS" instance=ExtResource("12_s2xp4")]
 position = Vector2(413.1, 140.5)
+
+[node name="door3" parent="OBJECTS" instance=ExtResource("12_s2xp4")]
+position = Vector2(29, 6.9)
+rotation = 4.71239
+metadata/UNMARKED = true
 
 [node name="respawn_point" parent="." instance=ExtResource("8_aw8vb")]
 position = Vector2(24, 147)

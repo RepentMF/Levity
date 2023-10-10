@@ -28,8 +28,7 @@
 [node name="Overworld" type="Node2D"]
 
 [node name="MUSH_Player" parent="." instance=ExtResource("1_k0ixt")]
-position = Vector2(706, 217)
-scale = Vector2(0.818005, 1.02275)
+position = Vector2(706, 196)
 metadata/PUSH_VALUE = 5
 
 [node name="Camera2D" type="Camera2D" parent="MUSH_Player"]

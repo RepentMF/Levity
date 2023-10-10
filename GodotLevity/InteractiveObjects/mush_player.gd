@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 # Booleans
 var botSquish = false
+var hasKey = false
 var hasReset = false
 var isDead = false
 var isTeleporting = false
@@ -111,7 +112,7 @@ func _physics_process(delta):
 		
 	# Handle resets
 	if Input.is_action_just_pressed("ui_select"):
-		hasReset
+		hasReset = true
 	pass
 	
 func _on_bot_body_entered(body):

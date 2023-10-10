@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b17chvbgkobgt"]
+
+[ext_resource type="Texture2D" uid="uid://dc3gac65nx4rj" path="res://Art/SpritesheetFiles/MUSH_spritesheet.png" id="1_cwvjp"]
+[ext_resource type="Script" path="res://InteractiveObjects/key.gd" id="1_sugqi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dplg5"]
+size = Vector2(12, 12)
+
+[node name="key" type="Area2D"]
+script = ExtResource("1_sugqi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dplg5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_cwvjp")
+region_enabled = true
+region_rect = Rect2(42, 14, 14, 14)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

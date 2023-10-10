@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://edfnu60t3q1"]
+[gd_scene load_steps=16 format=3 uid="uid://edfnu60t3q1"]
 
 [ext_resource type="PackedScene" uid="uid://ccj2w7kss300h" path="res://EnvironmentObjects/wall.tscn" id="1_uxudy"]
 [ext_resource type="PackedScene" uid="uid://cr0mq40qfhyup" path="res://EnvironmentObjects/corner_botleft.tscn" id="2_rn7ih"]
@@ -10,10 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://dtuqaxmqan3yl" path="res://EnvironmentObjects/ceiling.tscn" id="7_hlo5b"]
 [ext_resource type="PackedScene" uid="uid://dr63t8sd2kb61" path="res://InteractiveObjects/anti_box.tscn" id="8_qpson"]
 [ext_resource type="PackedScene" uid="uid://vpi1v7x7tptd" path="res://InteractiveObjects/wooden_box.tscn" id="9_bgvgq"]
-[ext_resource type="PackedScene" uid="uid://dxkuqb7fmd5km" path="res://EnvironmentObjects/respawn_point.tscn" id="10_ue6qy"]
+[ext_resource type="PackedScene" uid="uid://dxkuqb7fmd5km" path="res://InteractiveObjects/respawn_point.tscn" id="10_ue6qy"]
 [ext_resource type="PackedScene" uid="uid://dmg88tbrm61hf" path="res://InteractiveObjects/switch.tscn" id="11_j0bl7"]
 [ext_resource type="PackedScene" uid="uid://e2ybeyj8lsy8" path="res://InteractiveObjects/gravity_zone.tscn" id="12_hda5u"]
 [ext_resource type="PackedScene" uid="uid://b1endk384q5ay" path="res://InteractiveObjects/absence_mesh.tscn" id="13_gj1bg"]
+[ext_resource type="PackedScene" uid="uid://bfgomdm1iea48" path="res://EnvironmentObjects/backdrop.tscn" id="14_qpjmh"]
 
 [node name="Level 14" type="Node2D"]
 
@@ -110,5 +111,10 @@ position = Vector2(7, 7)
 [node name="ceiling" parent="ROOM" instance=ExtResource("7_hlo5b")]
 position = Vector2(210, 7)
 scale = Vector2(28, 1)
+
+[node name="backdrop" parent="ROOM" instance=ExtResource("14_qpjmh")]
+z_index = -5
+position = Vector2(210, 84)
+scale = Vector2(28, 10)
 
 [node name="AbsenceMesh" parent="." instance=ExtResource("13_gj1bg")]

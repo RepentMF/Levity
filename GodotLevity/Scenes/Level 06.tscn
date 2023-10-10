@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bju270vssdjbe"]
+[gd_scene load_steps=15 format=3 uid="uid://bju270vssdjbe"]
 
 [ext_resource type="PackedScene" uid="uid://ccj2w7kss300h" path="res://EnvironmentObjects/wall.tscn" id="1_ysai5"]
 [ext_resource type="PackedScene" uid="uid://cr0mq40qfhyup" path="res://EnvironmentObjects/corner_botleft.tscn" id="2_trtpn"]
@@ -6,8 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://lmnev5ju8xr5" path="res://EnvironmentObjects/floor.tscn" id="4_fr2r7"]
 [ext_resource type="PackedScene" uid="uid://d4hatb73l64kq" path="res://EnvironmentObjects/corner_topright.tscn" id="5_hjf11"]
 [ext_resource type="PackedScene" uid="uid://bjpk2bi6o3e11" path="res://EnvironmentObjects/corner_topleft.tscn" id="6_3bg4p"]
+[ext_resource type="PackedScene" uid="uid://bfgomdm1iea48" path="res://EnvironmentObjects/backdrop.tscn" id="7_dqq8w"]
 [ext_resource type="PackedScene" uid="uid://dtuqaxmqan3yl" path="res://EnvironmentObjects/ceiling.tscn" id="7_fr18f"]
-[ext_resource type="PackedScene" uid="uid://dxkuqb7fmd5km" path="res://EnvironmentObjects/respawn_point.tscn" id="8_27dgv"]
+[ext_resource type="PackedScene" uid="uid://dxkuqb7fmd5km" path="res://InteractiveObjects/respawn_point.tscn" id="8_27dgv"]
 [ext_resource type="PackedScene" uid="uid://vpi1v7x7tptd" path="res://InteractiveObjects/wooden_box.tscn" id="9_kbfta"]
 [ext_resource type="PackedScene" uid="uid://dmg88tbrm61hf" path="res://InteractiveObjects/switch.tscn" id="10_l52cd"]
 [ext_resource type="PackedScene" uid="uid://e2ybeyj8lsy8" path="res://InteractiveObjects/gravity_zone.tscn" id="11_sosqu"]
@@ -46,6 +47,11 @@ scale = Vector2(1, 6)
 position = Vector2(379, 90)
 rotation = 1.5708
 scale = Vector2(1, 4)
+
+[node name="backdrop" parent="ROOM" instance=ExtResource("7_dqq8w")]
+z_index = -5
+position = Vector2(210, 84)
+scale = Vector2(28, 10)
 
 [node name="OBJECTS" type="Node2D" parent="."]
 

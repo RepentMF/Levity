@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ebxyvlhvhu8l"]
+[gd_scene load_steps=13 format=3 uid="uid://ebxyvlhvhu8l"]
 
 [ext_resource type="PackedScene" uid="uid://ccj2w7kss300h" path="res://EnvironmentObjects/wall.tscn" id="1_v48a4"]
 [ext_resource type="PackedScene" uid="uid://cr0mq40qfhyup" path="res://EnvironmentObjects/corner_botleft.tscn" id="2_ev1p6"]
@@ -7,7 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://d4hatb73l64kq" path="res://EnvironmentObjects/corner_topright.tscn" id="5_bgrxq"]
 [ext_resource type="PackedScene" uid="uid://bjpk2bi6o3e11" path="res://EnvironmentObjects/corner_topleft.tscn" id="6_cj2w3"]
 [ext_resource type="PackedScene" uid="uid://dtuqaxmqan3yl" path="res://EnvironmentObjects/ceiling.tscn" id="7_nbhpo"]
-[ext_resource type="PackedScene" uid="uid://dxkuqb7fmd5km" path="res://EnvironmentObjects/respawn_point.tscn" id="8_gigad"]
+[ext_resource type="PackedScene" uid="uid://dxkuqb7fmd5km" path="res://InteractiveObjects/respawn_point.tscn" id="8_gigad"]
+[ext_resource type="PackedScene" uid="uid://bfgomdm1iea48" path="res://EnvironmentObjects/backdrop.tscn" id="8_uv6yn"]
 [ext_resource type="PackedScene" uid="uid://vpi1v7x7tptd" path="res://InteractiveObjects/wooden_box.tscn" id="9_0aabn"]
 [ext_resource type="PackedScene" uid="uid://lrk2cmcs8axw" path="res://InteractiveObjects/door.tscn" id="9_kd2lr"]
 [ext_resource type="PackedScene" uid="uid://b1endk384q5ay" path="res://InteractiveObjects/absence_mesh.tscn" id="10_b1chq"]
@@ -47,6 +48,11 @@ scale = Vector2(28, 1)
 [node name="wall4" parent="ROOM" instance=ExtResource("1_v48a4")]
 position = Vector2(210, 69)
 scale = Vector2(1, 8)
+
+[node name="backdrop" parent="ROOM" instance=ExtResource("8_uv6yn")]
+z_index = -5
+position = Vector2(210, 84)
+scale = Vector2(28, 10)
 
 [node name="OBJECTS" type="Node2D" parent="."]
 

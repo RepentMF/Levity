@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bcux4iweb4jsl"]
+[gd_scene load_steps=16 format=3 uid="uid://bcux4iweb4jsl"]
 
 [ext_resource type="PackedScene" uid="uid://ccj2w7kss300h" path="res://EnvironmentObjects/wall.tscn" id="1_uq1nt"]
 [ext_resource type="PackedScene" uid="uid://cr0mq40qfhyup" path="res://EnvironmentObjects/corner_botleft.tscn" id="2_38atj"]
@@ -7,11 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://bjpk2bi6o3e11" path="res://EnvironmentObjects/corner_topleft.tscn" id="5_ruvjq"]
 [ext_resource type="PackedScene" uid="uid://dtuqaxmqan3yl" path="res://EnvironmentObjects/ceiling.tscn" id="6_s4fm2"]
 [ext_resource type="PackedScene" uid="uid://lmnev5ju8xr5" path="res://EnvironmentObjects/floor.tscn" id="7_ycfky"]
+[ext_resource type="PackedScene" uid="uid://bfgomdm1iea48" path="res://EnvironmentObjects/backdrop.tscn" id="8_i3l36"]
 [ext_resource type="PackedScene" uid="uid://dr63t8sd2kb61" path="res://InteractiveObjects/anti_box.tscn" id="8_n5glb"]
 [ext_resource type="PackedScene" uid="uid://vpi1v7x7tptd" path="res://InteractiveObjects/wooden_box.tscn" id="9_8n48y"]
 [ext_resource type="PackedScene" uid="uid://dmg88tbrm61hf" path="res://InteractiveObjects/switch.tscn" id="10_oag7k"]
 [ext_resource type="PackedScene" uid="uid://e2ybeyj8lsy8" path="res://InteractiveObjects/gravity_zone.tscn" id="11_bhrgp"]
-[ext_resource type="PackedScene" uid="uid://dxkuqb7fmd5km" path="res://EnvironmentObjects/respawn_point.tscn" id="12_82rpu"]
+[ext_resource type="PackedScene" uid="uid://dxkuqb7fmd5km" path="res://InteractiveObjects/respawn_point.tscn" id="12_82rpu"]
 [ext_resource type="PackedScene" uid="uid://b1endk384q5ay" path="res://InteractiveObjects/absence_mesh.tscn" id="13_21arp"]
 [ext_resource type="PackedScene" uid="uid://lrk2cmcs8axw" path="res://InteractiveObjects/door.tscn" id="14_8oxo4"]
 
@@ -58,6 +59,11 @@ scale = Vector2(1, 8)
 [node name="floor" parent="ROOM" instance=ExtResource("7_ycfky")]
 position = Vector2(224, 161)
 scale = Vector2(26, 1)
+
+[node name="backdrop" parent="ROOM" instance=ExtResource("8_i3l36")]
+z_index = -5
+position = Vector2(210, 84)
+scale = Vector2(28, 10)
 
 [node name="OBJECTS" type="Node2D" parent="."]
 
