@@ -39,7 +39,7 @@ func _ready():
 			# Make it blue
 			animatedSprite2D.modulate = Color(0,0,1)
 			pass
-	pass # Replace with function body.
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -51,8 +51,9 @@ func _on_body_entered(body):
 		isPushed = true
 		GRAVITY_ZONE.changeNeeded = true
 		GRAVITY_ZONE.boxes_affected = SWITCH_TYPE
-	pass # Replace with function body.
+	pass
 
 func _on_body_exited(body):
 	if body.name == "MUSH_Player" || body.name.contains("box"):
 		isPushed = false
+	pass

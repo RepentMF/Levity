@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dawnlvbdcbjjt"]
+[gd_scene load_steps=12 format=3 uid="uid://dawnlvbdcbjjt"]
 
 [ext_resource type="PackedScene" uid="uid://ccj2w7kss300h" path="res://EnvironmentObjects/wall.tscn" id="1_ln423"]
 [ext_resource type="PackedScene" uid="uid://cr0mq40qfhyup" path="res://EnvironmentObjects/corner_botleft.tscn" id="2_5ssyg"]
@@ -7,8 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://d4hatb73l64kq" path="res://EnvironmentObjects/corner_topright.tscn" id="5_ndd4u"]
 [ext_resource type="PackedScene" uid="uid://bjpk2bi6o3e11" path="res://EnvironmentObjects/corner_topleft.tscn" id="6_qhfxg"]
 [ext_resource type="PackedScene" uid="uid://dtuqaxmqan3yl" path="res://EnvironmentObjects/ceiling.tscn" id="7_036l3"]
-[ext_resource type="PackedScene" uid="uid://vpi1v7x7tptd" path="res://EnvironmentObjects/wooden_box.tscn" id="8_3w2c2"]
+[ext_resource type="PackedScene" uid="uid://vpi1v7x7tptd" path="res://InteractiveObjects/wooden_box.tscn" id="8_3w2c2"]
 [ext_resource type="PackedScene" uid="uid://dxkuqb7fmd5km" path="res://EnvironmentObjects/respawn_point.tscn" id="8_ymg6f"]
+[ext_resource type="PackedScene" uid="uid://lrk2cmcs8axw" path="res://InteractiveObjects/door.tscn" id="9_6enjb"]
+[ext_resource type="PackedScene" uid="uid://b1endk384q5ay" path="res://InteractiveObjects/absence_mesh.tscn" id="10_wbbyl"]
 
 [node name="Level 01" type="Node2D"]
 
@@ -55,7 +57,15 @@ position = Vector2(216, 119)
 [node name="wooden_box" parent="OBJECTS" instance=ExtResource("8_3w2c2")]
 position = Vector2(108, 147)
 
+[node name="door" parent="OBJECTS" instance=ExtResource("9_6enjb")]
+position = Vector2(7, 140)
+
+[node name="door2" parent="OBJECTS" instance=ExtResource("9_6enjb")]
+position = Vector2(413, 140)
+
 [node name="respawn_point" parent="." instance=ExtResource("8_ymg6f")]
 position = Vector2(24, 147)
 scale = Vector2(1, 2)
 metadata/ID = 1
+
+[node name="AbsenceMesh" parent="." instance=ExtResource("10_wbbyl")]

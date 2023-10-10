@@ -10,7 +10,9 @@ size = Vector2(14, 14)
 size = Vector2(14, 2)
 
 [node name="MUSH_Player" type="CharacterBody2D"]
-safe_margin = 0.01
+floor_constant_speed = true
+floor_block_on_wall = false
+platform_wall_layers = 1
 script = ExtResource("1_g2n87")
 metadata/PUSH_VALUE = 20
 
@@ -26,5 +28,19 @@ shape = SubResource("RectangleShape2D_iynkm")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 7)
+position = Vector2(0, 6.25)
+scale = Vector2(0.98, 1)
 shape = SubResource("RectangleShape2D_7pt2g")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(0, -14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(0, 7.75)
+scale = Vector2(0.98, 1)
+shape = SubResource("RectangleShape2D_7pt2g")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_bot_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_bot_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_top_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="." method="_on_top_body_exited"]

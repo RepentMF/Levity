@@ -1,10 +1,13 @@
 extends CharacterBody2D
 
 # Booleans
+var botSquish = false
+var hasReset = false
 var isDead = false
 var isTeleporting = false
 var isUpsideDown = false
 var isWalljumping = false
+var topSquish = false
 
 # Integers
 var PUSH_VALUE
@@ -18,9 +21,6 @@ var maxWallJumpCount = 1
 var maxPowerLevel = 0
 var speed = 125.0
 var walljumpDirection = 0
-
-# String
-var lastSurface
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 525
@@ -63,8 +63,8 @@ func _process(delta):
 
 func _physics_process(delta):
 	#Handle death conditions
-	if !isDead:
-		# Add the gravity.
+	if !isDead || !hasReset:
+		# Add the gravity
 		if !is_on_floor():
 			velocity.y += gravity * delta
 			if sign(velocity.y) == sign(gravity):
@@ -73,7 +73,7 @@ func _physics_process(delta):
 			currentWalljumpCount = 0
 			isWalljumping = false
 
-		# Handle Jump or Walljump.
+		# Handle Jump or Walljump
 		if Input.is_action_just_pressed("ui_accept") && (is_on_floor() || is_on_ceiling()):
 			velocity.y = jumpVelocity
 		elif Input.is_action_just_pressed("ui_accept") && is_on_wall() && currentWalljumpCount < maxWallJumpCount:
@@ -81,7 +81,7 @@ func _physics_process(delta):
 			isWalljumping = true
 			currentWalljumpCount += 1
 
-		# Get the input direction and handle the movement/deceleration.
+		# Get the input direction and handle the movement/deceleration
 		if (!isWalljumping):
 			var direction = Input.get_axis("ui_left", "ui_right")
 			if direction:
@@ -99,19 +99,37 @@ func _physics_process(delta):
 			_animate_direction(walljumpDirection)
 		
 		move_and_slide()
-		var squishCount = 0
 		for n in get_slide_collision_count():
 			var i = get_slide_collision(n)
 			if i.get_collider() is RigidBody2D && i.get_collider().name.contains("box") && Input.is_action_pressed("ui_cancel"):
-				i.get_collider().apply_central_impulse(-i.get_normal() * PUSH_VALUE)
-		if is_on_ceiling() == true && lastSurface == "ceiling":
-			isDead = true
-		elif is_on_floor():
-			lastSurface = "floor"
-		elif is_on_ceiling():
-			lastSurface = "ceiling"
-			
-		print(lastSurface)
-	#else:
-		#print(isDead)
+				i.get_collider().apply_impulse(Vector2(-i.get_normal().x, 0) * PUSH_VALUE / 1.5)
+	
+	if topSquish && botSquish:
+		isDead = true
+	else:
+		isDead = false
+		
+	# Handle resets
+	if Input.is_action_just_pressed("ui_select"):
+		hasReset
+	pass
+	
+func _on_bot_body_entered(body):
+	if body.name.contains("floor") || body.name.contains("ceiling") || body.name.contains("box") || body.get_parent().name.contains("switch"):
+		botSquish = true
+	pass
+
+func _on_bot_body_exited(body):
+	if body.name.contains("floor") || body.name.contains("ceiling") || body.name.contains("box") || body.get_parent().name.contains("switch"):
+		botSquish = false
+	pass
+	
+func _on_top_body_entered(body):
+	if body.name.contains("floor") || body.name.contains("ceiling") || body.name.contains("box") || body.get_parent().name.contains("switch"):
+		topSquish = true
+	pass
+
+func _on_top_body_exited(body):
+	if body.name.contains("floor") || body.name.contains("ceiling") || body.name.contains("box") || body.get_parent().name.contains("switch"):
+		topSquish = false
 	pass

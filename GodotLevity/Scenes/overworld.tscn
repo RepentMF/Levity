@@ -1,10 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://cn5lyjsi8m8yv"]
+[gd_scene load_steps=25 format=3 uid="uid://cn5lyjsi8m8yv"]
 
 [ext_resource type="PackedScene" uid="uid://dtcrduh7wvabh" path="res://InteractiveObjects/mush_player.tscn" id="1_k0ixt"]
 [ext_resource type="PackedScene" uid="uid://c5w0l3l0d35n0" path="res://Scenes/Level 00.tscn" id="2_01t3r"]
-[ext_resource type="PackedScene" uid="uid://b1endk384q5ay" path="res://InteractiveObjects/absence_mesh.tscn" id="3_b712w"]
+[ext_resource type="Script" path="res://Scenes/LevelManager.gd" id="2_4iwqt"]
 [ext_resource type="PackedScene" uid="uid://dawnlvbdcbjjt" path="res://Scenes/Level 01.tscn" id="3_q7q7c"]
 [ext_resource type="PackedScene" uid="uid://b0rf32c1nfh5j" path="res://Scenes/Level 02.tscn" id="4_gbfym"]
+[ext_resource type="PackedScene" uid="uid://oaudt6fwpdxh" path="res://Scenes/LM00.tscn" id="5_es70o"]
 [ext_resource type="PackedScene" uid="uid://ebxyvlhvhu8l" path="res://Scenes/Level 03.tscn" id="5_qhkg2"]
 [ext_resource type="PackedScene" uid="uid://cpkk5qfba0yl1" path="res://Scenes/Level 04.tscn" id="7_jcx6r"]
 [ext_resource type="PackedScene" uid="uid://bju270vssdjbe" path="res://Scenes/Level 06.tscn" id="8_wxtwe"]
@@ -22,13 +23,14 @@
 [ext_resource type="PackedScene" uid="uid://cuvh80mmgf26f" path="res://Scenes/Level 13.tscn" id="18_qsx4g"]
 [ext_resource type="PackedScene" uid="uid://bcux4iweb4jsl" path="res://Scenes/Level 17.tscn" id="20_11fe1"]
 [ext_resource type="PackedScene" uid="uid://btk76jrh255ii" path="res://Scenes/Level 18.tscn" id="21_b362k"]
+[ext_resource type="PackedScene" uid="uid://cr1k0sdcreiuf" path="res://Scenes/Level 20.tscn" id="24_35fvx"]
 
 [node name="Overworld" type="Node2D"]
 
 [node name="MUSH_Player" parent="." instance=ExtResource("1_k0ixt")]
-position = Vector2(1231, -173)
+position = Vector2(706, 217)
 scale = Vector2(0.818005, 1.02275)
-metadata/PUSH_VALUE = 19
+metadata/PUSH_VALUE = 5
 
 [node name="Camera2D" type="Camera2D" parent="MUSH_Player"]
 zoom = Vector2(3, 3)
@@ -45,101 +47,108 @@ editor_draw_drag_margin = true
 [node name="Area 1" type="Node2D" parent="."]
 position = Vector2(2344, -105)
 
-[node name="Level 00" parent="Area 1" instance=ExtResource("2_01t3r")]
+[node name="LM00" type="Node2D" parent="Area 1"]
 position = Vector2(-1680, 168)
+script = ExtResource("2_4iwqt")
 
-[node name="AbsenceMesh" parent="Area 1/Level 00" instance=ExtResource("3_b712w")]
+[node name="Level 00" parent="Area 1/LM00" instance=ExtResource("2_01t3r")]
 
-[node name="Level 01" parent="Area 1" instance=ExtResource("3_q7q7c")]
+[node name="LM01" parent="Area 1" instance=ExtResource("5_es70o")]
 position = Vector2(-1260, 168)
 
-[node name="AbsenceMesh" parent="Area 1/Level 01" instance=ExtResource("3_b712w")]
+[node name="Level 01" parent="Area 1/LM01" instance=ExtResource("3_q7q7c")]
 
-[node name="Level 02" parent="Area 1" instance=ExtResource("4_gbfym")]
+[node name="LM02" parent="Area 1" instance=ExtResource("5_es70o")]
 position = Vector2(-840, 168)
 
-[node name="AbsenceMesh" parent="Area 1/Level 02" instance=ExtResource("3_b712w")]
+[node name="Level 02" parent="Area 1/LM02" instance=ExtResource("4_gbfym")]
 
-[node name="Level 03" parent="Area 1" instance=ExtResource("5_qhkg2")]
+[node name="LM03" parent="Area 1" instance=ExtResource("5_es70o")]
 position = Vector2(-420, 168)
 
-[node name="AbsenceMesh" parent="Area 1/Level 03" instance=ExtResource("3_b712w")]
+[node name="Level 03" parent="Area 1/LM03" instance=ExtResource("5_qhkg2")]
 
-[node name="Level 04" parent="Area 1" instance=ExtResource("7_jcx6r")]
+[node name="LM04" parent="Area 1" instance=ExtResource("5_es70o")]
 position = Vector2(0, 168)
 
-[node name="AbsenceMesh" parent="Area 1/Level 04" instance=ExtResource("3_b712w")]
+[node name="Level 04" parent="Area 1/LM04" instance=ExtResource("7_jcx6r")]
 
-[node name="Level 05" parent="Area 1" instance=ExtResource("10_q63lt")]
+[node name="LM05" parent="Area 1" instance=ExtResource("5_es70o")]
 
-[node name="AbsenceMesh" parent="Area 1/Level 05" instance=ExtResource("3_b712w")]
+[node name="Level 05" parent="Area 1/LM05" instance=ExtResource("10_q63lt")]
 
-[node name="Level 06" parent="Area 1" instance=ExtResource("8_wxtwe")]
+[node name="LM06" parent="Area 1" instance=ExtResource("5_es70o")]
 position = Vector2(-420, 0)
 
-[node name="AbsenceMesh" parent="Area 1/Level 06" instance=ExtResource("3_b712w")]
+[node name="Level 06" parent="Area 1/LM06" instance=ExtResource("8_wxtwe")]
 
-[node name="Level 07" parent="Area 1" instance=ExtResource("9_b8ymm")]
+[node name="LM07" parent="Area 1" instance=ExtResource("5_es70o")]
 position = Vector2(-840, 0)
 
-[node name="AbsenceMesh" parent="Area 1/Level 07" instance=ExtResource("3_b712w")]
+[node name="Level 07" parent="Area 1/LM07" instance=ExtResource("9_b8ymm")]
 
-[node name="Level 08" parent="Area 1" instance=ExtResource("11_4846t")]
+[node name="LM08" parent="Area 1" instance=ExtResource("5_es70o")]
 position = Vector2(-1260, 0)
 
-[node name="AbsenceMesh" parent="Area 1/Level 08" instance=ExtResource("3_b712w")]
+[node name="Level 08" parent="Area 1/LM08" instance=ExtResource("11_4846t")]
 
-[node name="Level 09" parent="Area 1" instance=ExtResource("12_2wavj")]
+[node name="LM09" parent="Area 1" instance=ExtResource("5_es70o")]
 position = Vector2(-1260, -168)
 
-[node name="AbsenceMesh" parent="Area 1/Level 09" instance=ExtResource("3_b712w")]
+[node name="Level 09" parent="Area 1/LM09" instance=ExtResource("12_2wavj")]
 
-[node name="Level 10" parent="Area 1" instance=ExtResource("13_yl52l")]
+[node name="LM10" parent="Area 1" instance=ExtResource("5_es70o")]
 position = Vector2(-840, -168)
 
-[node name="AbsenceMesh" parent="Area 1/Level 10" instance=ExtResource("3_b712w")]
+[node name="Level 10" parent="Area 1/LM10" instance=ExtResource("13_yl52l")]
 
-[node name="Level 11" parent="Area 1" instance=ExtResource("14_5ous5")]
+[node name="LM11" parent="Area 1" instance=ExtResource("5_es70o")]
 position = Vector2(-420, -168)
 
-[node name="AbsenceMesh" parent="Area 1/Level 11" instance=ExtResource("3_b712w")]
+[node name="Level 11" parent="Area 1/LM11" instance=ExtResource("14_5ous5")]
 
-[node name="Level 12" parent="Area 1" instance=ExtResource("15_7m4xp")]
+[node name="LM12" parent="Area 1" instance=ExtResource("5_es70o")]
 position = Vector2(0, -168)
 
-[node name="AbsenceMesh" parent="Area 1/Level 12" instance=ExtResource("3_b712w")]
+[node name="Level 12" parent="Area 1/LM12" instance=ExtResource("15_7m4xp")]
 
-[node name="Level 14" parent="Area 1" instance=ExtResource("16_uwxvd")]
+[node name="LM13" type="Node2D" parent="Area 1"]
+position = Vector2(0, -335)
+script = ExtResource("2_4iwqt")
+
+[node name="Level 13" parent="Area 1/LM13" instance=ExtResource("18_qsx4g")]
+
+[node name="LM14" parent="Area 1" instance=ExtResource("5_es70o")]
 position = Vector2(-420, -335)
 
-[node name="AbsenceMesh" parent="Area 1/Level 14" instance=ExtResource("3_b712w")]
+[node name="Level 14" parent="Area 1/LM14" instance=ExtResource("16_uwxvd")]
 
-[node name="Level 15" parent="Area 1" instance=ExtResource("17_shqqp")]
+[node name="LM15" parent="Area 1" instance=ExtResource("5_es70o")]
 position = Vector2(-840, -335)
 
-[node name="AbsenceMesh" parent="Area 1/Level 15" instance=ExtResource("3_b712w")]
+[node name="Level 15" parent="Area 1/LM15" instance=ExtResource("17_shqqp")]
 
-[node name="Level 13" parent="Area 1" instance=ExtResource("18_qsx4g")]
-position = Vector2(0, -335)
-
-[node name="AbsenceMesh" parent="Area 1/Level 13" instance=ExtResource("3_b712w")]
-
-[node name="Level 16" parent="Area 1" instance=ExtResource("17_j1x6b")]
+[node name="LM16" parent="Area 1" instance=ExtResource("5_es70o")]
 position = Vector2(-1260, -335)
 
-[node name="AbsenceMesh" parent="Area 1/Level 16" instance=ExtResource("3_b712w")]
+[node name="Level 16" parent="Area 1/LM16" instance=ExtResource("17_j1x6b")]
 
-[node name="Level 17" parent="Area 1" instance=ExtResource("20_11fe1")]
+[node name="LM17" parent="Area 1" instance=ExtResource("5_es70o")]
 position = Vector2(-1680, -335)
 
-[node name="AbsenceMesh" parent="Area 1/Level 17" instance=ExtResource("3_b712w")]
+[node name="Level 17" parent="Area 1/LM17" instance=ExtResource("20_11fe1")]
 
-[node name="Level 18" parent="Area 1" instance=ExtResource("21_b362k")]
+[node name="LM18" parent="Area 1" instance=ExtResource("5_es70o")]
 position = Vector2(-1680, -168)
 
-[node name="AbsenceMesh" parent="Area 1/Level 18" instance=ExtResource("3_b712w")]
+[node name="Level 18" parent="Area 1/LM18" instance=ExtResource("21_b362k")]
 
-[node name="Level 19" parent="Area 1" instance=ExtResource("18_1dcja")]
+[node name="LM19" parent="Area 1" instance=ExtResource("5_es70o")]
 position = Vector2(-1680, 0)
 
-[node name="AbsenceMesh" parent="Area 1/Level 19" instance=ExtResource("3_b712w")]
+[node name="Level 19" parent="Area 1/LM19" instance=ExtResource("18_1dcja")]
+
+[node name="LM20" parent="Area 1" instance=ExtResource("5_es70o")]
+position = Vector2(-2100, 0)
+
+[node name="Level 20" parent="Area 1/LM20" instance=ExtResource("24_35fvx")]

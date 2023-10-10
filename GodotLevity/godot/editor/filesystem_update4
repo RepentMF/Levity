@@ -1,7 +1,29 @@
 res://Scenes/overworld.tscn
-res://EnvironmentObjects/box_mover.gd
+res://InteractiveObjects/box.gd
+res://Scenes/Level 00.tscn
 res://InteractiveObjects/mush_player.tscn
+res://InteractiveObjects/door.tscn
+res://InteractiveObjects/door.gd
+res://Scenes/Level 01.tscn
 res://Scenes/Level 02.tscn
-res://InteractiveObjects/mush_player.gd
-res://InteractiveObjects/switch.tscn
-res://EnvironmentObjects/respawn_point.tscn
+res://Scenes/Level 03.tscn
+res://Scenes/Level 04.tscn
+res://Scenes/Level 05.tscn
+res://Scenes/Level 06.tscn
+res://Scenes/Level 07.tscn
+res://Scenes/Level 08.tscn
+res://Scenes/Level 09.tscn
+res://Scenes/Level 10.tscn
+res://Scenes/Level 11.tscn
+res://Scenes/Level 12.tscn
+res://Scenes/Level 13.tscn
+res://Scenes/Level 15.tscn
+res://Scenes/Level 14.tscn
+res://Scenes/Level 16.tscn
+res://Scenes/Level 17.tscn
+res://Scenes/Level 18.tscn
+res://Scenes/Level 19.tscn
+res://Scenes/Level 20.tscn
+res://InteractiveObjects/absence_mesh.gd
+res://InteractiveObjects/absence_mesh.tscn
+res://EnvironmentObjects/wall.tscn

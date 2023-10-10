@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://47x80cmpf4ab"]
+[gd_scene load_steps=12 format=3 uid="uid://47x80cmpf4ab"]
 
 [ext_resource type="PackedScene" uid="uid://ccj2w7kss300h" path="res://EnvironmentObjects/wall.tscn" id="1_t0ple"]
 [ext_resource type="PackedScene" uid="uid://cr0mq40qfhyup" path="res://EnvironmentObjects/corner_botleft.tscn" id="2_5xtje"]
@@ -8,7 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bjpk2bi6o3e11" path="res://EnvironmentObjects/corner_topleft.tscn" id="6_mnyas"]
 [ext_resource type="PackedScene" uid="uid://dtuqaxmqan3yl" path="res://EnvironmentObjects/ceiling.tscn" id="7_yl775"]
 [ext_resource type="PackedScene" uid="uid://dxkuqb7fmd5km" path="res://EnvironmentObjects/respawn_point.tscn" id="8_1oa4t"]
-[ext_resource type="PackedScene" uid="uid://vpi1v7x7tptd" path="res://EnvironmentObjects/wooden_box.tscn" id="8_evkp2"]
+[ext_resource type="PackedScene" uid="uid://lrk2cmcs8axw" path="res://InteractiveObjects/door.tscn" id="8_6o2hs"]
+[ext_resource type="PackedScene" uid="uid://vpi1v7x7tptd" path="res://InteractiveObjects/wooden_box.tscn" id="8_evkp2"]
+[ext_resource type="PackedScene" uid="uid://b1endk384q5ay" path="res://InteractiveObjects/absence_mesh.tscn" id="10_46wd8"]
 
 [node name="Level 05" type="Node2D"]
 
@@ -35,17 +37,17 @@ position = Vector2(210, 7)
 scale = Vector2(28, 1)
 
 [node name="wall3" parent="ROOM" instance=ExtResource("1_t0ple")]
-position = Vector2(287, 69)
+position = Vector2(291, 69)
 scale = Vector2(1, 8)
 
 [node name="wall5" parent="ROOM" instance=ExtResource("1_t0ple")]
-position = Vector2(287, 69)
+position = Vector2(291, 69)
 scale = Vector2(1, 8)
 
 [node name="OBJECTS" type="Node2D" parent="."]
 
 [node name="wooden_box" parent="OBJECTS" instance=ExtResource("8_evkp2")]
-position = Vector2(287, 147)
+position = Vector2(291, 147)
 
 [node name="wooden_box5" parent="OBJECTS" instance=ExtResource("8_evkp2")]
 position = Vector2(102, 147)
@@ -93,6 +95,13 @@ position = Vector2(109, 98)
 scale = Vector2(2, 2)
 metadata/SIZE = 2
 
+[node name="door" parent="OBJECTS" instance=ExtResource("8_6o2hs")]
+position = Vector2(391, 161)
+rotation = 1.5708
+
+[node name="door2" parent="OBJECTS" instance=ExtResource("8_6o2hs")]
+position = Vector2(7, 140)
+
 [node name="wall2" parent="." instance=ExtResource("1_t0ple")]
 position = Vector2(413, 84)
 scale = Vector2(1, 10)
@@ -109,3 +118,5 @@ metadata/ID = 5
 [node name="wall5" parent="." instance=ExtResource("1_t0ple")]
 position = Vector2(60, 113)
 scale = Vector2(1, 6)
+
+[node name="AbsenceMesh" parent="." instance=ExtResource("10_46wd8")]

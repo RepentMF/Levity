@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ebxyvlhvhu8l"]
+[gd_scene load_steps=12 format=3 uid="uid://ebxyvlhvhu8l"]
 
 [ext_resource type="PackedScene" uid="uid://ccj2w7kss300h" path="res://EnvironmentObjects/wall.tscn" id="1_v48a4"]
 [ext_resource type="PackedScene" uid="uid://cr0mq40qfhyup" path="res://EnvironmentObjects/corner_botleft.tscn" id="2_ev1p6"]
@@ -8,7 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bjpk2bi6o3e11" path="res://EnvironmentObjects/corner_topleft.tscn" id="6_cj2w3"]
 [ext_resource type="PackedScene" uid="uid://dtuqaxmqan3yl" path="res://EnvironmentObjects/ceiling.tscn" id="7_nbhpo"]
 [ext_resource type="PackedScene" uid="uid://dxkuqb7fmd5km" path="res://EnvironmentObjects/respawn_point.tscn" id="8_gigad"]
-[ext_resource type="PackedScene" uid="uid://vpi1v7x7tptd" path="res://EnvironmentObjects/wooden_box.tscn" id="9_0aabn"]
+[ext_resource type="PackedScene" uid="uid://vpi1v7x7tptd" path="res://InteractiveObjects/wooden_box.tscn" id="9_0aabn"]
+[ext_resource type="PackedScene" uid="uid://lrk2cmcs8axw" path="res://InteractiveObjects/door.tscn" id="9_kd2lr"]
+[ext_resource type="PackedScene" uid="uid://b1endk384q5ay" path="res://InteractiveObjects/absence_mesh.tscn" id="10_b1chq"]
 
 [node name="Level 03" type="Node2D"]
 
@@ -51,16 +53,22 @@ scale = Vector2(1, 8)
 [node name="wooden_box3" parent="OBJECTS" instance=ExtResource("9_0aabn")]
 position = Vector2(310, 140)
 scale = Vector2(2, 2)
-metadata/DIRECTION = 1
 metadata/SIZE = 2
 
 [node name="wooden_box4" parent="OBJECTS" instance=ExtResource("9_0aabn")]
 position = Vector2(310, 112)
 scale = Vector2(2, 2)
-metadata/DIRECTION = 1
 metadata/SIZE = 2
+
+[node name="door" parent="OBJECTS" instance=ExtResource("9_kd2lr")]
+position = Vector2(7, 140)
+
+[node name="door2" parent="OBJECTS" instance=ExtResource("9_kd2lr")]
+position = Vector2(413, 140)
 
 [node name="respawn_point" parent="." instance=ExtResource("8_gigad")]
 position = Vector2(24, 147)
 scale = Vector2(1, 2)
 metadata/ID = 3
+
+[node name="AbsenceMesh" parent="." instance=ExtResource("10_b1chq")]

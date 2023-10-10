@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dr63t8sd2kb61"]
 
-[ext_resource type="Script" path="res://EnvironmentObjects/wooden_box.gd" id="1_hjc0p"]
+[ext_resource type="Script" path="res://InteractiveObjects/box.gd" id="1_iwjc1"]
 [ext_resource type="Texture2D" uid="uid://dc3gac65nx4rj" path="res://Art/SpritesheetFiles/MUSH_spritesheet.png" id="2_u81l1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c5kmn"]
@@ -8,10 +8,10 @@ size = Vector2(14, 14)
 
 [node name="anti_box" type="RigidBody2D"]
 disable_mode = 2
-collision_layer = 3
+mass = 0.25
 can_sleep = false
 lock_rotation = true
-script = ExtResource("1_hjc0p")
+script = ExtResource("1_iwjc1")
 metadata/DIRECTION = -1
 metadata/DISPLAY_VALUE = false
 metadata/SIZE = 0

@@ -22,9 +22,12 @@ func _ready():
 
 func _process(delta):
 	if DISPLAY_VALUE:
+		print(linear_velocity)
 		pass
 	pass
 
 func _physics_process(delta):
-	gravity_scale = GRAVITY_DIRECTION
+	gravity_scale = GRAVITY_DIRECTION / 1.5
+	if abs(linear_velocity.x) > 70:
+		linear_velocity = Vector2(sign(linear_velocity.x) * 70, linear_velocity.y)
 	pass
