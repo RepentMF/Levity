@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c5w0l3l0d35n0"]
+[gd_scene load_steps=18 format=3 uid="uid://c5w0l3l0d35n0"]
 
 [ext_resource type="PackedScene" uid="uid://ccj2w7kss300h" path="res://EnvironmentObjects/wall.tscn" id="1_kjch5"]
 [ext_resource type="PackedScene" uid="uid://cr0mq40qfhyup" path="res://EnvironmentObjects/corner_botleft.tscn" id="2_6671t"]
@@ -12,7 +12,17 @@
 [ext_resource type="PackedScene" uid="uid://cv3oit3cchkt2" path="res://InteractiveObjects/bounce.tscn" id="8_dk85c"]
 [ext_resource type="PackedScene" uid="uid://bfgomdm1iea48" path="res://EnvironmentObjects/backdrop.tscn" id="9_j2j7q"]
 [ext_resource type="PackedScene" uid="uid://b1endk384q5ay" path="res://InteractiveObjects/absence_mesh.tscn" id="9_t7oel"]
+[ext_resource type="PackedScene" uid="uid://bnnsd4bhvuarf" path="res://EnvironmentObjects/small_light.tscn" id="10_0tco6"]
 [ext_resource type="PackedScene" uid="uid://lrk2cmcs8axw" path="res://InteractiveObjects/door.tscn" id="12_s2xp4"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nnusq"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gin4n"]
+light_mode = 2
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_e8x5v"]
+polygon = PackedVector2Array(127, 154, 127, 126, 154, 126, 154, 98, 92, 98, 92, 70, 34, 70, 14, 70, 14, 154)
 
 [node name="Level 00" type="Node2D"]
 
@@ -77,6 +87,7 @@ scale = Vector2(26, 1)
 
 [node name="Level00_boxes" type="Sprite2D" parent="ROOM"]
 texture_filter = 1
+material = SubResource("CanvasItemMaterial_nnusq")
 position = Vector2(84, 98)
 texture = ExtResource("8_3nfah")
 
@@ -85,10 +96,16 @@ z_index = -5
 position = Vector2(210, 84)
 scale = Vector2(28, 10)
 
+[node name="bounce_small_light" parent="ROOM" instance=ExtResource("10_0tco6")]
+material = SubResource("CanvasItemMaterial_gin4n")
+position = Vector2(20, 69)
+color = Color(0.992157, 0.615686, 0.996078, 1)
+energy = 0.25
+
 [node name="OBJECTS" type="Node2D" parent="."]
 
 [node name="bounce" parent="OBJECTS" instance=ExtResource("8_dk85c")]
-position = Vector2(25, 85)
+position = Vector2(23, 92)
 
 [node name="door" parent="OBJECTS" instance=ExtResource("12_s2xp4")]
 
@@ -105,3 +122,6 @@ position = Vector2(24, 147)
 scale = Vector2(1, 2)
 
 [node name="AbsenceMesh" parent="." instance=ExtResource("9_t7oel")]
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_e8x5v")

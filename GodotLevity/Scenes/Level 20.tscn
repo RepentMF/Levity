@@ -17,8 +17,8 @@
 [node name="ROOM" type="Node2D" parent="."]
 
 [node name="wall" parent="ROOM" instance=ExtResource("1_h3mnb")]
-position = Vector2(7, 84)
-scale = Vector2(1, 10)
+position = Vector2(7, 70)
+scale = Vector2(1, 8)
 
 [node name="wall2" parent="ROOM" instance=ExtResource("1_h3mnb")]
 position = Vector2(413, 70)
@@ -45,7 +45,6 @@ position = Vector2(210, 7)
 scale = Vector2(28, 1)
 
 [node name="backdrop" parent="ROOM" instance=ExtResource("8_h3h68")]
-visible = false
 z_index = -5
 position = Vector2(210, 84)
 scale = Vector2(28, 10)
@@ -53,8 +52,11 @@ scale = Vector2(28, 10)
 [node name="OBJECTS" type="Node2D" parent="."]
 
 [node name="door" parent="OBJECTS" instance=ExtResource("10_8g0n6")]
-position = Vector2(413, 140)
+position = Vector2(413, 141)
 metadata/DOOR_TYPE = "locked"
+
+[node name="door2" parent="OBJECTS" instance=ExtResource("10_8g0n6")]
+position = Vector2(7, 140)
 
 [node name="respawn_point" parent="." instance=ExtResource("8_1nbk8")]
 position = Vector2(396, 147)
@@ -62,4 +64,3 @@ scale = Vector2(1, 2)
 metadata/ID = 20
 
 [node name="AbsenceMesh" parent="." instance=ExtResource("9_8auoo")]
-visible = false

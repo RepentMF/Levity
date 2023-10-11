@@ -1,35 +1,22 @@
+res://Scenes/Level 20.tscn
 res://InteractiveObjects/absence_mesh.gd
 res://InteractiveObjects/box.gd
-res://EnvironmentObjects/backdrop.tscn
-res://Scenes/Level 20.tscn
-res://Scenes/Level 00.tscn
+res://EnvironmentObjects/small_light.tscn
 res://Scenes/overworld.tscn
-res://InteractiveObjects/door.tscn
+res://Scenes/Level 00.tscn
 res://EnvironmentObjects/wall.tscn
-res://Scenes/Level 01.tscn
-res://Scenes/Level 02.tscn
-res://Scenes/Level 03.tscn
-res://Scenes/Level 04.tscn
-res://Scenes/Level 05.tscn
-res://Scenes/Level 06.tscn
-res://Scenes/Level 07.tscn
-res://Scenes/Level 08.tscn
-res://Scenes/Level 09.tscn
-res://Scenes/Level 10.tscn
-res://Scenes/Level 11.tscn
-res://Scenes/Level 12.tscn
-res://Scenes/Level 13.tscn
-res://Scenes/Level 14.tscn
-res://Scenes/Level 15.tscn
-res://Scenes/Level 16.tscn
-res://Scenes/Level 17.tscn
-res://Scenes/Level 18.tscn
-res://Scenes/Level 19.tscn
-res://InteractiveObjects/respawn_point.tscn
-res://InteractiveObjects/mush_player.tscn
-res://Scenes/LM00.tscn
-res://InteractiveObjects/mush_player.gd
-res://InteractiveObjects/door.gd
+res://EnvironmentObjects/floor.tscn
+res://EnvironmentObjects/corner_topright.tscn
+res://EnvironmentObjects/corner_topleft.tscn
+res://EnvironmentObjects/corner_botright.tscn
+res://EnvironmentObjects/corner_botleft.tscn
 res://InteractiveObjects/wooden_box.tscn
+res://InteractiveObjects/anti_box.tscn
+res://InteractiveObjects/absence_mesh.tscn
+res://InteractiveObjects/door.tscn
 res://InteractiveObjects/key.tscn
-res://InteractiveObjects/key.gd
+res://InteractiveObjects/mush_player.tscn
+res://EnvironmentObjects/ceiling.tscn
+res://EnvironmentObjects/light_occluder.tscn
+res://InteractiveObjects/bounce.tscn
+res://InteractiveObjects/switch.tscn

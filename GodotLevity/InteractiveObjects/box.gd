@@ -15,6 +15,8 @@ func _ready():
 		SIZE = get_meta("SIZE")
 		get_node("CollisionShape2D").scale.x = SIZE
 		get_node("CollisionShape2D").scale.y = SIZE
+		get_node("LightOccluder2D").scale.x = SIZE
+		get_node("LightOccluder2D").scale.y = SIZE
 		$Sprite2D.scale.x = SIZE
 		$Sprite2D.scale.y = SIZE
 		mass = pow(SIZE, 3)

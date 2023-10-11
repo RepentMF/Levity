@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjpk2bi6o3e11"]
+[gd_scene load_steps=6 format=3 uid="uid://bjpk2bi6o3e11"]
 
 [ext_resource type="Texture2D" uid="uid://dc3gac65nx4rj" path="res://Art/SpritesheetFiles/MUSH_spritesheet.png" id="1_wisth"]
 
@@ -10,6 +10,9 @@ size = Vector2(7, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oe1gs"]
 size = Vector2(14, 7)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ka7dy"]
+polygon = PackedVector2Array(-7, -7, 1, -7, 3, -6, 4, -5, 5, -4, 6, -3, 7, -1, 7, 7, -7, 7)
 
 [node name="corner_topleft" type="StaticBody2D"]
 collision_layer = 3
@@ -30,3 +33,8 @@ shape = SubResource("RectangleShape2D_hb36v")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_oe1gs")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+rotation = 4.71239
+occluder = SubResource("OccluderPolygon2D_ka7dy")
+sdf_collision = false

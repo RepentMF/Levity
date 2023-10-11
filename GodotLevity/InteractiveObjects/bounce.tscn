@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cv3oit3cchkt2"]
+[gd_scene load_steps=5 format=3 uid="uid://cv3oit3cchkt2"]
 
 [ext_resource type="Script" path="res://InteractiveObjects/bounce.gd" id="1_0tdxu"]
 [ext_resource type="Texture2D" uid="uid://cn8lk2ory53ea" path="res://Art/SpritesheetFiles/BouncyStar_spritesheet.png" id="2_wl24h"]
+[ext_resource type="PackedScene" uid="uid://bnnsd4bhvuarf" path="res://EnvironmentObjects/small_light.tscn" id="3_wbkoy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ts4l"]
 
@@ -25,5 +26,8 @@ region_rect = Rect2(1, -1, 64, 64)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_4ts4l")
+
+[node name="small_light" parent="." instance=ExtResource("3_wbkoy")]
+color = Color(0.992157, 0.615686, 0.996078, 1)
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

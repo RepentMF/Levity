@@ -1,10 +1,13 @@
-[gd_scene load_steps=28 format=3 uid="uid://lrk2cmcs8axw"]
+[gd_scene load_steps=29 format=3 uid="uid://lrk2cmcs8axw"]
 
 [ext_resource type="Script" path="res://InteractiveObjects/door.gd" id="1_e34nu"]
 [ext_resource type="Texture2D" uid="uid://dc3gac65nx4rj" path="res://Art/SpritesheetFiles/MUSH_spritesheet.png" id="1_yxdsb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2l38c"]
 size = Vector2(14, 27.9855)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_leeep"]
+polygon = PackedVector2Array(-6.98438, -14.006, 7.03906, -14.0211, 7.04193, 13.9945, -7.00781, 13.9982)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wki28"]
 atlas = ExtResource("1_yxdsb")
@@ -295,6 +298,10 @@ metadata/UNMARKED = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_2l38c")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="CollisionShape2D"]
+visible = false
+occluder = SubResource("OccluderPolygon2D_leeep")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

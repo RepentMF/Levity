@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://m6rcefa6ep2c"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gm2on"]
+polygon = PackedVector2Array(-10, -10, -10, 10, 10, 10, 10, -10)
+
+[node name="light_occluder" type="LightOccluder2D"]
+occluder = SubResource("OccluderPolygon2D_gm2on")
+sdf_collision = false
