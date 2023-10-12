@@ -23,7 +23,26 @@ func _change_state(newState):
 		currentState = newState
 	pass
 
+func _create_polygon(sprite):
+	var bitmap = BitMap.new()
+	bitmap.create_from_image_alpha(sprite)
+	
+	var polygons = bitmap.opaque_to_polygons(Rect2(Vector2(0, 0), bitmap.get_size()))
+	
+	for polygon in polygons:
+		var collider = CollisionPolygon2D.new()
+		collider.polygon = polygon
+		add_child(collider)
+	pass
+
 func _handle_state():
+	var size = Vector2(0, 0)
+	if animatedSprite2D.get_sprite_frames().get_frame_texture(animatedSprite2D.animation, animatedSprite2D.frame) != null:
+		size.x = animatedSprite2D.get_sprite_frames().get_frame_texture(animatedSprite2D.animation, animatedSprite2D.frame).get_size().x / 14
+		size.y = animatedSprite2D.get_sprite_frames().get_frame_texture(animatedSprite2D.animation, animatedSprite2D.frame).get_size().y / 28
+	else:
+		size = Vector2(0, 0)
+		
 	match currentState:
 		"locked":
 			animatedSprite2D.play("door_locked")
@@ -50,6 +69,10 @@ func _handle_state():
 				if previousFrame != -1:
 					animatedSprite2D.set_frame(previousFrame)
 					previousFrame = -1
+			
+			if get_node("CollisionShape2D").scale != size:
+				get_node("CollisionShape2D").scale = size
+				get_node("CollisionShape2D").position.y -= (size.y * 3)
 			pass
 		"closing":
 			if animatedSprite2D.frame == 10:
@@ -62,6 +85,10 @@ func _handle_state():
 				if previousFrame != -1:
 					animatedSprite2D.set_frame(previousFrame)
 					previousFrame = -1
+			
+			if get_node("CollisionShape2D").scale != size:
+				get_node("CollisionShape2D").scale = size
+				get_node("CollisionShape2D").position.y +=  (size.y * 3)
 			pass
 		"opened":
 			animatedSprite2D.play("door_opened")

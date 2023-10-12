@@ -12,10 +12,10 @@ func _ready():
 func _process(delta):
 	if fade:
 		if $Sprite2D.modulate.a > 0:
-			$Sprite2D.modulate.a -= 1.2 * delta
+			$Sprite2D.modulate.a -= 1.4 * delta
 	else:
 		if $Sprite2D.modulate.a < 1:
-			$Sprite2D.modulate.a += 1.2 * delta
+			$Sprite2D.modulate.a += 1.4 * delta
 	pass
 
 func _on_body_entered(body):

@@ -40,7 +40,7 @@ func _process(delta):
 	
 	if shouldStartCount:
 		count += 1
-		if count > 50:
+		if count > 5:
 			count = 0
 			shouldStartCount = false
 			var level_instance = level.instantiate()

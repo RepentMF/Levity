@@ -105,7 +105,7 @@ energy = 0.25
 [node name="OBJECTS" type="Node2D" parent="."]
 
 [node name="bounce" parent="OBJECTS" instance=ExtResource("8_dk85c")]
-position = Vector2(23, 92)
+position = Vector2(23, 84)
 
 [node name="door" parent="OBJECTS" instance=ExtResource("12_s2xp4")]
 

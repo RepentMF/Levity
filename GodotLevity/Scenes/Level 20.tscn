@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cr1k0sdcreiuf"]
+[gd_scene load_steps=13 format=3 uid="uid://cr1k0sdcreiuf"]
 
 [ext_resource type="PackedScene" uid="uid://ccj2w7kss300h" path="res://EnvironmentObjects/wall.tscn" id="1_h3mnb"]
 [ext_resource type="PackedScene" uid="uid://cr0mq40qfhyup" path="res://EnvironmentObjects/corner_botleft.tscn" id="2_l8c6w"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dxkuqb7fmd5km" path="res://InteractiveObjects/respawn_point.tscn" id="8_1nbk8"]
 [ext_resource type="PackedScene" uid="uid://bfgomdm1iea48" path="res://EnvironmentObjects/backdrop.tscn" id="8_h3h68"]
 [ext_resource type="PackedScene" uid="uid://b1endk384q5ay" path="res://InteractiveObjects/absence_mesh.tscn" id="9_8auoo"]
+[ext_resource type="PackedScene" uid="uid://bnnsd4bhvuarf" path="res://EnvironmentObjects/small_light.tscn" id="9_qgym2"]
 [ext_resource type="PackedScene" uid="uid://lrk2cmcs8axw" path="res://InteractiveObjects/door.tscn" id="10_8g0n6"]
 
 [node name="Level 20" type="Node2D"]
@@ -48,6 +49,10 @@ scale = Vector2(28, 1)
 z_index = -5
 position = Vector2(210, 84)
 scale = Vector2(28, 10)
+
+[node name="small_light" parent="ROOM" instance=ExtResource("9_qgym2")]
+position = Vector2(7, 139)
+color = Color(100, 100, 0, 0.0117647)
 
 [node name="OBJECTS" type="Node2D" parent="."]
 

@@ -28,7 +28,7 @@
 [node name="Overworld" type="Node2D"]
 
 [node name="MUSH_Player" parent="." instance=ExtResource("1_k0ixt")]
-position = Vector2(2045, -149)
+position = Vector2(692, 210)
 floor_stop_on_slope = true
 metadata/PUSH_VALUE = 5
 
