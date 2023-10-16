@@ -50,7 +50,6 @@ position = Vector2(196, 7)
 scale = Vector2(26, 1)
 
 [node name="backdrop" parent="ROOM" instance=ExtResource("8_xkpyk")]
-visible = false
 z_index = -5
 position = Vector2(210, 84)
 scale = Vector2(28, 10)

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dicwlmcptdm66"]
+
+[ext_resource type="Script" path="res://InteractiveObjects/Upgrades/mush_upgrade.gd" id="1_6d2wb"]
+[ext_resource type="Texture2D" uid="uid://dc3gac65nx4rj" path="res://Art/SpritesheetFiles/MUSH_spritesheet.png" id="2_y782b"]
+[ext_resource type="PackedScene" uid="uid://bnnsd4bhvuarf" path="res://EnvironmentObjects/small_light.tscn" id="3_j3r3y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dplg5"]
+size = Vector2(12, 12)
+
+[node name="upgrade" type="Area2D"]
+script = ExtResource("1_6d2wb")
+metadata/UPGRADE_TYPE = "walljump"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dplg5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_y782b")
+region_enabled = true
+region_rect = Rect2(14, 0, 14, 14)
+
+[node name="small_light" parent="." instance=ExtResource("3_j3r3y")]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

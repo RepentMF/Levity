@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+#AnimatedSprite2D
+var animatedSprite2D
+
 # Booleans
 var botSquish = false
 var hasKey = false
@@ -28,9 +31,9 @@ var gravity = 525
 
 func _animate_direction(direction):
 	if direction == 1:
-		$Sprite2D.flip_h = true
+		animatedSprite2D.flip_h = true
 	elif direction == -1:
-		$Sprite2D.flip_h = false
+		animatedSprite2D.flip_h = false
 	pass
 
 func _change_gravity():
@@ -56,6 +59,7 @@ func _get_which_wall_collided():
 	pass
 
 func _ready():
+	animatedSprite2D = $Sprite2D
 	PUSH_VALUE = get_meta("PUSH_VALUE")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

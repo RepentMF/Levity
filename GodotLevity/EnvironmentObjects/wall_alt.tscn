@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://clltymqf21sma"]
+
+[ext_resource type="Texture2D" uid="uid://dc3gac65nx4rj" path="res://Art/SpritesheetFiles/MUSH_spritesheet.png" id="1_agald"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_83x8t"]
+size = Vector2(14, 14)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_b4n3p"]
+polygon = PackedVector2Array(-7, -7, 7, -7, 7, 7, -7, 7)
+
+[node name="wall" type="StaticBody2D"]
+collision_layer = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+texture = ExtResource("1_agald")
+region_enabled = true
+region_rect = Rect2(112, 14, 14, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_83x8t")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_b4n3p")
+sdf_collision = false

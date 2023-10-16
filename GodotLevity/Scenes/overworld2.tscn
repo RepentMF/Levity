@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://cusgyvkmix1mf"]
+
+[ext_resource type="PackedScene" uid="uid://dtcrduh7wvabh" path="res://InteractiveObjects/mush_player.tscn" id="1_8tp5k"]
+[ext_resource type="Script" path="res://Scenes/mush_camera.gd" id="2_woil2"]
+[ext_resource type="Script" path="res://Scenes/LevelManager.gd" id="3_c6716"]
+[ext_resource type="PackedScene" uid="uid://d10k34jxdo3vx" path="res://Scenes/Area 2/Level 21.tscn" id="4_k2u23"]
+
+[node name="Mid-Game Overworld" type="Node2D"]
+
+[node name="MUSH_Player" parent="." instance=ExtResource("1_8tp5k")]
+position = Vector2(692, 210)
+floor_stop_on_slope = true
+metadata/PUSH_VALUE = 5
+
+[node name="Camera2D" type="Camera2D" parent="MUSH_Player"]
+zoom = Vector2(3, 3)
+limit_left = 33
+limit_bottom = 365
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.25
+drag_right_margin = 0.25
+drag_bottom_margin = 0.5
+editor_draw_limits = true
+editor_draw_drag_margin = true
+script = ExtResource("2_woil2")
+
+[node name="Area 2" type="Node2D" parent="."]
+position = Vector2(2344, -105)
+
+[node name="LM21" type="Node2D" parent="Area 2"]
+position = Vector2(-1680, 168)
+script = ExtResource("3_c6716")
+
+[node name="Level 21" parent="Area 2/LM21" instance=ExtResource("4_k2u23")]

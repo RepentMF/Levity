@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Levity"
-run/main_scene="res://Scenes/overworld.tscn"
+run/main_scene="res://Scenes/overworld2.tscn"
 config/use_hidden_project_data_directory=false
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -69,4 +69,4 @@ ui_cancel={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0.351563, 0.351563, 0.351563, 1)
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

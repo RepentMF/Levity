@@ -93,7 +93,7 @@ func _handle_state():
 		"opened":
 			animatedSprite2D.play("door_opened")
 			if !openFlag:
-				get_node("CollisionShape2D").position.y = initPosY + 20
+				get_node("CollisionShape2D").position.y = initPosY - 20
 				get_node("CollisionShape2D").scale = Vector2(0, 0)
 			closedFlag = false
 			openFlag = true

@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=3 uid="uid://cr1k0sdcreiuf"]
 
 [ext_resource type="PackedScene" uid="uid://ccj2w7kss300h" path="res://EnvironmentObjects/wall.tscn" id="1_h3mnb"]
-[ext_resource type="PackedScene" uid="uid://cr0mq40qfhyup" path="res://EnvironmentObjects/corner_botleft.tscn" id="2_l8c6w"]
-[ext_resource type="PackedScene" uid="uid://2erhvegnqb5x" path="res://EnvironmentObjects/corner_botright.tscn" id="3_aelrb"]
+[ext_resource type="PackedScene" uid="uid://cr0mq40qfhyup" path="res://EnvironmentObjects/Corners/corner_botleft.tscn" id="2_l8c6w"]
+[ext_resource type="PackedScene" uid="uid://2erhvegnqb5x" path="res://EnvironmentObjects/Corners/corner_botright.tscn" id="3_aelrb"]
 [ext_resource type="PackedScene" uid="uid://lmnev5ju8xr5" path="res://EnvironmentObjects/floor.tscn" id="4_88yg8"]
-[ext_resource type="PackedScene" uid="uid://d4hatb73l64kq" path="res://EnvironmentObjects/corner_topright.tscn" id="5_i8631"]
-[ext_resource type="PackedScene" uid="uid://bjpk2bi6o3e11" path="res://EnvironmentObjects/corner_topleft.tscn" id="6_vogyc"]
+[ext_resource type="PackedScene" uid="uid://d4hatb73l64kq" path="res://EnvironmentObjects/Corners/corner_topright.tscn" id="5_i8631"]
+[ext_resource type="PackedScene" uid="uid://bjpk2bi6o3e11" path="res://EnvironmentObjects/Corners/corner_topleft.tscn" id="6_vogyc"]
 [ext_resource type="PackedScene" uid="uid://dtuqaxmqan3yl" path="res://EnvironmentObjects/ceiling.tscn" id="7_4807h"]
 [ext_resource type="PackedScene" uid="uid://dxkuqb7fmd5km" path="res://InteractiveObjects/respawn_point.tscn" id="8_1nbk8"]
 [ext_resource type="PackedScene" uid="uid://bfgomdm1iea48" path="res://EnvironmentObjects/backdrop.tscn" id="8_h3h68"]
@@ -51,7 +51,7 @@ position = Vector2(210, 84)
 scale = Vector2(28, 10)
 
 [node name="small_light" parent="ROOM" instance=ExtResource("9_qgym2")]
-position = Vector2(7, 139)
+position = Vector2(13, 140)
 color = Color(100, 100, 0, 0.0117647)
 
 [node name="OBJECTS" type="Node2D" parent="."]
@@ -61,7 +61,7 @@ position = Vector2(413, 141)
 metadata/DOOR_TYPE = "locked"
 
 [node name="door2" parent="OBJECTS" instance=ExtResource("10_8g0n6")]
-position = Vector2(7, 140)
+position = Vector2(7.17698, 140.531)
 
 [node name="respawn_point" parent="." instance=ExtResource("8_1nbk8")]
 position = Vector2(396, 147)
