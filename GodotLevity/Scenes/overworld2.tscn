@@ -1,14 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://cusgyvkmix1mf"]
+[gd_scene load_steps=8 format=3 uid="uid://cusgyvkmix1mf"]
 
 [ext_resource type="PackedScene" uid="uid://dtcrduh7wvabh" path="res://InteractiveObjects/mush_player.tscn" id="1_8tp5k"]
 [ext_resource type="Script" path="res://Scenes/mush_camera.gd" id="2_woil2"]
 [ext_resource type="Script" path="res://Scenes/LevelManager.gd" id="3_c6716"]
 [ext_resource type="PackedScene" uid="uid://d10k34jxdo3vx" path="res://Scenes/Area 2/Level 21.tscn" id="4_k2u23"]
+[ext_resource type="PackedScene" uid="uid://oaudt6fwpdxh" path="res://Scenes/LM00.tscn" id="5_xjeb8"]
+[ext_resource type="PackedScene" uid="uid://bhkxuqvis1i3n" path="res://Scenes/Area 2/Level 22.tscn" id="6_a555t"]
+[ext_resource type="PackedScene" uid="uid://ke0hr2mbrhhk" path="res://Scenes/Area 2/Level 23.tscn" id="7_b4ot2"]
 
 [node name="Mid-Game Overworld" type="Node2D"]
 
 [node name="MUSH_Player" parent="." instance=ExtResource("1_8tp5k")]
-position = Vector2(692, 210)
+position = Vector2(688, 196)
 floor_stop_on_slope = true
 metadata/PUSH_VALUE = 5
 
@@ -34,3 +37,14 @@ position = Vector2(-1680, 168)
 script = ExtResource("3_c6716")
 
 [node name="Level 21" parent="Area 2/LM21" instance=ExtResource("4_k2u23")]
+
+[node name="LM22" parent="Area 2" instance=ExtResource("5_xjeb8")]
+position = Vector2(-1259, 168)
+
+[node name="Level 22" parent="Area 2/LM22" instance=ExtResource("6_a555t")]
+position = Vector2(-1, 0)
+
+[node name="LM23" parent="Area 2" instance=ExtResource("5_xjeb8")]
+position = Vector2(-1260, 0)
+
+[node name="Level 23" parent="Area 2/LM23" instance=ExtResource("7_b4ot2")]

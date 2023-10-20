@@ -1,28 +1,9 @@
-res://InteractiveObjects/door.tscn
+res://Scenes/overworld2.tscn
 res://InteractiveObjects/absence_mesh.gd
 res://InteractiveObjects/box.gd
-res://Scenes/overworld.tscn
-res://Scenes/Level 00.tscn
-res://Scenes/Level 20.tscn
-res://Scenes/Level 19.tscn
-res://EnvironmentObjects/backdrop.tscn
-res://InteractiveObjects/mush_player.tscn
-res://Scenes/mush_camera.gd
-res://Scenes/overworld2.tscn
-res://Scenes/LM00.tscn
-res://Scenes/LevelManager.gd
-res://Scenes/Area 2/Level 21.tscn
-res://InteractiveObjects/respawn_point.tscn
-res://InteractiveObjects/respawn_point.gd
-res://InteractiveObjects/mush_player.gd
-res://EnvironmentObjects/wall.tscn
-res://Scenes/Area 1/Level 00.tscn
-res://InteractiveObjects/absence_mesh.tscn
+res://Scenes/Area 2/Level 22.tscn
+res://Scenes/Area 2/Level 23.tscn
 res://Scenes/Area 1/Level 20.tscn
-res://InteractiveObjects/door.gd
-res://Scenes/Area 1/Level 11.tscn
-res://EnvironmentObjects/Corners/corner_topleft_alt.tscn
-res://EnvironmentObjects/wall_alt.tscn
-res://InteractiveObjects/Upgrades/mush_upgrade.tscn
-res://InteractiveObjects/Upgrades/mush_upgrade.gd
-res://InteractiveObjects/key.tscn
+res://Scenes/Area 1/Level 16.tscn
+res://InteractiveObjects/mush_player.tscn
+res://Scenes/Area 2/Level 21.tscn

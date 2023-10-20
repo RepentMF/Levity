@@ -1,10 +1,10 @@
 [gd_scene load_steps=16 format=3 uid="uid://dyl3lg2rc4nij"]
 
 [ext_resource type="PackedScene" uid="uid://ccj2w7kss300h" path="res://EnvironmentObjects/wall.tscn" id="1_uhvqt"]
-[ext_resource type="PackedScene" uid="uid://cr0mq40qfhyup" path="res://EnvironmentObjects/corner_botleft.tscn" id="2_2tv43"]
-[ext_resource type="PackedScene" uid="uid://2erhvegnqb5x" path="res://EnvironmentObjects/corner_botright.tscn" id="3_b75oc"]
-[ext_resource type="PackedScene" uid="uid://d4hatb73l64kq" path="res://EnvironmentObjects/corner_topright.tscn" id="4_1pu11"]
-[ext_resource type="PackedScene" uid="uid://bjpk2bi6o3e11" path="res://EnvironmentObjects/corner_topleft.tscn" id="5_682rr"]
+[ext_resource type="PackedScene" uid="uid://cr0mq40qfhyup" path="res://EnvironmentObjects/Corners/corner_botleft.tscn" id="2_2tv43"]
+[ext_resource type="PackedScene" uid="uid://2erhvegnqb5x" path="res://EnvironmentObjects/Corners/corner_botright.tscn" id="3_b75oc"]
+[ext_resource type="PackedScene" uid="uid://d4hatb73l64kq" path="res://EnvironmentObjects/Corners/corner_topright.tscn" id="4_1pu11"]
+[ext_resource type="PackedScene" uid="uid://bjpk2bi6o3e11" path="res://EnvironmentObjects/Corners/corner_topleft.tscn" id="5_682rr"]
 [ext_resource type="PackedScene" uid="uid://dtuqaxmqan3yl" path="res://EnvironmentObjects/ceiling.tscn" id="6_hvupv"]
 [ext_resource type="PackedScene" uid="uid://lmnev5ju8xr5" path="res://EnvironmentObjects/floor.tscn" id="7_le343"]
 [ext_resource type="PackedScene" uid="uid://dr63t8sd2kb61" path="res://InteractiveObjects/anti_box.tscn" id="8_1xdip"]
@@ -98,6 +98,11 @@ position = Vector2(112, 84)
 scale = Vector2(2, 2)
 metadata/SIZE = 2
 
+[node name="wooden_box6" parent="OBJECTS" instance=ExtResource("9_4oi5o")]
+position = Vector2(112, 84)
+scale = Vector2(2, 2)
+metadata/SIZE = 2
+
 [node name="wooden_box5" parent="OBJECTS" instance=ExtResource("9_4oi5o")]
 position = Vector2(112, 56)
 scale = Vector2(2, 2)
@@ -111,7 +116,6 @@ position = Vector2(413, 140)
 
 [node name="gravity_zone" parent="." instance=ExtResource("11_q0182")]
 position = Vector2(210, 85)
-metadata/ONOFF_SWITCH = NodePath("")
 
 [node name="respawn_point" parent="." instance=ExtResource("12_n5tj0")]
 position = Vector2(396, 148)

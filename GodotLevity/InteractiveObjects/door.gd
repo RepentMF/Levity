@@ -126,6 +126,7 @@ func _on_body_entered(body):
 	if body.name == "MUSH_Player":
 		if currentState == "locked" && body.hasKey:
 			_change_state("unlocked")
+			body.hasKey = false
 		if currentState != "locked":
 			if currentState == "closing":
 				previousFrame = 10 - animatedSprite2D.frame

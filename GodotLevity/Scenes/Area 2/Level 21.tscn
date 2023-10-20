@@ -73,15 +73,15 @@ position = Vector2(106, 62)
 scale = Vector2(5, 1)
 
 [node name="corner_botright3" parent="ROOM" instance=ExtResource("3_2fds8")]
-position = Vector2(366, 82)
+position = Vector2(366, 87)
 
 [node name="wall6" parent="ROOM" instance=ExtResource("1_l07vl")]
-position = Vector2(366, 44)
-scale = Vector2(1, 4.44)
+position = Vector2(366, 47)
+scale = Vector2(1, 4.75)
 
 [node name="floor3" parent="ROOM" instance=ExtResource("4_4d37o")]
 z_index = -1
-position = Vector2(324, 82)
+position = Vector2(324, 87)
 scale = Vector2(5, 1)
 
 [node name="backdrop" parent="ROOM" instance=ExtResource("9_muahg")]

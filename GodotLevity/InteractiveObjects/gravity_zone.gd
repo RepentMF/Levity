@@ -14,7 +14,6 @@ func _ready():
 	objects_array = []
 	changeNeeded = false
 	boxes_affected = ""
-	#ONOFF_SWITCH = get_node(get_meta("ONOFF_SWITCH"))
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

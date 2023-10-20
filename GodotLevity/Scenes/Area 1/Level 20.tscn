@@ -58,7 +58,6 @@ color = Color(100, 100, 0, 0.0117647)
 
 [node name="door" parent="OBJECTS" instance=ExtResource("10_8g0n6")]
 position = Vector2(413, 141)
-metadata/DOOR_TYPE = "locked"
 
 [node name="door2" parent="OBJECTS" instance=ExtResource("10_8g0n6")]
 position = Vector2(7.17698, 140.531)

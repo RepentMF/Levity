@@ -164,7 +164,6 @@ metadata/SWITCH_TYPE = "wooden"
 
 [node name="gravity_zone" parent="." instance=ExtResource("9_mv0fv")]
 position = Vector2(210, 85)
-metadata/ONOFF_SWITCH = NodePath("../switch")
 
 [node name="respawn_point" parent="." instance=ExtResource("11_j1hrw")]
 position = Vector2(24, 148)

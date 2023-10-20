@@ -41,11 +41,7 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	if body.name == "MUSH_Player":
+	if body.name == "MUSH_Player" && ID >= body.currentRespawnPoint:
 		player = body
 		player.currentRespawnPoint = ID
-	pass
-
-
-func _on_gravity_zone_body_entered(body):
 	pass
