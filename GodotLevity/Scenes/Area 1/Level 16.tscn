@@ -93,11 +93,6 @@ position = Vector2(112, 112)
 scale = Vector2(2, 2)
 metadata/SIZE = 2
 
-[node name="wooden_box4" parent="OBJECTS" instance=ExtResource("9_4oi5o")]
-position = Vector2(112, 84)
-scale = Vector2(2, 2)
-metadata/SIZE = 2
-
 [node name="wooden_box6" parent="OBJECTS" instance=ExtResource("9_4oi5o")]
 position = Vector2(112, 84)
 scale = Vector2(2, 2)

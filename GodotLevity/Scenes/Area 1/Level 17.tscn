@@ -21,15 +21,15 @@
 [node name="ROOM" type="Node2D" parent="."]
 
 [node name="corner_botleft2" parent="ROOM" instance=ExtResource("2_38atj")]
-position = Vector2(192, 62)
+position = Vector2(140, 62)
 
 [node name="wall3" parent="ROOM" instance=ExtResource("1_uq1nt")]
 z_index = 1
-position = Vector2(192, 34)
+position = Vector2(140, 34)
 scale = Vector2(1, 3)
 
 [node name="floor2" parent="ROOM" instance=ExtResource("7_ycfky")]
-position = Vector2(241, 62)
+position = Vector2(189, 62)
 scale = Vector2(6, 1)
 
 [node name="wall" parent="ROOM" instance=ExtResource("1_uq1nt")]
@@ -115,6 +115,6 @@ z_index = 2
 
 [node name="switch4" parent="." instance=ExtResource("10_oag7k")]
 z_index = -1
-position = Vector2(253, 49)
+position = Vector2(201, 49)
 metadata/GRAVITY_ZONE = NodePath("../gravity_zone")
 metadata/SWITCH_TYPE = "wooden"

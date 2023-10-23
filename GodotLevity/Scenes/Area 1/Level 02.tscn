@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=3 uid="uid://b0rf32c1nfh5j"]
 
 [ext_resource type="PackedScene" uid="uid://ccj2w7kss300h" path="res://EnvironmentObjects/wall.tscn" id="1_mudrt"]
-[ext_resource type="PackedScene" uid="uid://cr0mq40qfhyup" path="res://EnvironmentObjects/corner_botleft.tscn" id="2_m5wlg"]
-[ext_resource type="PackedScene" uid="uid://2erhvegnqb5x" path="res://EnvironmentObjects/corner_botright.tscn" id="3_3hcmq"]
+[ext_resource type="PackedScene" uid="uid://cr0mq40qfhyup" path="res://EnvironmentObjects/Corners/corner_botleft.tscn" id="2_m5wlg"]
+[ext_resource type="PackedScene" uid="uid://2erhvegnqb5x" path="res://EnvironmentObjects/Corners/corner_botright.tscn" id="3_3hcmq"]
 [ext_resource type="PackedScene" uid="uid://lmnev5ju8xr5" path="res://EnvironmentObjects/floor.tscn" id="4_pdgg5"]
-[ext_resource type="PackedScene" uid="uid://d4hatb73l64kq" path="res://EnvironmentObjects/corner_topright.tscn" id="5_30am8"]
-[ext_resource type="PackedScene" uid="uid://bjpk2bi6o3e11" path="res://EnvironmentObjects/corner_topleft.tscn" id="6_dxfbi"]
+[ext_resource type="PackedScene" uid="uid://d4hatb73l64kq" path="res://EnvironmentObjects/Corners/corner_topright.tscn" id="5_30am8"]
+[ext_resource type="PackedScene" uid="uid://bjpk2bi6o3e11" path="res://EnvironmentObjects/Corners/corner_topleft.tscn" id="6_dxfbi"]
 [ext_resource type="PackedScene" uid="uid://dtuqaxmqan3yl" path="res://EnvironmentObjects/ceiling.tscn" id="7_aeu6l"]
 [ext_resource type="PackedScene" uid="uid://dxkuqb7fmd5km" path="res://InteractiveObjects/respawn_point.tscn" id="8_0dbue"]
 [ext_resource type="PackedScene" uid="uid://bfgomdm1iea48" path="res://EnvironmentObjects/backdrop.tscn" id="8_a8rml"]
@@ -64,7 +64,10 @@ position = Vector2(80, 147)
 position = Vector2(179, 105)
 
 [node name="wooden_box8" parent="OBJECTS" instance=ExtResource("9_cqijp")]
-position = Vector2(203, 147)
+position = Vector2(245, 147)
+
+[node name="wooden_box9" parent="OBJECTS" instance=ExtResource("9_cqijp")]
+position = Vector2(259, 147)
 
 [node name="wooden_box7" parent="OBJECTS" instance=ExtResource("9_cqijp")]
 position = Vector2(175, 119)
@@ -79,6 +82,9 @@ position = Vector2(337, 147)
 
 [node name="wooden_box6" parent="OBJECTS" instance=ExtResource("9_cqijp")]
 position = Vector2(309, 119)
+
+[node name="wooden_box10" parent="OBJECTS" instance=ExtResource("9_cqijp")]
+position = Vector2(309, 105)
 
 [node name="door" parent="OBJECTS" instance=ExtResource("9_jjtgw")]
 position = Vector2(7, 140)
