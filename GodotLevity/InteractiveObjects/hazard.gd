@@ -39,4 +39,5 @@ func _process(delta):
 func _on_body_entered(body):
 	if body.name == "MUSH_Player":
 		body.isDead = true
+		print(body.isDead)
 	pass # Replace with function body.

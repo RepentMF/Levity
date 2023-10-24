@@ -77,7 +77,7 @@ position = Vector2(366, 87)
 
 [node name="wall6" parent="ROOM" instance=ExtResource("1_l07vl")]
 position = Vector2(366, 47)
-scale = Vector2(1, 4.75)
+scale = Vector2(1, 4.85)
 
 [node name="floor3" parent="ROOM" instance=ExtResource("4_4d37o")]
 z_index = -1

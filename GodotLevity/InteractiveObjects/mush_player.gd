@@ -109,7 +109,7 @@ func _physics_process(delta):
 			if i.get_collider() is RigidBody2D && i.get_collider().name.contains("box") && Input.is_action_pressed("ui_cancel"):
 				i.get_collider().apply_impulse(Vector2(-i.get_normal().x, 0) * PUSH_VALUE / 1.5)
 	
-	if topSquish && botSquish:
+	if (topSquish && botSquish) || isDead:
 		isDead = true
 	else:
 		isDead = false

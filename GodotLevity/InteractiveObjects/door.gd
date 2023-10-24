@@ -123,8 +123,13 @@ func _process(delta):
 	pass
 
 func _on_body_entered(body):
+	var hasKey = false
 	if body.name == "MUSH_Player":
-		if currentState == "locked" && body.hasKey:
+		hasKey = body.hasKey
+	else:
+		hasKey = false
+	if body.name == "MUSH_Player" || body.name.contains("box"):
+		if currentState == "locked" && hasKey:
 			_change_state("unlocked")
 			body.hasKey = false
 		if currentState != "locked":
