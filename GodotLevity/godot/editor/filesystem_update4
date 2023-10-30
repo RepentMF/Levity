@@ -1,20 +1,9 @@
 res://Scenes/overworld2.tscn
 res://InteractiveObjects/absence_mesh.gd
 res://InteractiveObjects/box.gd
-res://Scenes/LevelManager.gd
-res://Scenes/Area 2/Level 24.tscn
-res://Scenes/overworld.tscn
-res://Scenes/Area 1/Level 17.tscn
-res://Scenes/Area 2/Level 22.tscn
-res://InteractiveObjects/mush_player.tscn
-res://Scenes/Area 2/Level 23.tscn
-res://Scenes/Area 2/Level 21.tscn
-res://InteractiveObjects/mush_player.gd
-res://InteractiveObjects/hazard2.tscn
 res://InteractiveObjects/hazard.gd
-res://InteractiveObjects/hazard1.tscn
-res://InteractiveObjects/bounce.tscn
+res://Scenes/LevelManager.gd
 res://Scenes/Area 2/Level 25.tscn
-res://InteractiveObjects/door.tscn
-res://InteractiveObjects/door.gd
+res://Scenes/Area 2/Level 24.tscn
+res://InteractiveObjects/hazard2.tscn
 res://Scenes/Area 2/Level 26.tscn
