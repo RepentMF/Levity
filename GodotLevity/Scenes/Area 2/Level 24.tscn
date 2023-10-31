@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ke0hr2mbrhhk"]
+[gd_scene load_steps=18 format=3 uid="uid://ke0hr2mbrhhk"]
 
 [ext_resource type="PackedScene" uid="uid://ccj2w7kss300h" path="res://EnvironmentObjects/wall.tscn" id="1_ummmi"]
 [ext_resource type="PackedScene" uid="uid://cr0mq40qfhyup" path="res://EnvironmentObjects/Corners/corner_botleft.tscn" id="2_1kf47"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dtuqaxmqan3yl" path="res://EnvironmentObjects/ceiling.tscn" id="7_m0jva"]
 [ext_resource type="PackedScene" uid="uid://bfgomdm1iea48" path="res://EnvironmentObjects/backdrop.tscn" id="8_mij6b"]
 [ext_resource type="PackedScene" uid="uid://vpi1v7x7tptd" path="res://InteractiveObjects/wooden_box.tscn" id="9_8pdax"]
+[ext_resource type="PackedScene" uid="uid://bvicpctx08p3y" path="res://InteractiveObjects/hazard2.tscn" id="9_voaa2"]
 [ext_resource type="PackedScene" uid="uid://dr63t8sd2kb61" path="res://InteractiveObjects/anti_box.tscn" id="10_xnaiu"]
 [ext_resource type="PackedScene" uid="uid://dxkuqb7fmd5km" path="res://InteractiveObjects/respawn_point.tscn" id="11_166pv"]
 [ext_resource type="PackedScene" uid="uid://b1endk384q5ay" path="res://InteractiveObjects/absence_mesh.tscn" id="12_04qk7"]
@@ -55,7 +56,7 @@ position = Vector2(413, 7)
 position = Vector2(7, 7)
 
 [node name="ceiling" parent="ROOM" instance=ExtResource("7_m0jva")]
-z_index = -2
+z_index = -1
 position = Vector2(210, 7)
 scale = Vector2(28, 1)
 
@@ -64,7 +65,38 @@ z_index = -5
 position = Vector2(210, 84)
 scale = Vector2(28, 10)
 
+[node name="backdrop2" parent="ROOM" instance=ExtResource("8_mij6b")]
+z_index = -1
+position = Vector2(314, 49)
+
+[node name="backdrop3" parent="ROOM" instance=ExtResource("8_mij6b")]
+z_index = -1
+position = Vector2(360, 61)
+
 [node name="OBJECTS" type="Node2D" parent="."]
+
+[node name="hazard" parent="OBJECTS" instance=ExtResource("9_voaa2")]
+z_index = -2
+position = Vector2(314, 105)
+rotation = 1.5708
+scale = Vector2(8, 1)
+
+[node name="hazard4" parent="OBJECTS" instance=ExtResource("9_voaa2")]
+z_index = -2
+position = Vector2(352, 147)
+rotation = 1.5708
+
+[node name="hazard2" parent="OBJECTS" instance=ExtResource("9_voaa2")]
+z_index = -2
+position = Vector2(314, 28)
+rotation = 1.5708
+scale = Vector2(2.125, 1)
+
+[node name="hazard3" parent="OBJECTS" instance=ExtResource("9_voaa2")]
+z_index = -2
+position = Vector2(360, 34)
+rotation = 1.5708
+scale = Vector2(3.125, 1)
 
 [node name="wooden_box5" parent="OBJECTS" instance=ExtResource("9_8pdax")]
 position = Vector2(178, 21)
@@ -73,7 +105,8 @@ position = Vector2(178, 21)
 position = Vector2(291, 133)
 
 [node name="wooden_box8" parent="OBJECTS" instance=ExtResource("9_8pdax")]
-position = Vector2(363, 147)
+position = Vector2(374, 75)
+rotation = 0.00136626
 
 [node name="wooden_box7" parent="OBJECTS" instance=ExtResource("9_8pdax")]
 position = Vector2(291, 147)
@@ -104,7 +137,7 @@ position = Vector2(178, 63)
 position = Vector2(291, 21)
 
 [node name="anti_box9" parent="OBJECTS" instance=ExtResource("10_xnaiu")]
-position = Vector2(349, 21)
+position = Vector2(374, 61)
 
 [node name="respawn_point" parent="." instance=ExtResource("11_166pv")]
 position = Vector2(50, 147)
@@ -130,4 +163,4 @@ position = Vector2(79, 148)
 metadata/GRAVITY_ZONE = NodePath("../gravity_zone")
 
 [node name="key" parent="." instance=ExtResource("16_wx80n")]
-position = Vector2(152, 28)
+position = Vector2(156, 22)

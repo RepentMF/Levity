@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dc3gac65nx4rj" path="res://Art/SpritesheetFiles/MUSH_spritesheet.png" id="2_odsvy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8px4"]
-size = Vector2(28, 28)
+size = Vector2(24.2, 28)
 
 [node name="hazard" type="Area2D"]
 z_index = -1

@@ -119,7 +119,8 @@ func _ready():
 func _process(delta):
 	_handle_state()
 	if DISPLAY_VALUE:
-		print(get_node("CollisionShape2D").position.y)
+		#print(get_node("CollisionShape2D").position.y)
+		print(currentState)
 	pass
 
 func _on_body_entered(body):
@@ -128,10 +129,12 @@ func _on_body_entered(body):
 		hasKey = body.hasKey
 	else:
 		hasKey = false
-	if body.name == "MUSH_Player" || body.name.contains("box"):
+	if body.name == "MUSH_Player" || (body.name.contains("box") && !UNMARKED):
 		if currentState == "locked" && hasKey:
-			_change_state("unlocked")
-			body.hasKey = false
+			print(body.name)
+			if get_parent().get_parent().name.contains(str(body.currentRespawnPoint)):
+				_change_state("unlocked")
+				body.hasKey = false
 		if currentState != "locked":
 			if currentState == "closing":
 				previousFrame = 10 - animatedSprite2D.frame
@@ -139,7 +142,7 @@ func _on_body_entered(body):
 	pass
 
 func _on_body_exited(body):
-	if body.name == "MUSH_Player":
+	if body.name == "MUSH_Player" || (body.name.contains("box") && !UNMARKED):
 		if currentState != "locked":
 			if currentState == "opening":
 				previousFrame = 10 - animatedSprite2D.frame

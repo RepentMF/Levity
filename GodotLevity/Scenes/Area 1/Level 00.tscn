@@ -112,7 +112,7 @@ position = Vector2(23, 84)
 position = Vector2(413.1, 140.5)
 
 [node name="door3" parent="OBJECTS" instance=ExtResource("12_s2xp4")]
-position = Vector2(29, 6.9)
+position = Vector2(29, 6.85)
 rotation = 4.71239
 metadata/UNMARKED = true
 

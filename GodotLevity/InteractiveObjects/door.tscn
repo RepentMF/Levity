@@ -311,7 +311,7 @@ texture_repeat = 1
 material = SubResource("CanvasItemMaterial_kxu8q")
 position = Vector2(-7.17499, -14.9758)
 sprite_frames = SubResource("SpriteFrames_sh0sa")
-animation = &"door_unlocked"
+animation = &"door_opening_unmarked"
 centered = false
 
 [node name="Area2D" type="Area2D" parent="."]
