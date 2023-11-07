@@ -3,12 +3,11 @@ res://InteractiveObjects/absence_mesh.gd
 res://InteractiveObjects/box.gd
 res://InteractiveObjects/hazard.gd
 res://Scenes/LevelManager.gd
-res://Scenes/Area 2/Level 28.tscn
-res://Scenes/Area 2/Level 27.tscn
-res://InteractiveObjects/hazard2.tscn
-res://Scenes/Area 2/Level 29.tscn
 res://Scenes/Area 2/Level 30.tscn
-res://InteractiveObjects/door.gd
+res://InteractiveObjects/hazard2.tscn
 res://InteractiveObjects/door.tscn
 res://InteractiveObjects/mush_player.tscn
+res://Scenes/Area 2/Level 31.tscn
 res://InteractiveObjects/mush_player.gd
+res://Scenes/Area 2/Level 32.tscn
+res://Scenes/Area 2/Level 22.tscn

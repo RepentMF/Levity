@@ -1,3 +1,4 @@
+Node2D
 CollisionShape2D
 LightOccluder2D
 PointLight2D
@@ -7,7 +8,6 @@ Area2D
 AnimationPlayer
 AnimatedSprite2D
 StaticBody2D
-Node2D
 Node
 RigidBody2D
 Camera2D
