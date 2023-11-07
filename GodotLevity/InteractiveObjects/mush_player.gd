@@ -17,6 +17,7 @@ var topSquish = false
 var PUSH_VALUE
 var activeTeleporterID = -1
 var currentDirection = -1
+var currentState
 var currentPowerLevel = 0
 var currentRespawnPoint = 0
 var currentWalljumpCount = 0
@@ -28,6 +29,29 @@ var walljumpDirection = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 525
+
+func _change_state(newState):
+	if currentState != newState:
+		currentState = newState
+	pass
+
+func _handle_state():
+	match currentState:
+		"standing":
+			pass
+		"walking":
+			pass
+		"jumping":
+			pass
+		"freefalling":
+			pass
+		"pushing":
+			pass
+		"walljumping":
+			pass
+		"dying":
+			pass
+	pass
 
 func _animate_direction(direction):
 	if direction == 1:

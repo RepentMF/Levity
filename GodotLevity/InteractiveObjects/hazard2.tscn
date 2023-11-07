@@ -7,7 +7,7 @@
 size = Vector2(24.2, 28)
 
 [node name="hazard" type="Area2D"]
-z_index = -1
+z_index = -2
 script = ExtResource("1_pbxvr")
 metadata/GRAVITY_TRIGGER = false
 metadata/BOUNCE_SPEED = -400.0

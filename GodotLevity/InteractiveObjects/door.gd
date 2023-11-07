@@ -23,18 +23,6 @@ func _change_state(newState):
 		currentState = newState
 	pass
 
-func _create_polygon(sprite):
-	var bitmap = BitMap.new()
-	bitmap.create_from_image_alpha(sprite)
-	
-	var polygons = bitmap.opaque_to_polygons(Rect2(Vector2(0, 0), bitmap.get_size()))
-	
-	for polygon in polygons:
-		var collider = CollisionPolygon2D.new()
-		collider.polygon = polygon
-		add_child(collider)
-	pass
-
 func _handle_state():
 	var size = Vector2(0, 0)
 	if animatedSprite2D.get_sprite_frames().get_frame_texture(animatedSprite2D.animation, animatedSprite2D.frame) != null:
@@ -100,6 +88,18 @@ func _handle_state():
 			pass
 	pass
 
+func _create_polygon(sprite):
+	var bitmap = BitMap.new()
+	bitmap.create_from_image_alpha(sprite)
+	
+	var polygons = bitmap.opaque_to_polygons(Rect2(Vector2(0, 0), bitmap.get_size()))
+	
+	for polygon in polygons:
+		var collider = CollisionPolygon2D.new()
+		collider.polygon = polygon
+		add_child(collider)
+	pass
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	DISPLAY_VALUE = get_meta("DISPLAY_VALUE")
@@ -129,7 +129,8 @@ func _on_body_entered(body):
 		hasKey = body.hasKey
 	else:
 		hasKey = false
-	if body.name == "MUSH_Player" || (body.name.contains("box") && !UNMARKED):
+	if body.name == "MUSH_Player":
+		# || (body.name.contains("box") && !UNMARKED)
 		if currentState == "locked" && hasKey:
 			print(body.name)
 			if get_parent().get_parent().name.contains(str(body.currentRespawnPoint)):
@@ -142,7 +143,8 @@ func _on_body_entered(body):
 	pass
 
 func _on_body_exited(body):
-	if body.name == "MUSH_Player" || (body.name.contains("box") && !UNMARKED):
+	if body.name == "MUSH_Player":
+		# || (body.name.contains("box") && !UNMARKED)
 		if currentState != "locked":
 			if currentState == "opening":
 				previousFrame = 10 - animatedSprite2D.frame
