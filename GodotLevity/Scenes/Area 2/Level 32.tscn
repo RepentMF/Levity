@@ -63,27 +63,45 @@ scale = Vector2(1, 1.35)
 
 [node name="backdrop5" parent="ROOM" instance=ExtResource("8_486e8")]
 z_index = -1
-position = Vector2(21, 121)
+position = Vector2(49, 147)
 rotation = 1.5708
-scale = Vector2(2, 1)
 
 [node name="OBJECTS" type="Node2D" parent="."]
 position = Vector2(1, 168)
 
-[node name="wooden_box6" parent="OBJECTS" instance=ExtResource("10_col0k")]
-position = Vector2(92, 105)
+[node name="wooden_box8" parent="OBJECTS" instance=ExtResource("10_col0k")]
+position = Vector2(59, 118)
 
-[node name="anti_box10" parent="OBJECTS" instance=ExtResource("11_dhdvn")]
-position = Vector2(86, 119)
+[node name="anti_box12" parent="OBJECTS" instance=ExtResource("11_dhdvn")]
+position = Vector2(53, 132)
 
-[node name="hazard4" parent="OBJECTS" instance=ExtResource("9_ljiki")]
-position = Vector2(20, -14)
-rotation = 1.5708
-scale = Vector2(20, 1)
+[node name="wooden_box7" parent="OBJECTS" instance=ExtResource("10_col0k")]
+position = Vector2(113, 68)
 
-[node name="hazard" parent="OBJECTS" instance=ExtResource("9_ljiki")]
-position = Vector2(214, 117)
-scale = Vector2(1, 6)
+[node name="anti_box11" parent="OBJECTS" instance=ExtResource("11_dhdvn")]
+position = Vector2(119, 82)
+
+[node name="wooden_box11" parent="OBJECTS" instance=ExtResource("10_col0k")]
+position = Vector2(113, -32)
+
+[node name="anti_box15" parent="OBJECTS" instance=ExtResource("11_dhdvn")]
+position = Vector2(119, -18)
+
+[node name="wooden_box12" parent="OBJECTS" instance=ExtResource("10_col0k")]
+position = Vector2(59, 18)
+
+[node name="anti_box16" parent="OBJECTS" instance=ExtResource("11_dhdvn")]
+position = Vector2(53, 32)
+
+[node name="wooden_box13" parent="OBJECTS" instance=ExtResource("10_col0k")]
+position = Vector2(59, -82)
+
+[node name="anti_box17" parent="OBJECTS" instance=ExtResource("11_dhdvn")]
+position = Vector2(53, -68)
+
+[node name="hazard5" parent="OBJECTS" instance=ExtResource("9_ljiki")]
+position = Vector2(104, 147)
+scale = Vector2(8, 1)
 
 [node name="respawn_point" parent="." instance=ExtResource("12_iobde")]
 position = Vector2(26, 309)
@@ -91,7 +109,9 @@ scale = Vector2(2, 2)
 metadata/ID = 32
 
 [node name="AbsenceMesh" parent="." instance=ExtResource("13_ofbde")]
-visible = false
+position = Vector2(170, 0)
+rotation = 1.5708
+scale = Vector2(1, 1.05)
 
 [node name="door3" parent="." instance=ExtResource("14_c7fsj")]
 position = Vector2(141, 7)

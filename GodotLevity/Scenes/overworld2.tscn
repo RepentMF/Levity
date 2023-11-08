@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cusgyvkmix1mf"]
+[gd_scene load_steps=20 format=3 uid="uid://cusgyvkmix1mf"]
 
 [ext_resource type="PackedScene" uid="uid://dtcrduh7wvabh" path="res://InteractiveObjects/mush_player.tscn" id="1_8tp5k"]
 [ext_resource type="Script" path="res://Scenes/mush_camera.gd" id="2_woil2"]
@@ -16,11 +16,14 @@
 [ext_resource type="PackedScene" uid="uid://boyf3fmqxnj7v" path="res://Scenes/Area 2/Level 30.tscn" id="14_siyna"]
 [ext_resource type="PackedScene" uid="uid://d37iuwxety6ek" path="res://Scenes/Area 2/Level 31.tscn" id="15_afxex"]
 [ext_resource type="PackedScene" uid="uid://btxhx6er1dadr" path="res://Scenes/Area 2/Level 32.tscn" id="16_26bap"]
+[ext_resource type="PackedScene" uid="uid://88mes1kl0u7p" path="res://Scenes/Area 2/Level 33.tscn" id="17_7w8a5"]
+[ext_resource type="PackedScene" uid="uid://caowlyy5hcvvx" path="res://Scenes/Area 2/Level 34.tscn" id="18_b234f"]
+[ext_resource type="PackedScene" uid="uid://d001gha73cmdn" path="res://Scenes/Area 2/Level 35.tscn" id="19_3u7j7"]
 
 [node name="Mid-Game Overworld" type="Node2D"]
 
 [node name="MUSH_Player" parent="." instance=ExtResource("1_8tp5k")]
-position = Vector2(1530, 96)
+position = Vector2(1803, -185)
 floor_stop_on_slope = true
 metadata/PUSH_VALUE = 5
 
@@ -108,3 +111,18 @@ position = Vector2(-1260, 60)
 position = Vector2(-840, -108)
 
 [node name="Level 32" parent="Area 2/LM32" instance=ExtResource("16_26bap")]
+
+[node name="LM33" parent="Area 2" instance=ExtResource("5_xjeb8")]
+position = Vector2(-840, -444)
+
+[node name="Level 33" parent="Area 2/LM33" instance=ExtResource("17_7w8a5")]
+
+[node name="LM34" parent="Area 2" instance=ExtResource("5_xjeb8")]
+position = Vector2(-672, -444)
+
+[node name="Level 34" parent="Area 2/LM34" instance=ExtResource("18_b234f")]
+
+[node name="LM35" parent="Area 2" instance=ExtResource("5_xjeb8")]
+position = Vector2(-672, -108)
+
+[node name="Level 35" parent="Area 2/LM35" instance=ExtResource("19_3u7j7")]

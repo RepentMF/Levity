@@ -27,8 +27,8 @@ position = Vector2(7, 99)
 scale = Vector2(1, 8)
 
 [node name="wall2" parent="ROOM" instance=ExtResource("1_ummmi")]
-position = Vector2(413, 84)
-scale = Vector2(1, 10)
+position = Vector2(413, 98)
+scale = Vector2(1, 8)
 
 [node name="wall4" parent="ROOM" instance=ExtResource("1_ummmi")]
 position = Vector2(234, 69)
@@ -76,24 +76,20 @@ position = Vector2(360, 61)
 [node name="OBJECTS" type="Node2D" parent="."]
 
 [node name="hazard" parent="OBJECTS" instance=ExtResource("9_voaa2")]
-z_index = -2
 position = Vector2(314, 105)
 rotation = 1.5708
 scale = Vector2(8, 1)
 
 [node name="hazard4" parent="OBJECTS" instance=ExtResource("9_voaa2")]
-z_index = -2
 position = Vector2(352, 147)
 rotation = 1.5708
 
 [node name="hazard2" parent="OBJECTS" instance=ExtResource("9_voaa2")]
-z_index = -2
 position = Vector2(314, 28)
 rotation = 1.5708
 scale = Vector2(2.125, 1)
 
 [node name="hazard3" parent="OBJECTS" instance=ExtResource("9_voaa2")]
-z_index = -2
 position = Vector2(360, 34)
 rotation = 1.5708
 scale = Vector2(3.125, 1)
@@ -149,6 +145,10 @@ metadata/ID = 24
 [node name="door" parent="." instance=ExtResource("13_wsbcx")]
 position = Vector2(7.15, 29.6)
 metadata/DOOR_TYPE = "locked"
+
+[node name="door2" parent="." instance=ExtResource("13_wsbcx")]
+position = Vector2(413, 29)
+metadata/DOOR_TYPE = "unmarked"
 
 [node name="door3" parent="." instance=ExtResource("13_wsbcx")]
 position = Vector2(29, 161)

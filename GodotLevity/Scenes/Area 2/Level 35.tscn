@@ -1,0 +1,219 @@
+[gd_scene load_steps=17 format=3 uid="uid://d001gha73cmdn"]
+
+[ext_resource type="PackedScene" uid="uid://ccj2w7kss300h" path="res://EnvironmentObjects/wall.tscn" id="1_m8rry"]
+[ext_resource type="PackedScene" uid="uid://cr0mq40qfhyup" path="res://EnvironmentObjects/Corners/corner_botleft.tscn" id="2_rho7x"]
+[ext_resource type="PackedScene" uid="uid://2erhvegnqb5x" path="res://EnvironmentObjects/Corners/corner_botright.tscn" id="3_2toei"]
+[ext_resource type="PackedScene" uid="uid://lmnev5ju8xr5" path="res://EnvironmentObjects/floor.tscn" id="4_qptmq"]
+[ext_resource type="PackedScene" uid="uid://d4hatb73l64kq" path="res://EnvironmentObjects/Corners/corner_topright.tscn" id="5_nqyx6"]
+[ext_resource type="PackedScene" uid="uid://bjpk2bi6o3e11" path="res://EnvironmentObjects/Corners/corner_topleft.tscn" id="6_5v4sy"]
+[ext_resource type="PackedScene" uid="uid://dtuqaxmqan3yl" path="res://EnvironmentObjects/ceiling.tscn" id="7_fb7x6"]
+[ext_resource type="PackedScene" uid="uid://bfgomdm1iea48" path="res://EnvironmentObjects/backdrop.tscn" id="8_bhfvu"]
+[ext_resource type="PackedScene" uid="uid://vpi1v7x7tptd" path="res://InteractiveObjects/wooden_box.tscn" id="9_3j41g"]
+[ext_resource type="PackedScene" uid="uid://dr63t8sd2kb61" path="res://InteractiveObjects/anti_box.tscn" id="10_flmio"]
+[ext_resource type="PackedScene" uid="uid://bvicpctx08p3y" path="res://InteractiveObjects/hazard2.tscn" id="11_u04uh"]
+[ext_resource type="PackedScene" uid="uid://dxkuqb7fmd5km" path="res://InteractiveObjects/respawn_point.tscn" id="12_ufm4e"]
+[ext_resource type="PackedScene" uid="uid://b1endk384q5ay" path="res://InteractiveObjects/absence_mesh.tscn" id="13_cn3ok"]
+[ext_resource type="PackedScene" uid="uid://lrk2cmcs8axw" path="res://InteractiveObjects/door.tscn" id="14_mrly1"]
+[ext_resource type="PackedScene" uid="uid://dicwlmcptdm66" path="res://InteractiveObjects/Upgrades/mush_upgrade.tscn" id="15_ghbo1"]
+[ext_resource type="PackedScene" uid="uid://b17chvbgkobgt" path="res://InteractiveObjects/key.tscn" id="15_jpw00"]
+
+[node name="Level 35" type="Node2D"]
+
+[node name="ROOM" type="Node2D" parent="."]
+position = Vector2(0, 168)
+
+[node name="wall" parent="ROOM" instance=ExtResource("1_m8rry")]
+position = Vector2(7, 0)
+scale = Vector2(1, 22)
+
+[node name="wall2" parent="ROOM" instance=ExtResource("1_m8rry")]
+position = Vector2(161, 0)
+scale = Vector2(1, 22)
+
+[node name="corner_botleft" parent="ROOM" instance=ExtResource("2_rho7x")]
+position = Vector2(7, 161)
+
+[node name="corner_botright" parent="ROOM" instance=ExtResource("3_2toei")]
+position = Vector2(161, 161)
+
+[node name="floor" parent="ROOM" instance=ExtResource("4_qptmq")]
+z_index = -1
+position = Vector2(70, 161)
+scale = Vector2(8, 1)
+
+[node name="corner_topright" parent="ROOM" instance=ExtResource("5_nqyx6")]
+position = Vector2(161, -161)
+
+[node name="corner_topleft" parent="ROOM" instance=ExtResource("6_5v4sy")]
+position = Vector2(7, -161)
+
+[node name="ceiling" parent="ROOM" instance=ExtResource("7_fb7x6")]
+z_index = -2
+position = Vector2(70, -161)
+scale = Vector2(8, 1)
+
+[node name="backdrop" parent="ROOM" instance=ExtResource("8_bhfvu")]
+z_index = -5
+position = Vector2(84, 1)
+rotation = 1.5708
+scale = Vector2(23, 11)
+
+[node name="backdrop4" parent="ROOM" instance=ExtResource("8_bhfvu")]
+z_index = -1
+position = Vector2(21, -135)
+scale = Vector2(1, 2)
+
+[node name="backdrop9" parent="ROOM" instance=ExtResource("8_bhfvu")]
+z_index = -1
+position = Vector2(84, -119.525)
+scale = Vector2(1, 1.1)
+
+[node name="backdrop12" parent="ROOM" instance=ExtResource("8_bhfvu")]
+z_index = -1
+position = Vector2(84, -153.48)
+scale = Vector2(1, 0.075)
+
+[node name="backdrop15" parent="ROOM" instance=ExtResource("8_bhfvu")]
+z_index = -1
+position = Vector2(91.585, -105)
+rotation = 1.5708
+scale = Vector2(1, 0.075)
+
+[node name="backdrop16" parent="ROOM" instance=ExtResource("8_bhfvu")]
+z_index = -1
+position = Vector2(109, 50)
+scale = Vector2(1, 3)
+
+[node name="backdrop10" parent="ROOM" instance=ExtResource("8_bhfvu")]
+z_index = -1
+position = Vector2(84, -67)
+
+[node name="backdrop11" parent="ROOM" instance=ExtResource("8_bhfvu")]
+z_index = -1
+position = Vector2(84, -27)
+
+[node name="backdrop13" parent="ROOM" instance=ExtResource("8_bhfvu")]
+z_index = -1
+position = Vector2(84, 36)
+
+[node name="backdrop7" parent="ROOM" instance=ExtResource("8_bhfvu")]
+z_index = -1
+position = Vector2(147, -135)
+scale = Vector2(1, 2)
+
+[node name="backdrop5" parent="ROOM" instance=ExtResource("8_bhfvu")]
+z_index = -1
+position = Vector2(21, 144.5)
+scale = Vector2(1, 1.35)
+
+[node name="backdrop14" parent="ROOM" instance=ExtResource("8_bhfvu")]
+z_index = -1
+position = Vector2(84, 88)
+
+[node name="backdrop8" parent="ROOM" instance=ExtResource("8_bhfvu")]
+z_index = -1
+position = Vector2(147, 137)
+rotation = 1.5708
+scale = Vector2(2.25, 1)
+
+[node name="backdrop6" parent="ROOM" instance=ExtResource("8_bhfvu")]
+z_index = -1
+position = Vector2(109, 147)
+rotation = 1.5708
+
+[node name="OBJECTS" type="Node2D" parent="."]
+position = Vector2(1, 168)
+
+[node name="wooden_box8" parent="OBJECTS" instance=ExtResource("9_3j41g")]
+position = Vector2(60, 118)
+
+[node name="anti_box12" parent="OBJECTS" instance=ExtResource("10_flmio")]
+position = Vector2(54, 132)
+
+[node name="wooden_box9" parent="OBJECTS" instance=ExtResource("9_3j41g")]
+position = Vector2(40, 20)
+
+[node name="anti_box13" parent="OBJECTS" instance=ExtResource("10_flmio")]
+position = Vector2(40, 34)
+
+[node name="wooden_box11" parent="OBJECTS" instance=ExtResource("9_3j41g")]
+position = Vector2(130, -120)
+
+[node name="anti_box15" parent="OBJECTS" instance=ExtResource("10_flmio")]
+position = Vector2(136, -106)
+
+[node name="wooden_box14" parent="OBJECTS" instance=ExtResource("9_3j41g")]
+position = Vector2(60, -53)
+
+[node name="anti_box18" parent="OBJECTS" instance=ExtResource("10_flmio")]
+position = Vector2(54, -39)
+
+[node name="hazard4" parent="OBJECTS" instance=ExtResource("11_u04uh")]
+position = Vector2(20, 0)
+rotation = 1.5708
+scale = Vector2(20, 1)
+
+[node name="hazard8" parent="OBJECTS" instance=ExtResource("11_u04uh")]
+position = Vector2(122, -106)
+scale = Vector2(5, 1)
+
+[node name="hazard12" parent="OBJECTS" instance=ExtResource("11_u04uh")]
+position = Vector2(134, 50)
+scale = Vector2(3, 1)
+
+[node name="hazard13" parent="OBJECTS" instance=ExtResource("11_u04uh")]
+position = Vector2(97, 87)
+
+[node name="hazard10" parent="OBJECTS" instance=ExtResource("11_u04uh")]
+position = Vector2(45, -32)
+scale = Vector2(5, 1)
+
+[node name="hazard6" parent="OBJECTS" instance=ExtResource("11_u04uh")]
+position = Vector2(83, -140)
+rotation = 1.5708
+scale = Vector2(2, 1)
+
+[node name="hazard7" parent="OBJECTS" instance=ExtResource("11_u04uh")]
+position = Vector2(83, -93)
+rotation = 1.5708
+scale = Vector2(3, 1)
+
+[node name="hazard11" parent="OBJECTS" instance=ExtResource("11_u04uh")]
+position = Vector2(83, 62)
+rotation = 1.5708
+scale = Vector2(3, 1)
+
+[node name="hazard9" parent="OBJECTS" instance=ExtResource("11_u04uh")]
+position = Vector2(83, -47)
+rotation = 1.5708
+scale = Vector2(2, 1)
+
+[node name="hazard5" parent="OBJECTS" instance=ExtResource("11_u04uh")]
+position = Vector2(64, 147)
+scale = Vector2(6, 1)
+
+[node name="respawn_point" parent="." instance=ExtResource("12_ufm4e")]
+position = Vector2(131, 33)
+scale = Vector2(2, 2)
+metadata/ID = 35
+
+[node name="AbsenceMesh" parent="." instance=ExtResource("13_cn3ok")]
+position = Vector2(176, -83)
+rotation = 1.5708
+scale = Vector2(1, 1.05)
+
+[node name="door3" parent="." instance=ExtResource("14_mrly1")]
+position = Vector2(141, 329)
+rotation = 4.71239
+metadata/DOOR_TYPE = "locked"
+
+[node name="door5" parent="." instance=ExtResource("14_mrly1")]
+position = Vector2(140, 7)
+rotation = 4.71239
+
+[node name="upgrade" parent="." instance=ExtResource("15_ghbo1")]
+position = Vector2(102, 220)
+rotation = -0.644027
+
+[node name="key" parent="." instance=ExtResource("15_jpw00")]
+position = Vector2(98, 270)
