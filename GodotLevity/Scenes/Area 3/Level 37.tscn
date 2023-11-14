@@ -1,0 +1,114 @@
+[gd_scene load_steps=16 format=3 uid="uid://c36s6a3qpu76n"]
+
+[ext_resource type="PackedScene" uid="uid://ccj2w7kss300h" path="res://EnvironmentObjects/wall.tscn" id="1_ef7wf"]
+[ext_resource type="PackedScene" uid="uid://cr0mq40qfhyup" path="res://EnvironmentObjects/Corners/corner_botleft.tscn" id="2_123ub"]
+[ext_resource type="PackedScene" uid="uid://2erhvegnqb5x" path="res://EnvironmentObjects/Corners/corner_botright.tscn" id="3_dkoax"]
+[ext_resource type="PackedScene" uid="uid://lmnev5ju8xr5" path="res://EnvironmentObjects/floor.tscn" id="4_1regi"]
+[ext_resource type="PackedScene" uid="uid://d4hatb73l64kq" path="res://EnvironmentObjects/Corners/corner_topright.tscn" id="5_wcrwm"]
+[ext_resource type="PackedScene" uid="uid://bjpk2bi6o3e11" path="res://EnvironmentObjects/Corners/corner_topleft.tscn" id="6_iperd"]
+[ext_resource type="PackedScene" uid="uid://dtuqaxmqan3yl" path="res://EnvironmentObjects/ceiling.tscn" id="7_igp1p"]
+[ext_resource type="PackedScene" uid="uid://3eq3127egj60" path="res://EnvironmentObjects/Corners/corner_topleft_alt.tscn" id="8_oekfn"]
+[ext_resource type="PackedScene" uid="uid://clltymqf21sma" path="res://EnvironmentObjects/wall_alt.tscn" id="9_2lxmt"]
+[ext_resource type="PackedScene" uid="uid://bfgomdm1iea48" path="res://EnvironmentObjects/backdrop.tscn" id="10_xsqc4"]
+[ext_resource type="PackedScene" uid="uid://dicwlmcptdm66" path="res://InteractiveObjects/Upgrades/mush_upgrade.tscn" id="11_6jg0r"]
+[ext_resource type="PackedScene" uid="uid://dxkuqb7fmd5km" path="res://InteractiveObjects/respawn_point.tscn" id="12_xbwwl"]
+[ext_resource type="PackedScene" uid="uid://b1endk384q5ay" path="res://InteractiveObjects/absence_mesh.tscn" id="13_rqj8p"]
+[ext_resource type="PackedScene" uid="uid://lrk2cmcs8axw" path="res://InteractiveObjects/door.tscn" id="14_6h07q"]
+[ext_resource type="PackedScene" uid="uid://b17chvbgkobgt" path="res://InteractiveObjects/key.tscn" id="15_8yh26"]
+
+[node name="Level 37" type="Node2D"]
+
+[node name="ROOM" type="Node2D" parent="."]
+
+[node name="wall" parent="ROOM" instance=ExtResource("1_ef7wf")]
+position = Vector2(7, 84)
+scale = Vector2(1, 10)
+
+[node name="wall2" parent="ROOM" instance=ExtResource("1_ef7wf")]
+position = Vector2(413, 70)
+scale = Vector2(1, 8)
+
+[node name="wall4" parent="ROOM" instance=ExtResource("1_ef7wf")]
+position = Vector2(234, 69)
+scale = Vector2(1, 8)
+
+[node name="corner_botleft" parent="ROOM" instance=ExtResource("2_123ub")]
+position = Vector2(7, 161)
+
+[node name="corner_botright" parent="ROOM" instance=ExtResource("3_dkoax")]
+position = Vector2(413, 161)
+
+[node name="floor" parent="ROOM" instance=ExtResource("4_1regi")]
+position = Vector2(210, 161)
+scale = Vector2(28.0089, 1)
+
+[node name="corner_topright" parent="ROOM" instance=ExtResource("5_wcrwm")]
+position = Vector2(413, 7)
+
+[node name="corner_topleft" parent="ROOM" instance=ExtResource("6_iperd")]
+position = Vector2(7, 7)
+
+[node name="ceiling" parent="ROOM" instance=ExtResource("7_igp1p")]
+z_index = -2
+position = Vector2(210, 7)
+scale = Vector2(28, 1)
+
+[node name="corner_topleft2" parent="ROOM" instance=ExtResource("8_oekfn")]
+position = Vector2(64, 62)
+
+[node name="corner_botright2" parent="ROOM" instance=ExtResource("3_dkoax")]
+position = Vector2(148, 62)
+
+[node name="wall3" parent="ROOM" instance=ExtResource("9_2lxmt")]
+position = Vector2(64, 97)
+scale = Vector2(1, 4)
+
+[node name="wall5" parent="ROOM" instance=ExtResource("1_ef7wf")]
+position = Vector2(148, 34)
+scale = Vector2(1, 3)
+
+[node name="floor2" parent="ROOM" instance=ExtResource("4_1regi")]
+z_index = -1
+position = Vector2(106, 62)
+scale = Vector2(5, 1)
+
+[node name="corner_botright3" parent="ROOM" instance=ExtResource("3_dkoax")]
+position = Vector2(366, 87)
+
+[node name="wall6" parent="ROOM" instance=ExtResource("1_ef7wf")]
+position = Vector2(366, 47)
+scale = Vector2(1, 4.85)
+
+[node name="floor3" parent="ROOM" instance=ExtResource("4_1regi")]
+z_index = -1
+position = Vector2(324, 87)
+scale = Vector2(5, 1)
+
+[node name="backdrop" parent="ROOM" instance=ExtResource("10_xsqc4")]
+z_index = -5
+position = Vector2(210, 84)
+scale = Vector2(28, 10)
+
+[node name="OBJECTS" type="Node2D" parent="."]
+
+[node name="upgrade" parent="OBJECTS" instance=ExtResource("11_6jg0r")]
+position = Vector2(289, 20)
+rotation = 3.14159
+
+[node name="respawn_point" parent="." instance=ExtResource("12_xbwwl")]
+position = Vector2(24, 147)
+scale = Vector2(1, 2)
+metadata/ID = 37
+
+[node name="AbsenceMesh" parent="." instance=ExtResource("13_rqj8p")]
+visible = false
+
+[node name="door" parent="." instance=ExtResource("14_6h07q")]
+position = Vector2(413, 141)
+metadata/DOOR_TYPE = "locked"
+
+[node name="door2" parent="." instance=ExtResource("14_6h07q")]
+position = Vector2(234, 140.5)
+
+[node name="key" parent="." instance=ExtResource("15_8yh26")]
+position = Vector2(116, 35)

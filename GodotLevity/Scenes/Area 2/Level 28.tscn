@@ -100,7 +100,6 @@ position = Vector2(182, 133)
 position = Vector2(182, 147)
 
 [node name="hazard5" parent="OBJECTS" instance=ExtResource("9_k1xeh")]
-z_index = -2
 position = Vector2(50, 86)
 scale = Vector2(6, 1)
 

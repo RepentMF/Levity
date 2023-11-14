@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cusgyvkmix1mf"]
+[gd_scene load_steps=21 format=3 uid="uid://cusgyvkmix1mf"]
 
 [ext_resource type="PackedScene" uid="uid://dtcrduh7wvabh" path="res://InteractiveObjects/mush_player.tscn" id="1_8tp5k"]
 [ext_resource type="Script" path="res://Scenes/mush_camera.gd" id="2_woil2"]
@@ -19,11 +19,12 @@
 [ext_resource type="PackedScene" uid="uid://88mes1kl0u7p" path="res://Scenes/Area 2/Level 33.tscn" id="17_7w8a5"]
 [ext_resource type="PackedScene" uid="uid://caowlyy5hcvvx" path="res://Scenes/Area 2/Level 34.tscn" id="18_b234f"]
 [ext_resource type="PackedScene" uid="uid://d001gha73cmdn" path="res://Scenes/Area 2/Level 35.tscn" id="19_3u7j7"]
+[ext_resource type="PackedScene" uid="uid://8f0xty82g6r" path="res://Scenes/Area 2/Level 36.tscn" id="20_xldty"]
 
 [node name="Mid-Game Overworld" type="Node2D"]
 
 [node name="MUSH_Player" parent="." instance=ExtResource("1_8tp5k")]
-position = Vector2(1803, -185)
+position = Vector2(721, -87)
 floor_stop_on_slope = true
 metadata/PUSH_VALUE = 5
 
@@ -97,32 +98,38 @@ position = Vector2(-2099, 60)
 position = Vector2(-0.999939, 0)
 
 [node name="LM30" parent="Area 2" instance=ExtResource("5_xjeb8")]
-position = Vector2(-1682, 60)
+position = Vector2(-1683, 60)
 
 [node name="Level 30" parent="Area 2/LM30" instance=ExtResource("14_siyna")]
 position = Vector2(2, 0)
 
 [node name="LM31" parent="Area 2" instance=ExtResource("5_xjeb8")]
+position = Vector2(-1, 0)
 
 [node name="Level 31" parent="Area 2/LM31" instance=ExtResource("15_afxex")]
 position = Vector2(-1260, 60)
 
 [node name="LM32" parent="Area 2" instance=ExtResource("5_xjeb8")]
-position = Vector2(-840, -108)
+position = Vector2(-841, -108)
 
 [node name="Level 32" parent="Area 2/LM32" instance=ExtResource("16_26bap")]
 
 [node name="LM33" parent="Area 2" instance=ExtResource("5_xjeb8")]
-position = Vector2(-840, -444)
+position = Vector2(-841, -444)
 
 [node name="Level 33" parent="Area 2/LM33" instance=ExtResource("17_7w8a5")]
 
 [node name="LM34" parent="Area 2" instance=ExtResource("5_xjeb8")]
-position = Vector2(-672, -444)
+position = Vector2(-673, -444)
 
 [node name="Level 34" parent="Area 2/LM34" instance=ExtResource("18_b234f")]
 
 [node name="LM35" parent="Area 2" instance=ExtResource("5_xjeb8")]
-position = Vector2(-672, -108)
+position = Vector2(-673, -108)
 
 [node name="Level 35" parent="Area 2/LM35" instance=ExtResource("19_3u7j7")]
+
+[node name="LM36" parent="Area 2" instance=ExtResource("5_xjeb8")]
+position = Vector2(-504, 60)
+
+[node name="Level 36" parent="Area 2/LM36" instance=ExtResource("20_xldty")]

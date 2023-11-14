@@ -87,7 +87,6 @@ metadata/SIZE = 2
 position = Vector2(169, 105)
 
 [node name="hazard4" parent="OBJECTS" instance=ExtResource("9_buu6i")]
-z_index = -2
 position = Vector2(214, 147)
 scale = Vector2(24, 1)
 

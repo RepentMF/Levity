@@ -27,8 +27,8 @@ position = Vector2(7, 0)
 scale = Vector2(1, 22)
 
 [node name="wall2" parent="ROOM" instance=ExtResource("1_m8rry")]
-position = Vector2(161, 0)
-scale = Vector2(1, 22)
+position = Vector2(161, -14)
+scale = Vector2(1, 20)
 
 [node name="corner_botleft" parent="ROOM" instance=ExtResource("2_rho7x")]
 position = Vector2(7, 161)
@@ -103,8 +103,8 @@ scale = Vector2(1, 2)
 
 [node name="backdrop5" parent="ROOM" instance=ExtResource("8_bhfvu")]
 z_index = -1
-position = Vector2(21, 144.5)
-scale = Vector2(1, 1.35)
+position = Vector2(21, 137)
+scale = Vector2(1, 2.3)
 
 [node name="backdrop14" parent="ROOM" instance=ExtResource("8_bhfvu")]
 z_index = -1
@@ -203,12 +203,11 @@ rotation = 1.5708
 scale = Vector2(1, 1.05)
 
 [node name="door3" parent="." instance=ExtResource("14_mrly1")]
-position = Vector2(141, 329)
-rotation = 4.71239
+position = Vector2(161, 309)
 metadata/DOOR_TYPE = "locked"
 
 [node name="door5" parent="." instance=ExtResource("14_mrly1")]
-position = Vector2(140, 7)
+position = Vector2(141, 7)
 rotation = 4.71239
 
 [node name="upgrade" parent="." instance=ExtResource("15_ghbo1")]
@@ -216,4 +215,4 @@ position = Vector2(102, 220)
 rotation = -0.644027
 
 [node name="key" parent="." instance=ExtResource("15_jpw00")]
-position = Vector2(98, 270)
+position = Vector2(144, 181)
