@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dtcrduh7wvabh" path="res://InteractiveObjects/mush_player.tscn" id="1_0u0vg"]
 [ext_resource type="Script" path="res://Scenes/mush_camera.gd" id="2_joq11"]
-[ext_resource type="Script" path="res://Scenes/LevelManager.gd" id="3_8i40h"]
-[ext_resource type="PackedScene" uid="uid://c36s6a3qpu76n" path="res://Scenes/Area 3/Level 37.tscn" id="4_0v45u"]
+[ext_resource type="PackedScene" uid="uid://oaudt6fwpdxh" path="res://Scenes/LM00.tscn" id="3_tw8en"]
+[ext_resource type="PackedScene" uid="uid://cmmdylxcy6dbe" path="res://Scenes/Area 3/Level 38.tscn" id="4_61ork"]
 
 [node name="Mid-Game Overworld" type="Node2D"]
 
@@ -26,11 +26,10 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 script = ExtResource("2_joq11")
 
-[node name="Area 2" type="Node2D" parent="."]
+[node name="Area 3" type="Node2D" parent="."]
 position = Vector2(2344, -105)
 
-[node name="LM37" type="Node2D" parent="Area 2"]
-position = Vector2(-1680, -108)
-script = ExtResource("3_8i40h")
+[node name="LM38" parent="Area 3" instance=ExtResource("3_tw8en")]
+position = Vector2(-1827, -74)
 
-[node name="Level 37" parent="Area 2/LM37" instance=ExtResource("4_0v45u")]
+[node name="Level 38" parent="Area 3/LM38" instance=ExtResource("4_61ork")]

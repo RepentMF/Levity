@@ -46,7 +46,7 @@ position = Vector2(7, 7)
 
 [node name="ceiling" parent="ROOM" instance=ExtResource("7_551ea")]
 z_index = -2
-position = Vector2(225, 7)
+position = Vector2(224, 7)
 scale = Vector2(26, 1)
 
 [node name="backdrop" parent="ROOM" instance=ExtResource("8_oj2cf")]

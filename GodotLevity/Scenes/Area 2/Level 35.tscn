@@ -198,10 +198,9 @@ scale = Vector2(2, 2)
 metadata/ID = 35
 
 [node name="AbsenceMesh" parent="." instance=ExtResource("13_cn3ok")]
-visible = false
-position = Vector2(176, -83)
+position = Vector2(167.42, 0)
 rotation = 1.5708
-scale = Vector2(1, 1.05)
+scale = Vector2(0.9, 1.1)
 
 [node name="door3" parent="." instance=ExtResource("14_mrly1")]
 position = Vector2(161, 309)
