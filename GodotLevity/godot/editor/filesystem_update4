@@ -1,13 +1,8 @@
-res://Scenes/overworld2.tscn
+res://Scenes/Area 2/Level 35.tscn
 res://InteractiveObjects/absence_mesh.gd
 res://InteractiveObjects/box.gd
 res://InteractiveObjects/hazard.gd
 res://Scenes/LevelManager.gd
-res://Scenes/Area 2/Level 35.tscn
-res://Scenes/Area 2/Level 36.tscn
-res://InteractiveObjects/mush_player.gd
-res://Scenes/Area 2/Level 28.tscn
-res://Scenes/Area 2/Level 27.tscn
-res://Scenes/Area 2/Level 29.tscn
-res://Scenes/overworld3.tscn
 res://Scenes/Area 3/Level 37.tscn
+res://Scenes/overworld3.tscn
+res://InteractiveObjects/mush_player.gd

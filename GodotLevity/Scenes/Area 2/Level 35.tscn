@@ -38,8 +38,8 @@ position = Vector2(161, 161)
 
 [node name="floor" parent="ROOM" instance=ExtResource("4_qptmq")]
 z_index = -1
-position = Vector2(70, 161)
-scale = Vector2(8, 1)
+position = Vector2(84, 161)
+scale = Vector2(10, 1)
 
 [node name="corner_topright" parent="ROOM" instance=ExtResource("5_nqyx6")]
 position = Vector2(161, -161)
@@ -198,6 +198,7 @@ scale = Vector2(2, 2)
 metadata/ID = 35
 
 [node name="AbsenceMesh" parent="." instance=ExtResource("13_cn3ok")]
+visible = false
 position = Vector2(176, -83)
 rotation = 1.5708
 scale = Vector2(1, 1.05)
