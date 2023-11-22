@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bjpk2bi6o3e11" path="res://EnvironmentObjects/Corners/corner_topleft.tscn" id="6_eqfxu"]
 [ext_resource type="PackedScene" uid="uid://dtuqaxmqan3yl" path="res://EnvironmentObjects/ceiling.tscn" id="7_0lohe"]
 [ext_resource type="PackedScene" uid="uid://bfgomdm1iea48" path="res://EnvironmentObjects/backdrop.tscn" id="9_w5oua"]
-[ext_resource type="PackedScene" uid="uid://bvicpctx08p3y" path="res://InteractiveObjects/hazard2.tscn" id="10_enwl0"]
 [ext_resource type="PackedScene" uid="uid://cquqgrf8e1kse" path="res://InteractiveObjects/teleporter.tscn" id="12_3nq3d"]
 [ext_resource type="PackedScene" uid="uid://lrk2cmcs8axw" path="res://InteractiveObjects/door.tscn" id="12_tu7si"]
+[ext_resource type="PackedScene" uid="uid://cv3oit3cchkt2" path="res://InteractiveObjects/bounce.tscn" id="13_rrra4"]
 [ext_resource type="PackedScene" uid="uid://dxkuqb7fmd5km" path="res://InteractiveObjects/respawn_point.tscn" id="14_3egrd"]
 [ext_resource type="PackedScene" uid="uid://b1endk384q5ay" path="res://InteractiveObjects/absence_mesh.tscn" id="15_qq6j8"]
 
@@ -21,6 +21,10 @@
 [node name="wall" parent="ROOM" instance=ExtResource("1_q6wwa")]
 position = Vector2(7, 84)
 scale = Vector2(1, 10)
+
+[node name="wall3" parent="ROOM" instance=ExtResource("1_q6wwa")]
+position = Vector2(210, 113)
+scale = Vector2(1, 6)
 
 [node name="wall2" parent="ROOM" instance=ExtResource("1_q6wwa")]
 position = Vector2(413, 70)
@@ -33,6 +37,7 @@ position = Vector2(7, 161)
 position = Vector2(413, 161)
 
 [node name="floor" parent="ROOM" instance=ExtResource("4_v5dpc")]
+z_index = -1
 position = Vector2(210, 161)
 scale = Vector2(28.0089, 1)
 
@@ -64,9 +69,13 @@ position = Vector2(278, 147)
 [node name="door2" parent="OBJECTS" instance=ExtResource("12_tu7si")]
 position = Vector2(413, 140)
 
-[node name="hazard" parent="OBJECTS" instance=ExtResource("10_enwl0")]
-position = Vector2(210, 147)
-scale = Vector2(10, 1)
+[node name="bounce" parent="OBJECTS" instance=ExtResource("13_rrra4")]
+position = Vector2(183, 138)
+metadata/BOUNCE_SPEED = -300.0
+
+[node name="bounce2" parent="OBJECTS" instance=ExtResource("13_rrra4")]
+position = Vector2(238, 138)
+metadata/BOUNCE_SPEED = -300.0
 
 [node name="respawn_point" parent="." instance=ExtResource("14_3egrd")]
 position = Vector2(37, 147)
@@ -74,7 +83,6 @@ scale = Vector2(2, 2)
 metadata/ID = 38
 
 [node name="AbsenceMesh" parent="." instance=ExtResource("15_qq6j8")]
-visible = false
 
 [node name="teleporter" parent="." instance=ExtResource("12_3nq3d")]
 position = Vector2(37, 40)
