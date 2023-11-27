@@ -43,15 +43,19 @@ func _process(delta):
 	pass
 	
 func _on_area_entered(area):
-	# If this teleporter is colliding with the player
+	# If this bounce is colliding with the player
 	if area.owner.name == "MUSH_Player":
 		if area.owner.isUpsideDown:
 			area.owner.velocity.y = -BOUNCE_SPEED
 		else:
 			area.owner.velocity.y = BOUNCE_SPEED
 			
-		# If this telporter is a gravity trigger
+		# If this bounce is a gravity trigger
 		if GRAVITY_TRIGGER:
 			# Change the player's gravity
 			area.owner._change_gravity()
+		
+		# If the player does not have full wall jump amount
+		if area.owner.currentWalljumpCount != 0:
+			area.owner.currentWalljumpCount = 0
 	pass

@@ -22,7 +22,7 @@ var currentPowerLevel = 0
 var currentRespawnPoint = 0
 var currentWalljumpCount = 0
 var jumpVelocity = -200.0
-var maxWallJumpCount = 2
+var maxWalljumpCount = 2
 var maxPowerLevel = 0
 var speed = 125.0
 var walljumpDirection = 0
@@ -105,7 +105,7 @@ func _physics_process(delta):
 		# Handle Jump or Walljump
 		if Input.is_action_just_pressed("ui_accept") && (is_on_floor() || is_on_ceiling()):
 			velocity.y = jumpVelocity
-		elif Input.is_action_just_pressed("ui_accept") && is_on_wall() && currentWalljumpCount < maxWallJumpCount:
+		elif Input.is_action_just_pressed("ui_accept") && is_on_wall() && currentWalljumpCount < maxWalljumpCount:
 			velocity.y = jumpVelocity
 			isWalljumping = true
 			currentWalljumpCount += 1
