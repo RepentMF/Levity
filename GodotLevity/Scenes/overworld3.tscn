@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://n08lwqufasrk"]
+[gd_scene load_steps=13 format=3 uid="uid://n08lwqufasrk"]
 
 [ext_resource type="PackedScene" uid="uid://dtcrduh7wvabh" path="res://InteractiveObjects/mush_player.tscn" id="1_0u0vg"]
 [ext_resource type="Script" path="res://Scenes/mush_camera.gd" id="2_joq11"]
@@ -8,11 +8,15 @@
 [ext_resource type="PackedScene" uid="uid://dhvwvse42cijm" path="res://Scenes/Area 3/Level 40.tscn" id="6_s1tvc"]
 [ext_resource type="PackedScene" uid="uid://dfd0t1wun8xsd" path="res://Scenes/Area 3/Level 41.tscn" id="7_b76ii"]
 [ext_resource type="PackedScene" uid="uid://b7iwdjfj2e6w8" path="res://Scenes/Area 3/Level 42.tscn" id="8_xl64u"]
+[ext_resource type="PackedScene" uid="uid://8v8t76ydqt1d" path="res://Scenes/Area 3/Level 43.tscn" id="9_ob6og"]
+[ext_resource type="PackedScene" uid="uid://bew15mujl2pep" path="res://Scenes/Area 3/Level 44.tscn" id="10_hl85t"]
+[ext_resource type="PackedScene" uid="uid://dl0f1oj3j78cs" path="res://Scenes/Area 3/Level 45.tscn" id="11_f6uhc"]
+[ext_resource type="PackedScene" uid="uid://cmmaaej47tusl" path="res://Scenes/Area 3/Level 46.tscn" id="12_2vdim"]
 
 [node name="Mid-Game Overworld" type="Node2D"]
 
 [node name="MUSH_Player" parent="." instance=ExtResource("1_0u0vg")]
-position = Vector2(554, -39)
+position = Vector2(1257, -427)
 floor_stop_on_slope = true
 metadata/PUSH_VALUE = 5
 
@@ -57,3 +61,24 @@ position = Vector2(-567, -74)
 position = Vector2(-147, -74)
 
 [node name="Level 42" parent="Area 3/LM42" instance=ExtResource("8_xl64u")]
+
+[node name="LM43" parent="Area 3" instance=ExtResource("3_tw8en")]
+position = Vector2(-147, -242)
+
+[node name="Level 43" parent="Area 3/LM43" instance=ExtResource("9_ob6og")]
+
+[node name="LM44" parent="Area 3" instance=ExtResource("3_tw8en")]
+position = Vector2(-567, -242)
+
+[node name="Level 44" parent="Area 3/LM44" instance=ExtResource("10_hl85t")]
+
+[node name="LM45" parent="Area 3" instance=ExtResource("3_tw8en")]
+position = Vector2(-987, -242)
+
+[node name="Level 45" parent="Area 3/LM45" instance=ExtResource("11_f6uhc")]
+
+[node name="LM46" parent="Area 3" instance=ExtResource("3_tw8en")]
+position = Vector2(-1155, -411)
+
+[node name="Level 46" parent="Area 3/LM46" instance=ExtResource("12_2vdim")]
+position = Vector2(0, 1)

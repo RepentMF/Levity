@@ -101,4 +101,3 @@ scale = Vector2(2, 2)
 metadata/ID = 41
 
 [node name="AbsenceMesh" parent="." instance=ExtResource("13_dr455")]
-visible = false
