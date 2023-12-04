@@ -29,6 +29,8 @@ func _process(delta):
 			player.isDead = false
 			player.hasReset = false
 			player.hasKey = false
+			if !RESPAWN_GRAVITY == player.isUpsideDown:
+				player._change_gravity()
 			
 			if level.count == 0:
 				player.animatedSprite2D.visible = true

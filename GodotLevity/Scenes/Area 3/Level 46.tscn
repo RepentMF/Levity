@@ -1,39 +1,64 @@
-[gd_scene load_steps=16 format=3 uid="uid://cmmaaej47tusl"]
+[gd_scene load_steps=21 format=3 uid="uid://cmmaaej47tusl"]
 
+[ext_resource type="PackedScene" uid="uid://byxuvd3osyqwt" path="res://EnvironmentObjects/wall_alt2.tscn" id="1_78ttq"]
 [ext_resource type="PackedScene" uid="uid://ccj2w7kss300h" path="res://EnvironmentObjects/wall.tscn" id="1_uwxfe"]
 [ext_resource type="PackedScene" uid="uid://cr0mq40qfhyup" path="res://EnvironmentObjects/Corners/corner_botleft.tscn" id="2_vo3ue"]
 [ext_resource type="PackedScene" uid="uid://2erhvegnqb5x" path="res://EnvironmentObjects/Corners/corner_botright.tscn" id="3_ul4m0"]
 [ext_resource type="PackedScene" uid="uid://lmnev5ju8xr5" path="res://EnvironmentObjects/floor.tscn" id="4_v675o"]
 [ext_resource type="PackedScene" uid="uid://d4hatb73l64kq" path="res://EnvironmentObjects/Corners/corner_topright.tscn" id="5_2w62b"]
-[ext_resource type="PackedScene" uid="uid://bjpk2bi6o3e11" path="res://EnvironmentObjects/Corners/corner_topleft.tscn" id="6_isltc"]
+[ext_resource type="PackedScene" uid="uid://c6m8m3hv7i4aw" path="res://EnvironmentObjects/Corners/corner_connector2.tscn" id="5_wuxrc"]
+[ext_resource type="PackedScene" uid="uid://crpv6dnd14qdl" path="res://EnvironmentObjects/wall_alt3.tscn" id="6_cr43a"]
 [ext_resource type="PackedScene" uid="uid://dtuqaxmqan3yl" path="res://EnvironmentObjects/ceiling.tscn" id="7_5w7ox"]
 [ext_resource type="PackedScene" uid="uid://bfgomdm1iea48" path="res://EnvironmentObjects/backdrop.tscn" id="8_4pe3k"]
 [ext_resource type="PackedScene" uid="uid://vpi1v7x7tptd" path="res://InteractiveObjects/wooden_box.tscn" id="9_6q4mr"]
 [ext_resource type="PackedScene" uid="uid://bvicpctx08p3y" path="res://InteractiveObjects/hazard2.tscn" id="11_a57p6"]
 [ext_resource type="PackedScene" uid="uid://dmg88tbrm61hf" path="res://InteractiveObjects/switch.tscn" id="11_gejeu"]
+[ext_resource type="PackedScene" uid="uid://cv3oit3cchkt2" path="res://InteractiveObjects/bounce.tscn" id="11_ho4q6"]
 [ext_resource type="PackedScene" uid="uid://dxkuqb7fmd5km" path="res://InteractiveObjects/respawn_point.tscn" id="12_bbhqd"]
 [ext_resource type="PackedScene" uid="uid://b1endk384q5ay" path="res://InteractiveObjects/absence_mesh.tscn" id="13_5so4o"]
 [ext_resource type="PackedScene" uid="uid://lrk2cmcs8axw" path="res://InteractiveObjects/door.tscn" id="14_28lf0"]
 [ext_resource type="PackedScene" uid="uid://e2ybeyj8lsy8" path="res://InteractiveObjects/gravity_zone.tscn" id="15_dmdtd"]
+[ext_resource type="PackedScene" uid="uid://fuehrtn52u1j" path="res://EnvironmentObjects/Corners/corner_connector1.tscn" id="17_thy64"]
+[ext_resource type="PackedScene" uid="uid://dicwlmcptdm66" path="res://InteractiveObjects/Upgrades/mush_upgrade.tscn" id="20_q75vy"]
 
-[node name="Level 32" type="Node2D"]
+[node name="Level 46" type="Node2D"]
 
 [node name="ROOM" type="Node2D" parent="."]
 position = Vector2(0, 168)
 
+[node name="wall3" parent="ROOM" instance=ExtResource("1_78ttq")]
+position = Vector2(-35, -264)
+scale = Vector2(1, 14)
+
+[node name="wall4" parent="ROOM" instance=ExtResource("1_78ttq")]
+position = Vector2(-58, -369)
+rotation = 1.5708
+scale = Vector2(1, 2.5)
+
 [node name="wall" parent="ROOM" instance=ExtResource("1_uwxfe")]
-position = Vector2(-81, 0)
-scale = Vector2(1, 22)
+position = Vector2(-81, -98)
+scale = Vector2(1, 36.5)
 
 [node name="wall2" parent="ROOM" instance=ExtResource("1_uwxfe")]
-position = Vector2(161, -14)
-scale = Vector2(1, 20)
+position = Vector2(161, 0)
+scale = Vector2(1, 18)
 
 [node name="corner_botleft" parent="ROOM" instance=ExtResource("2_vo3ue")]
 position = Vector2(-81, 161)
 
 [node name="corner_botright" parent="ROOM" instance=ExtResource("3_ul4m0")]
 position = Vector2(161, 161)
+
+[node name="corner_topleft3" parent="ROOM" instance=ExtResource("5_wuxrc")]
+position = Vector2(-35, -369)
+rotation = 3.14159
+
+[node name="corner_topleft4" parent="ROOM" instance=ExtResource("5_wuxrc")]
+position = Vector2(-81, -369)
+rotation = 1.5708
+
+[node name="wall5" parent="ROOM" instance=ExtResource("6_cr43a")]
+position = Vector2(-81, -355)
 
 [node name="floor" parent="ROOM" instance=ExtResource("4_v675o")]
 z_index = -1
@@ -43,13 +68,13 @@ scale = Vector2(17, 1)
 [node name="corner_topright" parent="ROOM" instance=ExtResource("5_2w62b")]
 position = Vector2(161, -161)
 
-[node name="corner_topleft" parent="ROOM" instance=ExtResource("6_isltc")]
-position = Vector2(-81, -161)
-
 [node name="ceiling" parent="ROOM" instance=ExtResource("7_5w7ox")]
 z_index = -2
-position = Vector2(56, -161)
-scale = Vector2(14, 1)
+position = Vector2(63, -161)
+scale = Vector2(13, 1)
+
+[node name="corner_topleft2" parent="ROOM" instance=ExtResource("17_thy64")]
+position = Vector2(-35, -161)
 
 [node name="backdrop" parent="ROOM" instance=ExtResource("8_4pe3k")]
 z_index = -5
@@ -57,27 +82,89 @@ position = Vector2(41, 0)
 rotation = 1.5708
 scale = Vector2(23, 17)
 
+[node name="backdrop2" parent="ROOM" instance=ExtResource("8_4pe3k")]
+z_index = -5
+position = Vector2(-57, -260)
+rotation = 1.5708
+scale = Vector2(14.6063, 4.05525)
+
 [node name="backdrop4" parent="ROOM" instance=ExtResource("8_4pe3k")]
 z_index = -1
-position = Vector2(21, -144.5)
+position = Vector2(103, 144)
 scale = Vector2(1, 1.35)
 
 [node name="backdrop5" parent="ROOM" instance=ExtResource("8_4pe3k")]
 z_index = -1
-position = Vector2(49, 147)
+position = Vector2(-9, 147)
 rotation = 1.5708
+
+[node name="backdrop6" parent="ROOM" instance=ExtResource("8_4pe3k")]
+z_index = -1
+position = Vector2(-67, 149.24)
+rotation = 1.5708
+scale = Vector2(0.675, 1)
+
+[node name="backdrop7" parent="ROOM" instance=ExtResource("8_4pe3k")]
+z_index = -1
+position = Vector2(-67, -159)
+rotation = 1.5708
+scale = Vector2(2, 1)
 
 [node name="OBJECTS" type="Node2D" parent="."]
 position = Vector2(1, 168)
 
 [node name="hazard5" parent="OBJECTS" instance=ExtResource("11_a57p6")]
-position = Vector2(-187, 0)
+position = Vector2(46, 147)
 scale = Vector2(8, 1)
+
+[node name="hazard7" parent="OBJECTS" instance=ExtResource("11_a57p6")]
+position = Vector2(-68, 0)
+rotation = 1.5708
+scale = Vector2(24, 1)
+
+[node name="hazard6" parent="OBJECTS" instance=ExtResource("11_a57p6")]
+position = Vector2(107, 60)
 
 [node name="wooden_box" parent="OBJECTS" instance=ExtResource("9_6q4mr")]
 position = Vector2(-17, 128)
 scale = Vector2(2, 2)
 metadata/SIZE = 2
+
+[node name="bounce" parent="OBJECTS" instance=ExtResource("11_ho4q6")]
+position = Vector2(107, 139)
+
+[node name="bounce3" parent="OBJECTS" instance=ExtResource("11_ho4q6")]
+position = Vector2(107, 41)
+
+[node name="hazard8" parent="OBJECTS" instance=ExtResource("11_a57p6")]
+position = Vector2(33, 28)
+
+[node name="hazard11" parent="OBJECTS" instance=ExtResource("11_a57p6")]
+position = Vector2(46, 15)
+
+[node name="hazard13" parent="OBJECTS" instance=ExtResource("11_a57p6")]
+position = Vector2(126, -74)
+
+[node name="hazard12" parent="OBJECTS" instance=ExtResource("11_a57p6")]
+position = Vector2(139, -61)
+
+[node name="bounce2" parent="OBJECTS" instance=ExtResource("11_ho4q6")]
+position = Vector2(33, 107)
+
+[node name="bounce5" parent="OBJECTS" instance=ExtResource("11_ho4q6")]
+position = Vector2(33, 9)
+
+[node name="hazard9" parent="OBJECTS" instance=ExtResource("11_a57p6")]
+position = Vector2(75, -116)
+
+[node name="bounce4" parent="OBJECTS" instance=ExtResource("11_ho4q6")]
+position = Vector2(75, -37)
+
+[node name="bounce6" parent="OBJECTS" instance=ExtResource("11_ho4q6")]
+position = Vector2(75, -135)
+
+[node name="bounce7" parent="OBJECTS" instance=ExtResource("11_ho4q6")]
+position = Vector2(139, -80)
 
 [node name="switch" parent="." instance=ExtResource("11_gejeu")]
 position = Vector2(-16, 316)
@@ -93,16 +180,15 @@ metadata/SWITCH_TYPE = "wooden"
 [node name="respawn_point" parent="." instance=ExtResource("12_bbhqd")]
 position = Vector2(135, 315)
 scale = Vector2(2, 2)
-metadata/ID = 32
+metadata/ID = 46
 
 [node name="AbsenceMesh" parent="." instance=ExtResource("13_5so4o")]
-visible = false
-position = Vector2(170, 0)
+position = Vector2(167.655, -207.63)
 rotation = 1.5708
-scale = Vector2(1, 1.05)
+scale = Vector2(1.295, 1.595)
 
 [node name="door3" parent="." instance=ExtResource("14_28lf0")]
-position = Vector2(203, 48)
+position = Vector2(161, 29)
 
 [node name="door4" parent="." instance=ExtResource("14_28lf0")]
 position = Vector2(161, 308)
@@ -110,3 +196,6 @@ position = Vector2(161, 308)
 [node name="gravity_zone" parent="." instance=ExtResource("15_dmdtd")]
 position = Vector2(41, 168)
 scale = Vector2(12, 16)
+
+[node name="upgrade" parent="." instance=ExtResource("20_q75vy")]
+position = Vector2(-57, -176)

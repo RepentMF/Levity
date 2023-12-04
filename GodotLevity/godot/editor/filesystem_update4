@@ -3,9 +3,7 @@ res://InteractiveObjects/absence_mesh.gd
 res://InteractiveObjects/box.gd
 res://InteractiveObjects/hazard.gd
 res://Scenes/LevelManager.gd
-res://Scenes/Area 3/Level 41.tscn
-res://Scenes/Area 3/Level 43.tscn
-res://Scenes/Area 3/Level 42.tscn
-res://Scenes/Area 3/Level 44.tscn
-res://Scenes/Area 3/Level 45.tscn
 res://Scenes/Area 3/Level 46.tscn
+res://Scenes/Area 3/Level 45.tscn
+res://Scenes/Area 3/Level 47.tscn
+res://InteractiveObjects/bounce.tscn

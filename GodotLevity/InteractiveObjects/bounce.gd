@@ -35,6 +35,9 @@ func _ready():
 	MOVE_TIMER = get_meta("MOVE_TIMER")
 	SPEED = get_meta("SPEED")
 	BOUNCE_SPEED = get_meta("BOUNCE_SPEED")
+	
+	if GRAVITY_TRIGGER:
+		get_node("small_light").color = Color(0, 1, 0, 1)
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
