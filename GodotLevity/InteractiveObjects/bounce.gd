@@ -1,15 +1,22 @@
 extends Area2D
 
 # Booleans
+var DISPLAY
 var GRAVITY_TRIGGER
 var MOVE_OBJECT
+var firstPass
 
 # Floats
+var FINAL_POSX
+var FINAL_POSY
 var INIT_MOVE_TIMER
+var INIT_POSX
+var INIT_POSY
 var MOVE_TIMER
 
 # Integers
 var BOUNCE_SPEED
+var count = 0
 
 # Vector2s
 var DIRECTION
@@ -17,17 +24,30 @@ var SPEED
 
 func _move_object(delta):
 	if MOVE_OBJECT:
-		if MOVE_TIMER > 0:
+		if MOVE_TIMER > 0 && !firstPass:
 			position.x += (SPEED.x * DIRECTION.x)
 			position.y += (SPEED.y * DIRECTION.y)
 			MOVE_TIMER -= delta
-		elif MOVE_TIMER <= 0:
+		elif MOVE_TIMER <= 0 && !firstPass:
 			DIRECTION *= -1
-			MOVE_TIMER = INIT_MOVE_TIMER
+			firstPass = true
+			FINAL_POSX = position.x
+			FINAL_POSY = position.y
+		if firstPass:
+			if position.x > FINAL_POSX && DIRECTION.x == 1:
+				DIRECTION *= -1
+			elif position.x < INIT_POSX && DIRECTION.x == -1:
+				DIRECTION *= -1
+			else:
+				position.x += (SPEED.x * DIRECTION.x)
+				position.y += (SPEED.y * DIRECTION.y)
+		if DISPLAY:
+			print(sign(SPEED.x), " ", SPEED.x)
 	pass
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	DISPLAY = get_meta("DISPLAY")
 	GRAVITY_TRIGGER = get_meta("GRAVITY_TRIGGER")
 	MOVE_OBJECT = get_meta("MOVE_OBJECT")
 	DIRECTION = get_meta("DIRECTION")
@@ -35,6 +55,10 @@ func _ready():
 	MOVE_TIMER = get_meta("MOVE_TIMER")
 	SPEED = get_meta("SPEED")
 	BOUNCE_SPEED = get_meta("BOUNCE_SPEED")
+	INIT_POSX = position.x
+	INIT_POSY = position.y
+	
+	firstPass = false
 	
 	if GRAVITY_TRIGGER:
 		get_node("small_light").color = Color(0, 1, 0, 1)

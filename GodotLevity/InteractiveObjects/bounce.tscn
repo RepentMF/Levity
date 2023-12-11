@@ -12,9 +12,10 @@ script = ExtResource("1_0tdxu")
 metadata/GRAVITY_TRIGGER = false
 metadata/BOUNCE_SPEED = -400.0
 metadata/MOVE_OBJECT = false
-metadata/MOVE_TIMER = 0.0
 metadata/DIRECTION = Vector2(0, 0)
 metadata/SPEED = Vector2(0, 0)
+metadata/MOVE_TIMER = 0.0
+metadata/DISPLAY = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 3

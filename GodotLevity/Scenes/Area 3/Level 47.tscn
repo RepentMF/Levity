@@ -70,8 +70,7 @@ position = Vector2(299, 147)
 [node name="OBJECTS" type="Node2D" parent="."]
 
 [node name="door2" parent="OBJECTS" instance=ExtResource("9_nvk6y")]
-position = Vector2(413, 27)
-rotation = 3.14159
+position = Vector2(413, 29)
 
 [node name="door3" parent="OBJECTS" instance=ExtResource("9_nvk6y")]
 position = Vector2(7, 29)
@@ -80,17 +79,11 @@ position = Vector2(7, 29)
 position = Vector2(195, 147)
 scale = Vector2(16, 1)
 
-[node name="hazard6" parent="OBJECTS" instance=ExtResource("10_3iqsd")]
-position = Vector2(226, 21)
-
 [node name="hazard8" parent="OBJECTS" instance=ExtResource("10_3iqsd")]
 position = Vector2(110, 21)
 
 [node name="hazard7" parent="OBJECTS" instance=ExtResource("10_3iqsd")]
 position = Vector2(251, 78)
-
-[node name="hazard4" parent="OBJECTS" instance=ExtResource("10_3iqsd")]
-position = Vector2(195, 78)
 
 [node name="hazard5" parent="OBJECTS" instance=ExtResource("10_3iqsd")]
 position = Vector2(135, 78)
@@ -99,18 +92,21 @@ position = Vector2(135, 78)
 position = Vector2(110, 124)
 metadata/BOUNCE_SPEED = -300.0
 
-[node name="bounce2" parent="OBJECTS" instance=ExtResource("11_kq1oc")]
-position = Vector2(171, 124)
-metadata/BOUNCE_SPEED = -300.0
-metadata/MOVE_OBJECT = true
-metadata/MOVE_TIMER = 2.0
-metadata/DIRECTION = Vector2(1, 0)
-metadata/SPEED = Vector2(0.05, 0)
-
 [node name="bounce5" parent="OBJECTS" instance=ExtResource("11_kq1oc")]
 position = Vector2(284, 124)
-metadata/GRAVITY_TRIGGER = true
 metadata/BOUNCE_SPEED = -300.0
+
+[node name="bounce6" parent="OBJECTS" instance=ExtResource("11_kq1oc")]
+position = Vector2(390, 124)
+metadata/BOUNCE_SPEED = -300.0
+
+[node name="bounce2" parent="OBJECTS" instance=ExtResource("11_kq1oc")]
+position = Vector2(163, 124)
+metadata/BOUNCE_SPEED = -300.0
+metadata/MOVE_OBJECT = true
+metadata/DIRECTION = Vector2(1, 0)
+metadata/SPEED = Vector2(0.1, 0)
+metadata/MOVE_TIMER = 2.25
 
 [node name="respawn_point" parent="." instance=ExtResource("12_4ijtr")]
 position = Vector2(34, 35)

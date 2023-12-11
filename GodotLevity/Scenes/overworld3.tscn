@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://n08lwqufasrk"]
+[gd_scene load_steps=19 format=3 uid="uid://n08lwqufasrk"]
 
 [ext_resource type="PackedScene" uid="uid://dtcrduh7wvabh" path="res://InteractiveObjects/mush_player.tscn" id="1_0u0vg"]
 [ext_resource type="Script" path="res://Scenes/mush_camera.gd" id="2_joq11"]
@@ -13,11 +13,16 @@
 [ext_resource type="PackedScene" uid="uid://dl0f1oj3j78cs" path="res://Scenes/Area 3/Level 45.tscn" id="11_f6uhc"]
 [ext_resource type="PackedScene" uid="uid://cmmaaej47tusl" path="res://Scenes/Area 3/Level 46.tscn" id="12_2vdim"]
 [ext_resource type="PackedScene" uid="uid://co5pas40m5ue1" path="res://Scenes/Area 3/Level 47.tscn" id="13_p4j8d"]
+[ext_resource type="PackedScene" uid="uid://b4i1sxf88rn14" path="res://Scenes/Area 3/Level 48.tscn" id="14_6n23s"]
+[ext_resource type="PackedScene" uid="uid://b6khx8c1lut3a" path="res://Scenes/Area 3/Level 49.tscn" id="15_xnayp"]
+[ext_resource type="PackedScene" uid="uid://01epx45qf58p" path="res://Scenes/Area 3/Level 50.tscn" id="16_noh1u"]
+[ext_resource type="PackedScene" uid="uid://b67ae0ximrmfm" path="res://Scenes/Area 3/Level 51.tscn" id="17_xdsr4"]
+[ext_resource type="PackedScene" uid="uid://ch8olx3smkw4u" path="res://Scenes/Area 3/Level 52.tscn" id="18_l5vfk"]
 
 [node name="Mid-Game Overworld" type="Node2D"]
 
 [node name="MUSH_Player" parent="." instance=ExtResource("1_0u0vg")]
-position = Vector2(1329, -482)
+position = Vector2(3491, -487)
 floor_stop_on_slope = true
 metadata/PUSH_VALUE = 5
 
@@ -88,3 +93,28 @@ position = Vector2(0, 1)
 position = Vector2(-987, -410)
 
 [node name="Level 47" parent="Area 3/LM47" instance=ExtResource("13_p4j8d")]
+
+[node name="LM48" parent="Area 3" instance=ExtResource("3_tw8en")]
+position = Vector2(-567, -410)
+
+[node name="Level 48" parent="Area 3/LM48" instance=ExtResource("14_6n23s")]
+
+[node name="LM49" parent="Area 3" instance=ExtResource("3_tw8en")]
+position = Vector2(-147, -410)
+
+[node name="Level 49" parent="Area 3/LM49" instance=ExtResource("15_xnayp")]
+
+[node name="LM50" parent="Area 3" instance=ExtResource("3_tw8en")]
+position = Vector2(273, -410)
+
+[node name="Level 50" parent="Area 3/LM50" instance=ExtResource("16_noh1u")]
+
+[node name="LM51" parent="Area 3" instance=ExtResource("3_tw8en")]
+position = Vector2(693, -410)
+
+[node name="Level 51" parent="Area 3/LM51" instance=ExtResource("17_xdsr4")]
+
+[node name="LM52" parent="Area 3" instance=ExtResource("3_tw8en")]
+position = Vector2(1113, -410)
+
+[node name="Level 52" parent="Area 3/LM52" instance=ExtResource("18_l5vfk")]

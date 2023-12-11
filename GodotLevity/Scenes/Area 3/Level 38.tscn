@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cmmdylxcy6dbe"]
+[gd_scene load_steps=15 format=3 uid="uid://cmmdylxcy6dbe"]
 
 [ext_resource type="PackedScene" uid="uid://ccj2w7kss300h" path="res://EnvironmentObjects/wall.tscn" id="1_q6wwa"]
 [ext_resource type="PackedScene" uid="uid://cr0mq40qfhyup" path="res://EnvironmentObjects/Corners/corner_botleft.tscn" id="2_lv48c"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://lrk2cmcs8axw" path="res://InteractiveObjects/door.tscn" id="12_tu7si"]
 [ext_resource type="PackedScene" uid="uid://cv3oit3cchkt2" path="res://InteractiveObjects/bounce.tscn" id="13_rrra4"]
 [ext_resource type="PackedScene" uid="uid://dxkuqb7fmd5km" path="res://InteractiveObjects/respawn_point.tscn" id="14_3egrd"]
+[ext_resource type="PackedScene" uid="uid://vpi1v7x7tptd" path="res://InteractiveObjects/wooden_box.tscn" id="14_472t7"]
 [ext_resource type="PackedScene" uid="uid://b1endk384q5ay" path="res://InteractiveObjects/absence_mesh.tscn" id="15_qq6j8"]
 
 [node name="Level 38" type="Node2D"]
@@ -70,12 +71,15 @@ position = Vector2(278, 147)
 position = Vector2(413, 140)
 
 [node name="bounce" parent="OBJECTS" instance=ExtResource("13_rrra4")]
-position = Vector2(183, 138)
-metadata/BOUNCE_SPEED = -300.0
+position = Vector2(146, 60)
+metadata/BOUNCE_SPEED = -150.0
 
 [node name="bounce2" parent="OBJECTS" instance=ExtResource("13_rrra4")]
 position = Vector2(238, 138)
 metadata/BOUNCE_SPEED = -300.0
+
+[node name="wooden_box" parent="OBJECTS" instance=ExtResource("14_472t7")]
+position = Vector2(69, 147)
 
 [node name="respawn_point" parent="." instance=ExtResource("14_3egrd")]
 position = Vector2(37, 147)
