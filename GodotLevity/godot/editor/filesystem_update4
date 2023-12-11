@@ -1,13 +1,6 @@
-res://Scenes/overworld3.tscn
+res://Scenes/Area 4/Level 53.tscn
 res://InteractiveObjects/absence_mesh.gd
 res://InteractiveObjects/box.gd
 res://InteractiveObjects/hazard.gd
 res://Scenes/LevelManager.gd
-res://Scenes/Area 3/Level 50.tscn
-res://Scenes/Area 3/Level 51.tscn
-res://Scenes/Area 3/Level 49.tscn
-res://InteractiveObjects/bounce.tscn
-res://Scenes/Area 3/Level 48.tscn
-res://Scenes/Area 3/Level 52.tscn
-res://Scenes/Area 3/Level 38.tscn
-res://Scenes/Area 3/Level 47.tscn
+res://Scenes/overworld4.tscn
