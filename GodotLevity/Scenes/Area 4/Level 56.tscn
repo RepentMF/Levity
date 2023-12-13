@@ -23,6 +23,11 @@
 position = Vector2(7, 84)
 scale = Vector2(1, 10)
 
+[node name="wall3" parent="ROOM" instance=ExtResource("1_7hhvw")]
+position = Vector2(69, 94)
+rotation = 1.5708
+scale = Vector2(1, 8)
+
 [node name="wall2" parent="ROOM" instance=ExtResource("1_7hhvw")]
 position = Vector2(413, 84)
 scale = Vector2(1, 10)
@@ -55,20 +60,20 @@ scale = Vector2(28, 10)
 
 [node name="backdrop2" parent="ROOM" instance=ExtResource("8_jj7md")]
 z_index = -1
-position = Vector2(135, 73)
+position = Vector2(35, 147)
 
 [node name="backdrop3" parent="ROOM" instance=ExtResource("8_jj7md")]
 z_index = -1
-position = Vector2(303, 147)
+position = Vector2(224, 147)
 
 [node name="backdrop5" parent="ROOM" instance=ExtResource("8_jj7md")]
 z_index = -1
-position = Vector2(391, 147)
+position = Vector2(384, 147)
 
 [node name="backdrop4" parent="ROOM" instance=ExtResource("8_jj7md")]
 z_index = -1
-position = Vector2(219, 147)
-scale = Vector2(0.4, 0.75)
+position = Vector2(196, 147.25)
+scale = Vector2(1, 0.75)
 
 [node name="OBJECTS" type="Node2D" parent="."]
 
@@ -76,24 +81,20 @@ scale = Vector2(0.4, 0.75)
 position = Vector2(210, 84)
 scale = Vector2(1, 11.5)
 
-[node name="hazard2" parent="OBJECTS" instance=ExtResource("9_w1xff")]
-position = Vector2(135, 117)
-scale = Vector2(1, 6)
-
 [node name="hazard3" parent="OBJECTS" instance=ExtResource("9_w1xff")]
-position = Vector2(259, 147)
-scale = Vector2(6, 1)
+position = Vector2(116, 147.25)
+scale = Vector2(12, 1)
 
 [node name="hazard4" parent="OBJECTS" instance=ExtResource("9_w1xff")]
-position = Vector2(347, 147)
-scale = Vector2(6, 1)
+position = Vector2(304, 147)
+scale = Vector2(12, 1)
 
 [node name="bounce2" parent="OBJECTS" instance=ExtResource("10_jkrw6")]
-position = Vector2(303, 129)
+position = Vector2(345, 129)
 metadata/BOUNCE_SPEED = -300.0
 
 [node name="teleporter2" parent="OBJECTS" instance=ExtResource("11_2anyj")]
-position = Vector2(170, 69)
+position = Vector2(178, 129)
 metadata/ID = 1
 metadata/DESTINATION = NodePath("../teleporter3")
 metadata/DISPLAY_VALUE = true
@@ -104,17 +105,13 @@ metadata/ID = 2
 metadata/DESTINATION = NodePath("../teleporter2")
 metadata/DISPLAY_VALUE = true
 
+[node name="wooden_box" parent="OBJECTS" instance=ExtResource("12_d6isq")]
+position = Vector2(43, 80)
+
 [node name="respawn_point" parent="." instance=ExtResource("12_d33ut")]
-position = Vector2(54, 147)
-scale = Vector2(2, 2)
+position = Vector2(67, 78)
+scale = Vector2(6, 2)
 metadata/ID = 56
 
 [node name="AbsenceMesh" parent="." instance=ExtResource("13_tmnlp")]
 visible = false
-
-[node name="bounce" parent="." instance=ExtResource("10_jkrw6")]
-position = Vector2(107, 132)
-
-[node name="wooden_box" parent="." instance=ExtResource("12_d6isq")]
-position = Vector2(170, 28)
-metadata/SIZE = 1

@@ -1,19 +1,9 @@
-res://Scenes/overworld4.tscn
+res://InteractiveObjects/teleporter.tscn
 res://InteractiveObjects/absence_mesh.gd
 res://InteractiveObjects/box.gd
 res://InteractiveObjects/hazard.gd
 res://Scenes/LevelManager.gd
-res://Scenes/Area 4/Level 56.tscn
-res://InteractiveObjects/teleporter.tscn
-res://InteractiveObjects/wooden_box.tscn
 res://InteractiveObjects/mush_player.tscn
-res://InteractiveObjects/teleporter.gd
-res://Scenes/overworld.tscn
-res://Scenes/LM00.tscn
-res://Scenes/overworld3.tscn
-res://Scenes/Area 4/Level 53.tscn
-res://InteractiveObjects/hazard2.tscn
-res://omega_box.tscn
-res://omega_box.gd
-res://InteractiveObjects/omega_box.tscn
-res://InteractiveObjects/omega_box.gd
+res://Scenes/Area 4/Level 56.tscn
+res://InteractiveObjects/wooden_box.tscn
+res://Scenes/overworld4.tscn

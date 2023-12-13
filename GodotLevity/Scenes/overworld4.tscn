@@ -12,7 +12,7 @@
 [node name="Late-Game Overworld" type="Node2D"]
 
 [node name="MUSH_Player" parent="." instance=ExtResource("1_6eu06")]
-position = Vector2(1932, -192)
+position = Vector2(1694, -168)
 floor_stop_on_slope = true
 metadata/PUSH_VALUE = 5
 
@@ -74,5 +74,8 @@ position = Vector2(-566, -89)
 metadata/DESTINATION = NodePath("../T56_ent")
 
 [node name="T56_ent" parent="Area 4" instance=ExtResource("5_xgli2")]
-position = Vector2(-486, -17)
+position = Vector2(-486, -134)
 metadata/DESTINATION = NodePath("../T55_exit")
+
+[node name="T56_exit" parent="Area 4" instance=ExtResource("5_xgli2")]
+position = Vector2(-134, -124)
