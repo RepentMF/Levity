@@ -12,6 +12,7 @@ metadata/ID = 0
 metadata/GRAVITY_TRIGGER = false
 metadata/DESTINATION = NodePath("")
 metadata/LEVEL_DOOR = false
+metadata/DISPLAY_VALUE = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 3

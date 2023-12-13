@@ -37,7 +37,7 @@ func _process(delta):
 	if !done:
 		AREA_PREFAB = get_parent().name
 		LEVEL_PREFAB = str("res://Scenes/", AREA_PREFAB, "/", get_child(0).name, ".tscn")
-		print(LEVEL_PREFAB)
+		#print(LEVEL_PREFAB)
 		level = load(LEVEL_PREFAB)
 		done = true
 	

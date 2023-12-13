@@ -6,7 +6,7 @@ var UPGRADE_TYPE
 func _apply_upgrade(player):
 	match UPGRADE_TYPE:
 		"walljump":
-			player.maxWallJumpCount += 1
+			player.maxWalljumpCount += 1
 pass
 
 # Called when the node enters the scene tree for the first time.

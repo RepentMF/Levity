@@ -1,15 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://xncg7k5m2tay"]
+[gd_scene load_steps=9 format=3 uid="uid://xncg7k5m2tay"]
 
 [ext_resource type="PackedScene" uid="uid://dtcrduh7wvabh" path="res://InteractiveObjects/mush_player.tscn" id="1_6eu06"]
 [ext_resource type="Script" path="res://Scenes/mush_camera.gd" id="2_1uu2a"]
 [ext_resource type="PackedScene" uid="uid://oaudt6fwpdxh" path="res://Scenes/LM00.tscn" id="3_eixvj"]
 [ext_resource type="PackedScene" uid="uid://br4y5e3p5p7lc" path="res://Scenes/Area 4/Level 53.tscn" id="4_2k28j"]
 [ext_resource type="PackedScene" uid="uid://cquqgrf8e1kse" path="res://InteractiveObjects/teleporter.tscn" id="5_xgli2"]
+[ext_resource type="PackedScene" uid="uid://dxwpt3r4tuqaw" path="res://Scenes/Area 4/Level 54.tscn" id="6_ef3ly"]
+[ext_resource type="PackedScene" uid="uid://cvieo8kouqlbu" path="res://Scenes/Area 4/Level 55.tscn" id="7_wdrcj"]
+[ext_resource type="PackedScene" uid="uid://mwq280iyo7ex" path="res://Scenes/Area 4/Level 56.tscn" id="8_nbrak"]
 
 [node name="Late-Game Overworld" type="Node2D"]
 
 [node name="MUSH_Player" parent="." instance=ExtResource("1_6eu06")]
-position = Vector2(554, -109)
+position = Vector2(1932, -192)
 floor_stop_on_slope = true
 metadata/PUSH_VALUE = 5
 
@@ -31,14 +34,45 @@ script = ExtResource("2_1uu2a")
 position = Vector2(2344, -105)
 
 [node name="LM53" parent="Area 4" instance=ExtResource("3_eixvj")]
-position = Vector2(-1827, -74)
+position = Vector2(-1827, -63)
 
 [node name="Level 53" parent="Area 4/LM53" instance=ExtResource("4_2k28j")]
 
-[node name="teleporter" parent="Area 4/LM53" instance=ExtResource("5_xgli2")]
-position = Vector2(364, 37)
-metadata/DESTINATION = NodePath("../../../teleporter2")
+[node name="LM54" parent="Area 4" instance=ExtResource("3_eixvj")]
+position = Vector2(-1391, -104)
 
-[node name="teleporter2" parent="." instance=ExtResource("5_xgli2")]
-position = Vector2(1007, -141)
-metadata/DESTINATION = NodePath("../Area 4/LM53/teleporter")
+[node name="Level 54" parent="Area 4/LM54" instance=ExtResource("6_ef3ly")]
+
+[node name="LM55" parent="Area 4" instance=ExtResource("3_eixvj")]
+position = Vector2(-955, -134)
+
+[node name="Level 55" parent="Area 4/LM55" instance=ExtResource("7_wdrcj")]
+
+[node name="LM56" parent="Area 4" instance=ExtResource("3_eixvj")]
+position = Vector2(-519, -164)
+
+[node name="Level 56" parent="Area 4/LM56" instance=ExtResource("8_nbrak")]
+
+[node name="T53_exit" parent="Area 4" instance=ExtResource("5_xgli2")]
+position = Vector2(-1463, -37)
+metadata/DESTINATION = NodePath("../T54_ent")
+
+[node name="T54_ent" parent="Area 4" instance=ExtResource("5_xgli2")]
+position = Vector2(-1357, 44)
+metadata/DESTINATION = NodePath("../T53_exit")
+
+[node name="T54_exit" parent="Area 4" instance=ExtResource("5_xgli2")]
+position = Vector2(-1033, -57)
+metadata/DESTINATION = NodePath("../T55_ent")
+
+[node name="T55_ent" parent="Area 4" instance=ExtResource("5_xgli2")]
+position = Vector2(-924, 13)
+metadata/DESTINATION = NodePath("../T54_exit")
+
+[node name="T55_exit" parent="Area 4" instance=ExtResource("5_xgli2")]
+position = Vector2(-566, -89)
+metadata/DESTINATION = NodePath("../T56_ent")
+
+[node name="T56_ent" parent="Area 4" instance=ExtResource("5_xgli2")]
+position = Vector2(-486, -17)
+metadata/DESTINATION = NodePath("../T55_exit")

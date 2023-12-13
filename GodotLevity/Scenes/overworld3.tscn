@@ -22,7 +22,7 @@
 [node name="Mid-Game Overworld" type="Node2D"]
 
 [node name="MUSH_Player" parent="." instance=ExtResource("1_0u0vg")]
-position = Vector2(3491, -487)
+position = Vector2(1300, -212)
 floor_stop_on_slope = true
 metadata/PUSH_VALUE = 5
 

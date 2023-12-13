@@ -86,3 +86,12 @@ func _on_area_entered(area):
 		if area.owner.currentWalljumpCount != 0:
 			area.owner.currentWalljumpCount = 0
 	pass
+
+func _on_body_entered(body):
+	# If this bounce is colliding with a box
+	if body.name.contains("box"):
+		if body.GRAVITY_DIRECTION == 1:
+			body.linear_velocity.y = BOUNCE_SPEED
+		elif body.GRAVITY_DIRECTION == -1:
+			body.linear_velocity.y = -BOUNCE_SPEED
+	pass

@@ -2,10 +2,12 @@ extends RigidBody2D
 
 #Booleans
 var DISPLAY_VALUE
+var isTeleporting = false
 
 # Integers
 var GRAVITY_DIRECTION
 var SIZE
+var activeTeleporterID = -1
 var gravity
 
 func _ready():
@@ -32,4 +34,6 @@ func _physics_process(delta):
 	gravity_scale = GRAVITY_DIRECTION / 1.5
 	if abs(linear_velocity.x) > 70:
 		linear_velocity = Vector2(sign(linear_velocity.x) * 70, linear_velocity.y)
+	if isTeleporting:
+		position = position
 	pass
